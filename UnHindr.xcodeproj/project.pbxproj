@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2BB1F3E910641FB171AAA24E /* Pods_UnHindrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */; };
+		70A9163E2367FD3C003ACF83 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A9163D2367FD3C003ACF83 /* Charts.framework */; };
+		70A9163F2367FD3C003ACF83 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 70A9163D2367FD3C003ACF83 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		93FA49CD665592E4B99DB3F3 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */; };
 		9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8982367D826003CF8B9 /* AppDelegate.swift */; };
 		9DF3F89B2367D826003CF8B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F89A2367D826003CF8B9 /* ViewController.swift */; };
@@ -37,11 +39,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		70A916402367FD3D003ACF83 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				70A9163F2367FD3C003ACF83 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		070601D3D77C38C0722FE935 /* Pods-UnHindrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD8E5234FA9D115EE968692 /* Pods-UnHindr-UnHindrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.release.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.release.xcconfig"; sourceTree = "<group>"; };
+		70A9163D2367FD3C003ACF83 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF3F8952367D826003CF8B9 /* UnHindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnHindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF3F8982367D826003CF8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DF3F89A2367D826003CF8B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBE5CD7485E703281E2757D0 /* Pods_UnHindr.framework in Frameworks */,
+				70A9163E2367FD3C003ACF83 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +119,6 @@
 				070601D3D77C38C0722FE935 /* Pods-UnHindrTests.debug.xcconfig */,
 				BC2051C061649210EBAEDB5D /* Pods-UnHindrTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -118,6 +135,7 @@
 		9DF3F88C2367D826003CF8B9 = {
 			isa = PBXGroup;
 			children = (
+				70A9163D2367FD3C003ACF83 /* Charts.framework */,
 				9DF3F8972367D826003CF8B9 /* UnHindr */,
 				9DF3F8AC2367D82D003CF8B9 /* UnHindrTests */,
 				9DF3F8B72367D82D003CF8B9 /* UnHindrUITests */,
@@ -181,6 +199,7 @@
 				9DF3F8922367D826003CF8B9 /* Frameworks */,
 				9DF3F8932367D826003CF8B9 /* Resources */,
 				04C0D504A1150BA36A8DB35A /* [CP] Embed Pods Frameworks */,
+				70A916402367FD3D003ACF83 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
