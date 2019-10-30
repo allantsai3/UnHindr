@@ -3,15 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2BB1F3E910641FB171AAA24E /* Pods_UnHindrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */; };
+		81BBD41B23690C0D00454F99 /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBD41A23690C0D00454F99 /* MedicationViewController.swift */; };
+		81BBD41D23692BD400454F99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81BBD41C23692BD400454F99 /* Main.storyboard */; };
+		81BBD41F236930ED00454F99 /* MedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBD41E236930ED00454F99 /* MedViewController.swift */; };
 		93FA49CD665592E4B99DB3F3 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */; };
 		9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8982367D826003CF8B9 /* AppDelegate.swift */; };
 		9DF3F89B2367D826003CF8B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F89A2367D826003CF8B9 /* ViewController.swift */; };
-		9DF3F89E2367D826003CF8B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3F89C2367D826003CF8B9 /* Main.storyboard */; };
+		9DF3F89E2367D826003CF8B9 /* Medication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3F89C2367D826003CF8B9 /* Medication.storyboard */; };
 		9DF3F8A02367D82D003CF8B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3F89F2367D82D003CF8B9 /* Assets.xcassets */; };
 		9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3F8A12367D82D003CF8B9 /* LaunchScreen.storyboard */; };
 		9DF3F8AE2367D82D003CF8B9 /* UnHindrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8AD2367D82D003CF8B9 /* UnHindrTests.swift */; };
@@ -42,10 +45,13 @@
 		070601D3D77C38C0722FE935 /* Pods-UnHindrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD8E5234FA9D115EE968692 /* Pods-UnHindr-UnHindrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.release.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.release.xcconfig"; sourceTree = "<group>"; };
+		81BBD41A23690C0D00454F99 /* MedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
+		81BBD41C23692BD400454F99 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		81BBD41E236930ED00454F99 /* MedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedViewController.swift; sourceTree = "<group>"; };
 		9DF3F8952367D826003CF8B9 /* UnHindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnHindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF3F8982367D826003CF8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DF3F89A2367D826003CF8B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9DF3F89D2367D826003CF8B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9DF3F89D2367D826003CF8B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Medication.storyboard; sourceTree = "<group>"; };
 		9DF3F89F2367D82D003CF8B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DF3F8A22367D82D003CF8B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DF3F8A42367D82D003CF8B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,7 +107,6 @@
 				070601D3D77C38C0722FE935 /* Pods-UnHindrTests.debug.xcconfig */,
 				BC2051C061649210EBAEDB5D /* Pods-UnHindrTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -113,6 +118,14 @@
 				03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81BBD41923690BDE00454F99 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				81BBD41A23690C0D00454F99 /* MedicationViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		9DF3F88C2367D826003CF8B9 = {
@@ -140,13 +153,16 @@
 		9DF3F8972367D826003CF8B9 /* UnHindr */ = {
 			isa = PBXGroup;
 			children = (
+				81BBD41923690BDE00454F99 /* ViewControllers */,
 				9DF3F8982367D826003CF8B9 /* AppDelegate.swift */,
 				9DF3F89A2367D826003CF8B9 /* ViewController.swift */,
-				9DF3F89C2367D826003CF8B9 /* Main.storyboard */,
+				9DF3F89C2367D826003CF8B9 /* Medication.storyboard */,
 				9DF3F89F2367D82D003CF8B9 /* Assets.xcassets */,
 				9DF3F8A12367D82D003CF8B9 /* LaunchScreen.storyboard */,
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
+				81BBD41C23692BD400454F99 /* Main.storyboard */,
+				81BBD41E236930ED00454F99 /* MedViewController.swift */,
 			);
 			path = UnHindr;
 			sourceTree = "<group>";
@@ -279,9 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */,
+				81BBD41D23692BD400454F99 /* Main.storyboard in Resources */,
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
 				9DF3F8A02367D82D003CF8B9 /* Assets.xcassets in Resources */,
-				9DF3F89E2367D826003CF8B9 /* Main.storyboard in Resources */,
+				9DF3F89E2367D826003CF8B9 /* Medication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,8 +426,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BBD41B23690C0D00454F99 /* MedicationViewController.swift in Sources */,
 				9DF3F89B2367D826003CF8B9 /* ViewController.swift in Sources */,
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
+				81BBD41F236930ED00454F99 /* MedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,12 +465,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9DF3F89C2367D826003CF8B9 /* Main.storyboard */ = {
+		9DF3F89C2367D826003CF8B9 /* Medication.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9DF3F89D2367D826003CF8B9 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Medication.storyboard;
 			sourceTree = "<group>";
 		};
 		9DF3F8A12367D82D003CF8B9 /* LaunchScreen.storyboard */ = {
