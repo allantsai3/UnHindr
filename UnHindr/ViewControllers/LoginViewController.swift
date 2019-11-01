@@ -7,6 +7,7 @@
 //
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     // MARK: - Outlets
@@ -28,8 +29,32 @@ class LoginViewController: UIViewController {
     // Output:
     //      1. Signin successful -> Navigate to home menu
     //      2. Signin unsuccessful -> Display an error message
-    func authenticateLogin(){
+    private func authenticateLogin(){
+        guard let email = self.emailTextField.text, let password = self.passwordTextField.text else {
+            print("Email and password fields are empty")
+            return
+        }
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            guard let strongSelf = self else { return }
+            if error != nil {
+                print("Error with authentication")
+                return
+            }
+            
+            strongSelf.transitionToHomeScreen()
         
+        }
+    }
+    
+    // MARK - Changes storyboard and view controller to the home screen
+    // Input: None
+    // Output:
+    //      1. Storyboard changes to HomeScreen and displays first view on the storyboard
+    private func transitionToHomeScreen(){
+        //Switch storyboard to the home menu
+        let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
+        present(vc, animated: true, completion: nil)
     }
 
     // MARK: - Segue functions for navigation to adjacent views
@@ -38,11 +63,7 @@ class LoginViewController: UIViewController {
     // Action: If successful -> Navigate to home menu
     //         else not successful -> display error message
     @IBAction func loginTapped(_ sender: Any) {
-//        //Switch storyboard to the home menu
-        let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
-        present(vc, animated: true, completion: nil)
-//
+        authenticateLogin()
     }
 
 }
