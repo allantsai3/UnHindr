@@ -24,7 +24,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="HG1-Bx-ddg" userLabel="Page Header">
                                 <rect key="frame" x="17" y="62" width="134" height="42"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Medication Name" borderStyle="roundedRect" placeholder="Medication Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xl6-gZ-jjy">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medication Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xl6-gZ-jjy">
                                 <rect key="frame" x="72.5" y="194" width="269" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="PYs-RS-OMg"/>
@@ -34,7 +34,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="00:00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iil-vq-vNa">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00:00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iil-vq-vNa">
                                 <rect key="frame" x="257" y="560" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -276,7 +276,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="cpM-bk-Ohy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="979.71014492753636" y="25.446428571428569"/>
+            <point key="canvasLocation" x="942" y="755"/>
+        </scene>
+        <!--myLog-->
+        <scene sceneID="kMv-EI-DoM">
+            <objects>
+                <viewController id="V6G-2q-PVP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wSZ-dG-6fW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LjY-yr-sYL"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="myLog" id="Oc3-A0-7Z8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iE0-WF-HJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="941" y="-682"/>
         </scene>
         <!--MedicationHome-->
         <scene sceneID="c02-pU-jzI">
@@ -323,16 +339,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vjt-Nr-QhP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Det-Rg-g08"/>
+                    <tabBarItem key="tabBarItem" title="myMeds" id="Det-Rg-g08"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0Q-mV-Ilg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1749.2753623188407" y="26.116071428571427"/>
+            <point key="canvasLocation" x="941" y="27"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Edf-VT-0Wd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Siq-wZ-QA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wqA-ir-ZJ9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YMm-Gs-jOQ">
@@ -341,9 +356,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="m39-Xf-Vgv"/>
+                        <segue destination="qdr-HS-vBK" kind="relationship" relationship="viewControllers" id="M3u-lD-7VA"/>
+                        <segue destination="V6G-2q-PVP" kind="relationship" relationship="viewControllers" id="4GN-1b-5ot"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Siq-wZ-QA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="97" y="27"/>
         </scene>
@@ -1096,6 +1113,5 @@ E5cTnxOiE6cTrxOyE8QTxxPMAAAAAAAAAgEAAAAAAAAAVAAAAAAAAAAAAAAAAAAAE84
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dFx-mT-XiA"/>
-        <segue reference="sNy-cJ-JPu"/>
     </inferredMetricsTieBreakers>
 </document>
