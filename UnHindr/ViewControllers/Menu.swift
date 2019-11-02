@@ -18,7 +18,7 @@ class HomeMenu : UIViewController {
     @IBAction func goToMed(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Medication", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MedicationViewController") as UIViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "MedicationHome") as UIViewController
         present(vc, animated: true, completion: nil)
     }
     

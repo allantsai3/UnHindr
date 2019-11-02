@@ -20,7 +20,7 @@
 		9DF3F8B92367D82D003CF8B9 /* UnHindrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */; };
 		9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */; };
 		CBE5CD7485E703281E2757D0 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */; };
-		CDF84C07236BAF2F00B31B55 /* HomeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF84C06236BAF2F00B31B55 /* HomeMenu.swift */; };
+		CDF84C07236BAF2F00B31B55 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF84C06236BAF2F00B31B55 /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 		A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr_UnHindrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A52706C5DFD3854AB3653D /* Pods-UnHindr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.debug.xcconfig"; sourceTree = "<group>"; };
 		BC2051C061649210EBAEDB5D /* Pods-UnHindrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.release.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.release.xcconfig"; sourceTree = "<group>"; };
-		CDF84C06236BAF2F00B31B55 /* HomeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenu.swift; sourceTree = "<group>"; };
+		CDF84C06236BAF2F00B31B55 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		D67DC310DD2C16DCFB8FDD88 /* Pods-UnHindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.release.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.release.xcconfig"; sourceTree = "<group>"; };
 		F1C3785DD264C27DA744F93C /* Pods-UnHindr-UnHindrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +123,7 @@
 		81BBD41923690BDE00454F99 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CDF84C06236BAF2F00B31B55 /* Menu.swift */,
 				81BBD41A23690C0D00454F99 /* MedicationViewController.swift */,
 			);
 			path = ViewControllers;
@@ -153,7 +154,6 @@
 		9DF3F8972367D826003CF8B9 /* UnHindr */ = {
 			isa = PBXGroup;
 			children = (
-				CDF84C06236BAF2F00B31B55 /* HomeMenu.swift */,
 				81BBD41923690BDE00454F99 /* ViewControllers */,
 				9DF3F8982367D826003CF8B9 /* AppDelegate.swift */,
 				9DF3F89A2367D826003CF8B9 /* ViewController.swift */,
@@ -428,7 +428,7 @@
 			files = (
 				81BBD41B23690C0D00454F99 /* MedicationViewController.swift in Sources */,
 				9DF3F89B2367D826003CF8B9 /* ViewController.swift in Sources */,
-				CDF84C07236BAF2F00B31B55 /* HomeMenu.swift in Sources */,
+				CDF84C07236BAF2F00B31B55 /* Menu.swift in Sources */,
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
