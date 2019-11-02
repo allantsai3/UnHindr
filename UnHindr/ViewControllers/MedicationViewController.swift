@@ -11,7 +11,7 @@ import UIKit
 
 class MedicationViewController: UIViewController {
 
-    //let timePicker = UIDatePicker()
+    
     
     @IBOutlet weak var checkMon: UIImageView!
     @IBOutlet weak var checkTues: UIImageView!
@@ -50,7 +50,7 @@ class MedicationViewController: UIViewController {
     
     @objc func timeChanged(timePicker: UIDatePicker) {
         let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "hh:mm"
+        timeFormatter.dateFormat = "hh:mm a"
         timeInputTextField.text = timeFormatter.string(from: timePicker.date)
     }
     

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wqA-ir-ZJ9">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="yDn-hG-gAB" customClass="MedicationViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BRy-Fu-zrT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XK0-5A-Vd0"/>
@@ -31,15 +31,14 @@
             <objects>
                 <viewController storyboardIdentifier="MedicationViewController" id="BYZ-38-t0r" customClass="MedicationViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NewMedBackground" translatesAutoresizingMaskIntoConstraints="NO" id="KJb-en-Bbt">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewMedBackground" translatesAutoresizingMaskIntoConstraints="NO" id="KJb-en-Bbt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQf-eO-hS0">
-                                <rect key="frame" x="230" y="291" width="49" height="48"/>
+                                <rect key="frame" x="230" y="331" width="49" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="wednesday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -50,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lv5-v5-TH4">
-                                <rect key="frame" x="163" y="291" width="48" height="48"/>
+                                <rect key="frame" x="163" y="331" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="tuesday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -59,18 +58,8 @@
                                     <action selector="tuesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rss-4a-jCO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyc-Bh-VK1">
-                                <rect key="frame" x="185" y="457" width="158" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Add">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="addMedTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GCN-en-HMT"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i01-8S-XaK">
-                                <rect key="frame" x="126" y="347" width="48" height="47"/>
+                                <rect key="frame" x="126" y="387" width="48" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="friday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -80,7 +69,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ts-pE-khf">
-                                <rect key="frame" x="94" y="291" width="48" height="48"/>
+                                <rect key="frame" x="94" y="331" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="monday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -90,7 +79,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1F-57-HNH">
-                                <rect key="frame" x="199" y="347" width="48" height="47"/>
+                                <rect key="frame" x="199" y="387" width="48" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="saturday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -100,7 +89,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Cp-2K-w0y">
-                                <rect key="frame" x="261" y="347" width="48" height="47"/>
+                                <rect key="frame" x="265" y="387" width="48" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="sunday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -109,41 +98,31 @@
                                     <action selector="sunButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jzK-FH-L9b"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hz2-5D-7U3">
-                                <rect key="frame" x="16" y="457" width="158" height="71"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Medication Name" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xl6-gZ-jjy">
+                                <rect key="frame" x="60" y="163" width="261" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Cancel">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelMedTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zHd-CN-Kac"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xl6-gZ-jjy">
-                                <rect key="frame" x="60" y="127" width="261" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="SY9-Mr-YlO">
-                                <rect key="frame" x="106" y="311" width="25" height="25"/>
+                                <rect key="frame" x="106" y="351" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="ybu-Fx-t1r">
-                                <rect key="frame" x="175" y="311" width="25" height="25"/>
+                                <rect key="frame" x="175" y="351" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="Q2O-XD-4tW">
-                                <rect key="frame" x="242" y="311" width="25" height="25"/>
+                                <rect key="frame" x="242" y="351" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="9TX-4E-3GJ">
-                                <rect key="frame" x="273" y="366" width="25" height="25"/>
+                                <rect key="frame" x="277" y="406" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qV0-er-sN6">
-                                <rect key="frame" x="60" y="347" width="49" height="47"/>
+                                <rect key="frame" x="60" y="387" width="49" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="thursday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -153,19 +132,19 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="XrU-0b-Ls6">
-                                <rect key="frame" x="211" y="366" width="25" height="25"/>
+                                <rect key="frame" x="211" y="406" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="3JC-Pe-ob0">
-                                <rect key="frame" x="138" y="366" width="25" height="25"/>
+                                <rect key="frame" x="138" y="406" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="6Bk-Df-MeE">
-                                <rect key="frame" x="72" y="366" width="25" height="25"/>
+                                <rect key="frame" x="72" y="406" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1000" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Svh-PI-Us0">
-                                <rect key="frame" x="239" y="184" width="94" height="29"/>
+                                <rect key="frame" x="230" y="220" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -174,21 +153,21 @@
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzB-0I-E3B">
-                                <rect key="frame" x="239" y="165" width="94" height="21"/>
+                                <rect key="frame" x="230" y="201" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxS-aZ-aoh">
-                                <rect key="frame" x="239" y="215" width="94" height="21"/>
+                                <rect key="frame" x="230" y="251" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="oKy-9t-o8L">
-                                <rect key="frame" x="239" y="233" width="94" height="29"/>
+                                <rect key="frame" x="230" y="269" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -196,15 +175,61 @@
                                     <action selector="quantityStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="haB-Xq-69H"/>
                                 </connections>
                             </stepper>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iil-vq-vNa">
-                                <rect key="frame" x="216" y="410" width="97" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="00:00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iil-vq-vNa">
+                                <rect key="frame" x="191" y="459" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyc-Bh-VK1">
+                                <rect key="frame" x="203" y="528" width="99" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Add">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addMedTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GCN-en-HMT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hz2-5D-7U3">
+                                <rect key="frame" x="63" y="528" width="100" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Cancel">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelMedTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zHd-CN-Kac"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addNewMeds" translatesAutoresizingMaskIntoConstraints="NO" id="78Q-aJ-y6O">
+                                <rect key="frame" x="104" y="117" width="175" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dosage" translatesAutoresizingMaskIntoConstraints="NO" id="YXM-Bc-fA3">
+                                <rect key="frame" x="109" y="215" width="94" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quantity" translatesAutoresizingMaskIntoConstraints="NO" id="O7I-Ng-N9r">
+                                <rect key="frame" x="119" y="269" width="70" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="rmW-HH-8Mt">
+                                <rect key="frame" x="104" y="459" width="58" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="HG1-Bx-ddg">
+                                <rect key="frame" x="17" y="44" width="134" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KJb-en-Bbt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="A2h-r3-kqd"/>
+                            <constraint firstItem="KJb-en-Bbt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="iSf-Dx-rfG"/>
+                            <constraint firstItem="KJb-en-Bbt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mfg-f5-HU0"/>
+                            <constraint firstItem="KJb-en-Bbt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sa5-xG-fkR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="qVu-Pa-cuW"/>
@@ -225,7 +250,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="cpM-bk-Ohy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="980" y="26.53673163418291"/>
+            <point key="canvasLocation" x="980" y="25.862068965517242"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Edf-VT-0Wd">
@@ -251,12 +276,17 @@
         <image name="Add" width="158" height="71"/>
         <image name="Cancel" width="158" height="71"/>
         <image name="NewMedBackground" width="462" height="1008"/>
+        <image name="addNewMeds" width="223" height="36"/>
         <image name="check" width="36" height="36"/>
+        <image name="dosage" width="129" height="30"/>
         <image name="friday" width="74" height="73"/>
         <image name="monday" width="73" height="73"/>
+        <image name="myMeds-1" width="144" height="42"/>
+        <image name="quantity" width="94" height="30"/>
         <image name="saturday" width="74" height="73"/>
         <image name="sunday" width="74" height="73"/>
         <image name="thursday" width="74" height="73"/>
+        <image name="time" width="66" height="36"/>
         <image name="tuesday" width="74" height="73"/>
         <image name="wednesday" width="74" height="73"/>
     </resources>

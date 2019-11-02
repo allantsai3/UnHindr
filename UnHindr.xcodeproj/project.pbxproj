@@ -123,6 +123,7 @@
 		81BBD41923690BDE00454F99 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				81BBD41A23690C0D00454F99 /* MedicationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -153,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				CDF84C06236BAF2F00B31B55 /* HomeMenu.swift */,
-				81BBD41A23690C0D00454F99 /* MedicationViewController.swift */,
 				81BBD41923690BDE00454F99 /* ViewControllers */,
 				9DF3F8982367D826003CF8B9 /* AppDelegate.swift */,
 				9DF3F89A2367D826003CF8B9 /* ViewController.swift */,
