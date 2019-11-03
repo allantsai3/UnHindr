@@ -60,9 +60,8 @@
                                     <action selector="dosageStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="upd-r5-jxo"/>
                                 </connections>
                             </stepper>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQf-eO-hS0" userLabel="Wed Button">
-                                <rect key="frame" x="257" y="381" width="76" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQf-eO-hS0" userLabel="Wed Button">
+                                <rect key="frame" x="267" y="380" width="74" height="73"/>
                                 <state key="normal" image="wednesday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -71,13 +70,11 @@
                                     <action selector="wedButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iNh-S4-WFg"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="Q2O-XD-4tW">
-                                <rect key="frame" x="278" y="408" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="Q2O-XD-4tW">
+                                <rect key="frame" x="287" y="410" width="36" height="36"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qV0-er-sN6" userLabel="Thurs Button">
-                                <rect key="frame" x="38" y="462" width="79" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qV0-er-sN6" userLabel="Thurs Button">
+                                <rect key="frame" x="30" y="462" width="75" height="75"/>
                                 <state key="normal" image="thursday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -85,13 +82,11 @@
                                     <action selector="thursButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xwf-jI-Yp7"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="6Bk-Df-MeE">
-                                <rect key="frame" x="58" y="493" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="6Bk-Df-MeE">
+                                <rect key="frame" x="49" y="492" width="36" height="36"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i01-8S-XaK" userLabel="Fri Button">
-                                <rect key="frame" x="130" y="463" width="75" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i01-8S-XaK" userLabel="Fri Button">
+                                <rect key="frame" x="126" y="463" width="75" height="75"/>
                                 <state key="normal" image="friday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -99,13 +94,11 @@
                                     <action selector="friButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bjx-cO-Ou1"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="3JC-Pe-ob0">
-                                <rect key="frame" x="150" y="493" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="3JC-Pe-ob0">
+                                <rect key="frame" x="145" y="493" width="36" height="36"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Cp-2K-w0y" userLabel="Sun Button">
-                                <rect key="frame" x="299" y="464" width="76" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Cp-2K-w0y" userLabel="Sun Button">
+                                <rect key="frame" x="310" y="463" width="74" height="73"/>
                                 <state key="normal" image="sunday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -113,13 +106,11 @@
                                     <action selector="sunButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jzK-FH-L9b"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="9TX-4E-3GJ">
-                                <rect key="frame" x="322" y="493" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="9TX-4E-3GJ">
+                                <rect key="frame" x="330" y="492" width="36" height="36"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1F-57-HNH" userLabel="Sat Button">
-                                <rect key="frame" x="216" y="464" width="75" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1F-57-HNH" userLabel="Sat Button">
+                                <rect key="frame" x="214" y="463" width="74" height="73"/>
                                 <state key="normal" image="saturday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -127,26 +118,18 @@
                                     <action selector="satButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FTH-1N-3dI"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="XrU-0b-Ls6">
-                                <rect key="frame" x="236" y="493" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="XrU-0b-Ls6">
+                                <rect key="frame" x="234" y="493" width="36" height="36"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lv5-v5-TH4" userLabel="Tues Button">
-                                <rect key="frame" x="170" y="381" width="74" height="73"/>
-                                <state key="normal" image="tuesday">
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ts-pE-khf" userLabel="Mon Button">
+                                <rect key="frame" x="76" y="380" width="75" height="75"/>
+                                <state key="normal" image="monday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="tuesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rss-4a-jCO"/>
+                                    <action selector="monButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cuy-bG-ukF"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="ybu-Fx-t1r">
-                                <rect key="frame" x="190" y="408" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="SY9-Mr-YlO">
-                                <rect key="frame" x="96" y="408" width="36" height="36"/>
-                            </imageView>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GAt-IX-B5C">
                                 <rect key="frame" x="27" y="263" width="234" height="73"/>
                                 <subviews>
@@ -210,19 +193,32 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ts-pE-khf" userLabel="Mon Button">
-                                <rect key="frame" x="78" y="381" width="73" height="73"/>
-                                <state key="normal" image="monday">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="SY9-Mr-YlO">
+                                <rect key="frame" x="94" y="410" width="36" height="36"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxp-Ou-yMu" userLabel="Tues Button">
+                                <rect key="frame" x="171" y="380" width="75" height="75"/>
+                                <state key="normal" image="tuesday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="monButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cuy-bG-ukF"/>
+                                    <action selector="tuesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kLd-5a-h1n"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="Fpv-3A-YQj">
+                                <rect key="frame" x="191" y="410" width="36" height="36"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mu-cd-YDG">
+                                <rect key="frame" x="150" y="344" width="114" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SY9-Mr-YlO" firstAttribute="top" secondItem="GAt-IX-B5C" secondAttribute="bottom" constant="72" id="0Dd-ia-GNl"/>
+                            <constraint firstItem="qV0-er-sN6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="22" id="03U-BP-X84"/>
+                            <constraint firstItem="6Cp-2K-w0y" firstAttribute="top" secondItem="QQf-eO-hS0" secondAttribute="bottom" constant="10" id="1SU-mG-vhw"/>
                             <constraint firstItem="HG1-Bx-ddg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="17" id="5Wc-Nd-jgC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jxP-zU-K2Q" secondAttribute="bottom" constant="153" id="7Co-6D-mk6"/>
                             <constraint firstItem="jxP-zU-K2Q" firstAttribute="top" secondItem="R7t-D0-Ogs" secondAttribute="bottom" constant="48" id="7po-uE-tdE"/>
@@ -230,29 +226,54 @@
                             <constraint firstItem="oKy-9t-o8L" firstAttribute="top" secondItem="Xl6-gZ-jjy" secondAttribute="bottom" constant="24" id="8Ib-cZ-tqo"/>
                             <constraint firstItem="KJb-en-Bbt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="A2h-r3-kqd"/>
                             <constraint firstItem="OZb-9q-COZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Aby-Zt-3pk"/>
-                            <constraint firstItem="lv5-v5-TH4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AlW-qr-qJp"/>
+                            <constraint firstItem="3JC-Pe-ob0" firstAttribute="top" secondItem="i01-8S-XaK" secondAttribute="top" constant="30" id="Agf-2Q-YQa"/>
                             <constraint firstAttribute="trailing" secondItem="HG1-Bx-ddg" secondAttribute="trailing" constant="263" id="C8K-J7-LYR"/>
                             <constraint firstItem="oKy-9t-o8L" firstAttribute="leading" secondItem="GAt-IX-B5C" secondAttribute="trailing" constant="21" id="CGi-NQ-AGP"/>
+                            <constraint firstItem="c1F-57-HNH" firstAttribute="leading" secondItem="i01-8S-XaK" secondAttribute="trailing" constant="22" id="Cyx-Ei-YAY"/>
+                            <constraint firstItem="XrU-0b-Ls6" firstAttribute="leading" secondItem="c1F-57-HNH" secondAttribute="leading" constant="20" id="Ea8-m3-fkl"/>
+                            <constraint firstItem="i01-8S-XaK" firstAttribute="leading" secondItem="qV0-er-sN6" secondAttribute="trailing" constant="22" id="Etb-UW-ZLH"/>
+                            <constraint firstItem="Fpv-3A-YQj" firstAttribute="leading" secondItem="Rxp-Ou-yMu" secondAttribute="leading" constant="20" id="H7m-Qe-g7B"/>
                             <constraint firstItem="HG1-Bx-ddg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="62" id="IX0-ze-kIO"/>
                             <constraint firstItem="5ts-pE-khf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="56" id="JDD-AP-tjq"/>
+                            <constraint firstItem="QQf-eO-hS0" firstAttribute="top" secondItem="Xl6-gZ-jjy" secondAttribute="bottom" constant="136" id="Jhb-cy-3A7"/>
+                            <constraint firstItem="3JC-Pe-ob0" firstAttribute="leading" secondItem="i01-8S-XaK" secondAttribute="leading" constant="20" id="KMr-ps-gBA"/>
+                            <constraint firstItem="qV0-er-sN6" firstAttribute="top" secondItem="5ts-pE-khf" secondAttribute="bottom" constant="9" id="NWa-8X-g0P"/>
+                            <constraint firstItem="6Cp-2K-w0y" firstAttribute="leading" secondItem="c1F-57-HNH" secondAttribute="trailing" constant="22" id="OIR-jJ-5FY"/>
+                            <constraint firstItem="SY9-Mr-YlO" firstAttribute="top" secondItem="5ts-pE-khf" secondAttribute="top" constant="30" id="Pp6-yY-v1z"/>
+                            <constraint firstItem="Q2O-XD-4tW" firstAttribute="top" secondItem="QQf-eO-hS0" secondAttribute="top" constant="30" id="PvL-DV-jK2"/>
+                            <constraint firstItem="Fpv-3A-YQj" firstAttribute="top" secondItem="Rxp-Ou-yMu" secondAttribute="top" constant="30" id="RA5-xt-jna"/>
+                            <constraint firstItem="SY9-Mr-YlO" firstAttribute="leading" secondItem="5ts-pE-khf" secondAttribute="leading" constant="18" id="S0H-6z-Fcd"/>
                             <constraint firstItem="OZb-9q-COZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S4J-jl-x2E"/>
+                            <constraint firstItem="Rxp-Ou-yMu" firstAttribute="leading" secondItem="5ts-pE-khf" secondAttribute="trailing" constant="22" id="Sgx-Nd-4AB"/>
                             <constraint firstItem="jxP-zU-K2Q" firstAttribute="top" secondItem="iil-vq-vNa" secondAttribute="bottom" constant="48" id="SqE-Sg-Utb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iil-vq-vNa" secondAttribute="trailing" constant="40" id="UG2-aG-OQy"/>
                             <constraint firstItem="5ts-pE-khf" firstAttribute="top" secondItem="Xl6-gZ-jjy" secondAttribute="bottom" constant="136" id="V1h-2S-ecI"/>
+                            <constraint firstItem="XrU-0b-Ls6" firstAttribute="top" secondItem="c1F-57-HNH" secondAttribute="top" constant="30" id="Vkh-hS-3jf"/>
+                            <constraint firstItem="6Bk-Df-MeE" firstAttribute="leading" secondItem="qV0-er-sN6" secondAttribute="leading" constant="20" id="Y5c-dc-gCU"/>
+                            <constraint firstItem="9TX-4E-3GJ" firstAttribute="leading" secondItem="c1F-57-HNH" secondAttribute="trailing" constant="42" id="YKJ-Yh-mQ6"/>
+                            <constraint firstItem="6Bk-Df-MeE" firstAttribute="top" secondItem="qV0-er-sN6" secondAttribute="top" constant="30" id="Z95-bo-pPS"/>
                             <constraint firstItem="jxP-zU-K2Q" firstAttribute="top" secondItem="iil-vq-vNa" secondAttribute="bottom" constant="48" id="bcP-aW-UvM"/>
+                            <constraint firstItem="9TX-4E-3GJ" firstAttribute="top" secondItem="Svh-PI-Us0" secondAttribute="bottom" constant="152" id="d91-7y-uqg"/>
+                            <constraint firstItem="8mu-cd-YDG" firstAttribute="top" secondItem="Xl6-gZ-jjy" secondAttribute="bottom" constant="100" id="dLQ-d4-FDp"/>
                             <constraint firstItem="GAt-IX-B5C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="due-6Y-mTf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oKy-9t-o8L" secondAttribute="trailing" constant="18" id="fKy-vb-RAF"/>
-                            <constraint firstItem="lv5-v5-TH4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hJ6-XB-Gc6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Svh-PI-Us0" secondAttribute="trailing" constant="18" id="hfC-e6-SK9"/>
                             <constraint firstItem="R7t-D0-Ogs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="37" id="hhc-sB-Qjc"/>
+                            <constraint firstItem="8mu-cd-YDG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iNf-Hb-tyA"/>
                             <constraint firstItem="KJb-en-Bbt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="iSf-Dx-rfG"/>
                             <constraint firstItem="KJb-en-Bbt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mfg-f5-HU0"/>
+                            <constraint firstItem="QQf-eO-hS0" firstAttribute="leading" secondItem="Rxp-Ou-yMu" secondAttribute="trailing" constant="22" id="pXk-uT-1NC"/>
                             <constraint firstItem="Xl6-gZ-jjy" firstAttribute="top" secondItem="OZb-9q-COZ" secondAttribute="bottom" constant="20" id="pb1-9a-OMR"/>
                             <constraint firstItem="jxP-zU-K2Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="poI-el-9q4"/>
+                            <constraint firstItem="i01-8S-XaK" firstAttribute="top" secondItem="5ts-pE-khf" secondAttribute="bottom" constant="10" id="ptc-HL-Hi0"/>
                             <constraint firstItem="Xl6-gZ-jjy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pxE-qT-vkc"/>
+                            <constraint firstItem="6Cp-2K-w0y" firstAttribute="leading" secondItem="c1F-57-HNH" secondAttribute="trailing" constant="22" id="s4o-zF-lmx"/>
                             <constraint firstItem="GAt-IX-B5C" firstAttribute="top" secondItem="Xl6-gZ-jjy" secondAttribute="bottom" constant="19" id="sHy-kP-Iv6"/>
                             <constraint firstItem="KJb-en-Bbt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sa5-xG-fkR"/>
-                            <constraint firstItem="SY9-Mr-YlO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="96" id="zFQ-59-hjp"/>
+                            <constraint firstItem="Q2O-XD-4tW" firstAttribute="leading" secondItem="QQf-eO-hS0" secondAttribute="leading" constant="20" id="tco-X7-ATw"/>
+                            <constraint firstItem="Rxp-Ou-yMu" firstAttribute="top" secondItem="Xl6-gZ-jjy" secondAttribute="bottom" constant="136" id="wBa-4E-Gy1"/>
+                            <constraint firstItem="c1F-57-HNH" firstAttribute="top" secondItem="QQf-eO-hS0" secondAttribute="bottom" constant="10" id="wqa-Mh-RGK"/>
+                            <constraint firstItem="6Cp-2K-w0y" firstAttribute="top" secondItem="QQf-eO-hS0" secondAttribute="bottom" constant="10" id="yYX-Tf-C4a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -263,7 +284,7 @@
                         <outlet property="checkSat" destination="XrU-0b-Ls6" id="H6L-AC-IMA"/>
                         <outlet property="checkSun" destination="9TX-4E-3GJ" id="gmC-TR-i2F"/>
                         <outlet property="checkThur" destination="6Bk-Df-MeE" id="Ux4-x2-Zmn"/>
-                        <outlet property="checkTues" destination="ybu-Fx-t1r" id="UNI-g5-782"/>
+                        <outlet property="checkTues" destination="Fpv-3A-YQj" id="rG3-pf-Yhd"/>
                         <outlet property="checkWed" destination="Q2O-XD-4tW" id="P5X-2Z-Wd5"/>
                         <outlet property="dosageLabel" destination="zzB-0I-E3B" id="Rsi-H0-2sZ"/>
                         <outlet property="medFieldName" destination="Xl6-gZ-jjy" id="euG-4M-TXk"/>
