@@ -24,6 +24,9 @@
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f52-Tr-MrN" userLabel="profle">
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="232"/>
                                         <state key="normal" image="Profile"/>
+                                        <connections>
+                                            <action selector="profileTapped:" destination="htM-Qi-GRg" eventType="touchUpInside" id="Fc2-Ga-bR0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjU-9F-vfA" userLabel="EmergencyContact">
                                         <rect key="frame" x="188" y="0.0" width="186" height="232"/>
@@ -44,6 +47,9 @@
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugf-Nl-Zuo" userLabel="medication">
                                         <rect key="frame" x="188" y="0.0" width="186" height="196"/>
                                         <state key="normal" image="Medication"/>
+                                        <connections>
+                                            <action selector="medicationTapped:" destination="htM-Qi-GRg" eventType="touchUpInside" id="2P2-nh-X4g"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -105,13 +111,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Chat" width="200" height="192"/>
-        <image name="Connect" width="199" height="191"/>
-        <image name="Emergency" width="204" height="232"/>
-        <image name="Location" width="200" height="192"/>
-        <image name="Medication" width="204" height="196"/>
-        <image name="Options" width="200" height="192"/>
-        <image name="Profile" width="202" height="229"/>
-        <image name="Wellness" width="203" height="195"/>
+        <image name="Chat" width="200" height="192.5"/>
+        <image name="Connect" width="199" height="191.5"/>
+        <image name="Emergency" width="204" height="232.5"/>
+        <image name="Location" width="200" height="192.5"/>
+        <image name="Medication" width="204" height="196.5"/>
+        <image name="Options" width="200" height="192.5"/>
+        <image name="Profile" width="202" height="229.5"/>
+        <image name="Wellness" width="203" height="195.5"/>
     </resources>
 </document>
