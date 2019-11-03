@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBG" translatesAutoresizingMaskIntoConstraints="NO" id="DV3-4L-Dn3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="897"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Foreground" translatesAutoresizingMaskIntoConstraints="NO" id="gA7-aH-eZN">
                                 <rect key="frame" x="34" y="458" width="346" height="389"/>
@@ -84,7 +84,7 @@
                             <constraint firstItem="eT9-dg-1jS" firstAttribute="top" secondItem="dOO-mx-ulJ" secondAttribute="bottom" constant="20" id="FzB-Ox-5fq"/>
                             <constraint firstItem="DV3-4L-Dn3" firstAttribute="leading" secondItem="UV8-Qe-6fV" secondAttribute="leading" id="Zfg-Sm-k7h"/>
                             <constraint firstItem="AfK-3e-csx" firstAttribute="centerX" secondItem="UV8-Qe-6fV" secondAttribute="centerX" id="fSZ-qf-wHe"/>
-                            <constraint firstAttribute="bottom" secondItem="DV3-4L-Dn3" secondAttribute="bottom" id="lmu-Af-3X7"/>
+                            <constraint firstAttribute="bottom" secondItem="DV3-4L-Dn3" secondAttribute="bottom" constant="-1" id="lmu-Af-3X7"/>
                             <constraint firstAttribute="trailing" secondItem="DV3-4L-Dn3" secondAttribute="trailing" id="qrZ-US-oZh"/>
                             <constraint firstItem="AfK-3e-csx" firstAttribute="top" secondItem="yfE-f1-1jh" secondAttribute="bottom" constant="10" id="xPO-Dt-EhB"/>
                             <constraint firstItem="gA7-aH-eZN" firstAttribute="centerX" secondItem="UV8-Qe-6fV" secondAttribute="centerX" id="zUF-lA-WdV"/>

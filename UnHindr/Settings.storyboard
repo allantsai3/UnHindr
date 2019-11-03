@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="29x-Pw-Tsq">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,38 +10,73 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="S8b-P2-ZHW">
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" id="29x-Pw-Tsq" customClass="SettingsViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7b6-gr-tgC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oj2-Eh-ueE">
-                                <rect key="frame" x="35" y="64" width="62" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="logout"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zre-0Z-piK">
-                                <rect key="frame" x="35" y="64" width="62" height="63"/>
+                                <rect key="frame" x="34" y="202" width="62" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="logout"/>
+                                <state key="normal" title="Logout" image="logout"/>
                                 <connections>
                                     <action selector="logoutPressed:" destination="29x-Pw-Tsq" eventType="touchUpInside" id="RcH-RM-enw"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topBG" translatesAutoresizingMaskIntoConstraints="NO" id="gah-eH-EFm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="pSb-F9-Gmb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeN-NF-rfh">
+                                <rect key="frame" x="276" y="76" width="118" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMv-AT-ArL">
+                                <rect key="frame" x="27" y="64" width="77" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="RUE-ri-1L5"/>
+                                    <constraint firstAttribute="height" constant="60" id="rFv-4g-Kne"/>
+                                </constraints>
+                                <state key="normal" image="home-white"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ri2-xS-FrU">
+                                <rect key="frame" x="117" y="215" width="99" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hMv-AT-ArL" firstAttribute="top" secondItem="v8V-ik-5a5" secondAttribute="top" constant="20" id="565-vV-SjK"/>
+                            <constraint firstItem="hMv-AT-ArL" firstAttribute="leading" secondItem="v8V-ik-5a5" secondAttribute="leading" constant="27" id="Ljf-59-J6S"/>
+                            <constraint firstItem="v8V-ik-5a5" firstAttribute="trailing" secondItem="NeN-NF-rfh" secondAttribute="trailing" constant="20" id="VSV-H8-uRz"/>
+                            <constraint firstItem="gah-eH-EFm" firstAttribute="top" secondItem="7b6-gr-tgC" secondAttribute="top" id="fqL-1S-Ebt"/>
+                            <constraint firstItem="gah-eH-EFm" firstAttribute="centerX" secondItem="7b6-gr-tgC" secondAttribute="centerX" id="or7-zc-0kd"/>
+                            <constraint firstItem="NeN-NF-rfh" firstAttribute="top" secondItem="v8V-ik-5a5" secondAttribute="top" constant="32" id="rXF-OG-fnr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="v8V-ik-5a5"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings" id="gZn-N0-KBi">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="7Fy-OI-g6X"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yej-mr-1bU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16.800000000000001" y="129.98500749625188"/>
+            <point key="canvasLocation" x="1836.2318840579712" y="129.91071428571428"/>
         </scene>
     </scenes>
     <resources>
+        <image name="home-white" width="400" height="312"/>
         <image name="logout" width="225" height="225"/>
+        <image name="topBG" width="414" height="120"/>
     </resources>
 </document>
