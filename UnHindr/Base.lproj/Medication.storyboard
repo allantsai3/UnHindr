@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DoR-Xp-Ioy">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="17" y="62" width="134" height="42"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medication Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xl6-gZ-jjy">
-                                <rect key="frame" x="72.5" y="194" width="269" height="50"/>
+                                <rect key="frame" x="72.5" y="200" width="269" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="PYs-RS-OMg"/>
                                     <constraint firstAttribute="width" constant="269" id="iAp-tQ-vTU"/>
@@ -41,27 +41,27 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Medication" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZb-9q-COZ">
-                                <rect key="frame" x="86.5" y="144" width="241.5" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <rect key="frame" x="62.5" y="144" width="289" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="oKy-9t-o8L" userLabel="quantityStepper">
-                                <rect key="frame" x="282" y="268" width="94" height="29"/>
+                                <rect key="frame" x="282" y="274" width="94" height="29"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="quantityStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="8Iy-Mq-W1A"/>
                                 </connections>
                             </stepper>
                             <stepper opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Svh-PI-Us0" userLabel="DosageSteper" colorLabel="IBBuiltInLabel-Gray">
-                                <rect key="frame" x="282" y="311" width="94" height="29"/>
+                                <rect key="frame" x="282" y="317" width="94" height="29"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="dosageStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="upd-r5-jxo"/>
                                 </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQf-eO-hS0" userLabel="Wed Button">
-                                <rect key="frame" x="267" y="380" width="74" height="73"/>
+                                <rect key="frame" x="267" y="386" width="74" height="73"/>
                                 <state key="normal" image="wednesday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -71,7 +71,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="Q2O-XD-4tW">
-                                <rect key="frame" x="287" y="410" width="36" height="36"/>
+                                <rect key="frame" x="287" y="416" width="36" height="36"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qV0-er-sN6" userLabel="Thurs Button">
                                 <rect key="frame" x="30" y="462" width="75" height="75"/>
@@ -98,7 +98,7 @@
                                 <rect key="frame" x="145" y="493" width="36" height="36"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Cp-2K-w0y" userLabel="Sun Button">
-                                <rect key="frame" x="310" y="463" width="74" height="73"/>
+                                <rect key="frame" x="310" y="469" width="74" height="73"/>
                                 <state key="normal" image="sunday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -107,10 +107,10 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="9TX-4E-3GJ">
-                                <rect key="frame" x="330" y="492" width="36" height="36"/>
+                                <rect key="frame" x="330" y="498" width="36" height="36"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1F-57-HNH" userLabel="Sat Button">
-                                <rect key="frame" x="214" y="463" width="74" height="73"/>
+                                <rect key="frame" x="214" y="469" width="74" height="73"/>
                                 <state key="normal" image="saturday">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -119,7 +119,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="XrU-0b-Ls6">
-                                <rect key="frame" x="234" y="493" width="36" height="36"/>
+                                <rect key="frame" x="234" y="499" width="36" height="36"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ts-pE-khf" userLabel="Mon Button">
                                 <rect key="frame" x="76" y="380" width="75" height="75"/>
@@ -130,8 +130,8 @@
                                     <action selector="monButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cuy-bG-ukF"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GAt-IX-B5C">
-                                <rect key="frame" x="27" y="263" width="234" height="73"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAt-IX-B5C">
+                                <rect key="frame" x="27" y="269" width="234" height="73"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dosage (mg)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eC-dg-0T8">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
@@ -179,7 +179,7 @@
                                         </state>
                                         <connections>
                                             <action selector="cancelMedTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zHd-CN-Kac"/>
-                                            <segue destination="qdr-HS-vBK" kind="show" id="dFx-mT-XiA"/>
+                                            <segue destination="DoR-Xp-Ioy" kind="show" id="NDL-Vv-dXp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyc-Bh-VK1" userLabel="Add Button">
@@ -189,12 +189,13 @@
                                         </state>
                                         <connections>
                                             <action selector="addMedTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GCN-en-HMT"/>
+                                            <segue destination="DoR-Xp-Ioy" kind="show" id="oXC-72-HLs"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="SY9-Mr-YlO">
-                                <rect key="frame" x="94" y="410" width="36" height="36"/>
+                                <rect key="frame" x="94" y="416" width="36" height="36"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxp-Ou-yMu" userLabel="Tues Button">
                                 <rect key="frame" x="171" y="380" width="75" height="75"/>
@@ -206,10 +207,10 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="Fpv-3A-YQj">
-                                <rect key="frame" x="191" y="410" width="36" height="36"/>
+                                <rect key="frame" x="191" y="416" width="36" height="36"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mu-cd-YDG">
-                                <rect key="frame" x="150" y="344" width="114" height="30"/>
+                                <rect key="frame" x="150" y="350" width="114" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -252,6 +253,7 @@
                             <constraint firstItem="6Bk-Df-MeE" firstAttribute="leading" secondItem="qV0-er-sN6" secondAttribute="leading" constant="20" id="Y5c-dc-gCU"/>
                             <constraint firstItem="9TX-4E-3GJ" firstAttribute="leading" secondItem="c1F-57-HNH" secondAttribute="trailing" constant="42" id="YKJ-Yh-mQ6"/>
                             <constraint firstItem="6Bk-Df-MeE" firstAttribute="top" secondItem="qV0-er-sN6" secondAttribute="top" constant="30" id="Z95-bo-pPS"/>
+                            <constraint firstItem="8mu-cd-YDG" firstAttribute="top" secondItem="GAt-IX-B5C" secondAttribute="bottom" constant="8" symbolic="YES" id="aU2-HP-5wp"/>
                             <constraint firstItem="jxP-zU-K2Q" firstAttribute="top" secondItem="iil-vq-vNa" secondAttribute="bottom" constant="48" id="bcP-aW-UvM"/>
                             <constraint firstItem="9TX-4E-3GJ" firstAttribute="top" secondItem="Svh-PI-Us0" secondAttribute="bottom" constant="152" id="d91-7y-uqg"/>
                             <constraint firstItem="8mu-cd-YDG" firstAttribute="top" secondItem="Xl6-gZ-jjy" secondAttribute="bottom" constant="100" id="dLQ-d4-FDp"/>
@@ -277,7 +279,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Home" id="qVu-Pa-cuW"/>
+                    <tabBarItem key="tabBarItem" title="" image="myMeds" id="qVu-Pa-cuW"/>
                     <connections>
                         <outlet property="checkFri" destination="3JC-Pe-ob0" id="pfO-67-ZNm"/>
                         <outlet property="checkMon" destination="SY9-Mr-YlO" id="0Gr-0M-GSZ"/>
@@ -295,9 +297,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="cpM-bk-Ohy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="942" y="755"/>
+            <point key="canvasLocation" x="2215.9420289855075" y="779.46428571428567"/>
         </scene>
-        <!--myLog-->
+        <!--View Controller-->
         <scene sceneID="kMv-EI-DoM">
             <objects>
                 <viewController id="V6G-2q-PVP" sceneMemberID="viewController">
@@ -307,18 +309,36 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LjY-yr-sYL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="myLog" id="Oc3-A0-7Z8"/>
+                    <tabBarItem key="tabBarItem" title="" image="myLog" selectedImage="myLog" id="Oc3-A0-7Z8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iE0-WF-HJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941" y="-682"/>
+            <point key="canvasLocation" x="2216" y="-688"/>
+        </scene>
+        <!--Main Tab Controller-->
+        <scene sceneID="6Qe-Np-k8P">
+            <objects>
+                <tabBarController storyboardIdentifier="mainTabController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DoR-Xp-Ioy" customClass="mainTabController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="oxi-00-Xtz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qdr-HS-vBK" kind="relationship" relationship="viewControllers" id="4em-wB-8kK"/>
+                        <segue destination="V6G-2q-PVP" kind="relationship" relationship="viewControllers" id="gT8-ZR-2Dq"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Uv-jS-Vek" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="864" y="27"/>
         </scene>
         <!--MedicationHome-->
         <scene sceneID="c02-pU-jzI">
             <objects>
                 <viewController storyboardIdentifier="MedicationHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qdr-HS-vBK" userLabel="MedicationHome" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yqz-xM-FDS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu_BG" translatesAutoresizingMaskIntoConstraints="NO" id="i85-Zd-rQ8">
@@ -344,57 +364,60 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="EjM-1f-z6b">
-                                <rect key="frame" x="20" y="62" width="134" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeO-I8-xOc">
+                                <rect key="frame" x="28.5" y="600" width="357" height="107"/>
+                                <state key="normal" image="Full med schedule"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMeds-1" translatesAutoresizingMaskIntoConstraints="NO" id="EjM-1f-z6b">
+                                <rect key="frame" x="250" y="62" width="144" height="42"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDm-xR-eb9" userLabel="Home button">
+                                <rect key="frame" x="20" y="51" width="83" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="URK-yP-avq"/>
+                                    <constraint firstAttribute="height" constant="65" id="t9i-Tx-8qH"/>
+                                </constraints>
+                                <state key="normal" image="home-white"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="M2H-yf-Sbp" firstAttribute="centerX" secondItem="yqz-xM-FDS" secondAttribute="centerX" id="4B3-FW-7dJ"/>
+                            <constraint firstItem="vjt-Nr-QhP" firstAttribute="trailing" secondItem="EjM-1f-z6b" secondAttribute="trailing" constant="20" id="Mp7-6M-DfL"/>
+                            <constraint firstItem="EjM-1f-z6b" firstAttribute="top" secondItem="vjt-Nr-QhP" secondAttribute="top" constant="18" id="Pnm-Ph-xem"/>
                             <constraint firstItem="M2H-yf-Sbp" firstAttribute="top" secondItem="i85-Zd-rQ8" secondAttribute="bottom" constant="19" id="QAB-4a-0Wx"/>
+                            <constraint firstItem="BDm-xR-eb9" firstAttribute="top" secondItem="vjt-Nr-QhP" secondAttribute="top" constant="7" id="Qum-n3-nfC"/>
                             <constraint firstItem="i85-Zd-rQ8" firstAttribute="centerX" secondItem="yqz-xM-FDS" secondAttribute="centerX" id="Yjk-th-oe0"/>
+                            <constraint firstItem="vjt-Nr-QhP" firstAttribute="bottom" secondItem="LeO-I8-xOc" secondAttribute="bottom" constant="106" id="b9l-BR-g0w"/>
+                            <constraint firstItem="BDm-xR-eb9" firstAttribute="leading" secondItem="vjt-Nr-QhP" secondAttribute="leading" constant="20" id="jJH-5z-g1e"/>
+                            <constraint firstItem="LeO-I8-xOc" firstAttribute="centerX" secondItem="yqz-xM-FDS" secondAttribute="centerX" id="wJr-sj-Orf"/>
                             <constraint firstItem="i85-Zd-rQ8" firstAttribute="top" secondItem="yqz-xM-FDS" secondAttribute="top" id="zkD-Nu-Zwa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vjt-Nr-QhP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="myMeds" id="Det-Rg-g08"/>
+                    <tabBarItem key="tabBarItem" title="" image="myMeds" selectedImage="myMeds" id="NJi-e7-Eaq"/>
+                    <navigationItem key="navigationItem" id="B71-nr-1cV"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0Q-mV-Ilg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941" y="27"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="Edf-VT-0Wd">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wqA-ir-ZJ9" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YMm-Gs-jOQ">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="qdr-HS-vBK" kind="relationship" relationship="viewControllers" id="M3u-lD-7VA"/>
-                        <segue destination="V6G-2q-PVP" kind="relationship" relationship="viewControllers" id="4GN-1b-5ot"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Siq-wZ-QA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="97" y="27"/>
+            <point key="canvasLocation" x="2215.9420289855075" y="26.785714285714285"/>
         </scene>
     </scenes>
     <resources>
         <image name="Add" width="158" height="71"/>
         <image name="Add new" width="195" height="92"/>
         <image name="Cancel" width="158" height="71"/>
-        <image name="Home" width="128" height="108"/>
+        <image name="Full med schedule" width="357" height="107"/>
         <image name="Menu_BG" width="414" height="120"/>
         <image name="NewMedBackground" width="462" height="1008"/>
         <image name="Remove" width="195" height="92"/>
         <image name="check" width="36" height="36"/>
         <image name="friday" width="74" height="73"/>
+        <image name="home-white" width="400" height="312"/>
         <image name="monday" width="73" height="73"/>
+        <image name="myLog" width="66" height="84"/>
+        <image name="myMeds" width="82" height="84"/>
         <image name="myMeds-1" width="144" height="42"/>
         <image name="saturday" width="74" height="73"/>
         <image name="sunday" width="74" height="73"/>
@@ -403,6 +426,6 @@
         <image name="wednesday" width="74" height="73"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dFx-mT-XiA"/>
+        <segue reference="NDL-Vv-dXp"/>
     </inferredMetricsTieBreakers>
 </document>

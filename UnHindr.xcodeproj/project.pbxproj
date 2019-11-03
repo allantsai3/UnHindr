@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2BB1F3E910641FB171AAA24E /* Pods_UnHindrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */; };
+		815133C7236E7B6500911543 /* mainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815133C6236E7B6500911543 /* mainTabController.swift */; };
 		81BBD41B23690C0D00454F99 /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBD41A23690C0D00454F99 /* MedicationViewController.swift */; };
-		81BBD41D23692BD400454F99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81BBD41C23692BD400454F99 /* Main.storyboard */; };
 		93FA49CD665592E4B99DB3F3 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */; };
 		9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8982367D826003CF8B9 /* AppDelegate.swift */; };
 		9DF3F89B2367D826003CF8B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F89A2367D826003CF8B9 /* ViewController.swift */; };
@@ -20,7 +20,6 @@
 		9DF3F8B92367D82D003CF8B9 /* UnHindrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */; };
 		9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */; };
 		CBE5CD7485E703281E2757D0 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */; };
-		CDF84C07236BAF2F00B31B55 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF84C06236BAF2F00B31B55 /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +44,8 @@
 		070601D3D77C38C0722FE935 /* Pods-UnHindrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD8E5234FA9D115EE968692 /* Pods-UnHindr-UnHindrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.release.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.release.xcconfig"; sourceTree = "<group>"; };
+		815133C6236E7B6500911543 /* mainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabController.swift; sourceTree = "<group>"; };
 		81BBD41A23690C0D00454F99 /* MedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
-		81BBD41C23692BD400454F99 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9DF3F8952367D826003CF8B9 /* UnHindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnHindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF3F8982367D826003CF8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DF3F89A2367D826003CF8B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +63,6 @@
 		A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr_UnHindrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A52706C5DFD3854AB3653D /* Pods-UnHindr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.debug.xcconfig"; sourceTree = "<group>"; };
 		BC2051C061649210EBAEDB5D /* Pods-UnHindrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.release.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.release.xcconfig"; sourceTree = "<group>"; };
-		CDF84C06236BAF2F00B31B55 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		D67DC310DD2C16DCFB8FDD88 /* Pods-UnHindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.release.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.release.xcconfig"; sourceTree = "<group>"; };
 		F1C3785DD264C27DA744F93C /* Pods-UnHindr-UnHindrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,8 +121,8 @@
 		81BBD41923690BDE00454F99 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CDF84C06236BAF2F00B31B55 /* Menu.swift */,
 				81BBD41A23690C0D00454F99 /* MedicationViewController.swift */,
+				815133C6236E7B6500911543 /* mainTabController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,7 +160,6 @@
 				9DF3F8A12367D82D003CF8B9 /* LaunchScreen.storyboard */,
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
-				81BBD41C23692BD400454F99 /* Main.storyboard */,
 			);
 			path = UnHindr;
 			sourceTree = "<group>";
@@ -295,7 +292,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */,
-				81BBD41D23692BD400454F99 /* Main.storyboard in Resources */,
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
 				9DF3F8A02367D82D003CF8B9 /* Assets.xcassets in Resources */,
 				9DF3F89E2367D826003CF8B9 /* Medication.storyboard in Resources */,
@@ -426,9 +422,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815133C7236E7B6500911543 /* mainTabController.swift in Sources */,
 				81BBD41B23690C0D00454F99 /* MedicationViewController.swift in Sources */,
 				9DF3F89B2367D826003CF8B9 /* ViewController.swift in Sources */,
-				CDF84C07236BAF2F00B31B55 /* Menu.swift in Sources */,
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
