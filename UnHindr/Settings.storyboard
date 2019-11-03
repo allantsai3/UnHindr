@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--HomeScreen-->
+        <scene sceneID="KnG-st-Udi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeScreen" id="Npz-sD-8D8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vua-1F-r1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1318" y="-82"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="S8b-P2-ZHW">
             <objects>
@@ -18,14 +26,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zre-0Z-piK">
-                                <rect key="frame" x="34" y="202" width="62" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout" image="logout"/>
-                                <connections>
-                                    <action selector="logoutPressed:" destination="29x-Pw-Tsq" eventType="touchUpInside" id="RcH-RM-enw"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topBG" translatesAutoresizingMaskIntoConstraints="NO" id="gah-eH-EFm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                 <constraints>
@@ -38,30 +38,55 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMv-AT-ArL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMv-AT-ArL" userLabel="Home">
                                 <rect key="frame" x="27" y="64" width="77" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="77" id="RUE-ri-1L5"/>
                                     <constraint firstAttribute="height" constant="60" id="rFv-4g-Kne"/>
                                 </constraints>
                                 <state key="normal" image="home-white"/>
+                                <connections>
+                                    <segue destination="Npz-sD-8D8" kind="show" id="AB8-Hi-nFq"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ri2-xS-FrU">
-                                <rect key="frame" x="117" y="215" width="99" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ur6-no-QJu" userLabel="logout button">
+                                <rect key="frame" x="157.5" y="217" width="99" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutPressed:" destination="29x-Pw-Tsq" eventType="touchUpInside" id="IGo-m3-6VL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiI-EC-TYK">
+                                <rect key="frame" x="59" y="209" width="80" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="CLj-2A-J0q"/>
+                                    <constraint firstAttribute="height" constant="65" id="qv7-dZ-TQl"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="logout-black"/>
+                                <connections>
+                                    <action selector="logoutPressed:" destination="29x-Pw-Tsq" eventType="touchUpInside" id="xtK-CG-r3U"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hMv-AT-ArL" firstAttribute="top" secondItem="v8V-ik-5a5" secondAttribute="top" constant="20" id="565-vV-SjK"/>
+                            <constraint firstItem="Ur6-no-QJu" firstAttribute="top" secondItem="gah-eH-EFm" secondAttribute="bottom" constant="87" id="97O-2v-sgy"/>
+                            <constraint firstItem="Ur6-no-QJu" firstAttribute="leading" secondItem="BiI-EC-TYK" secondAttribute="trailing" constant="18.5" id="Hhc-VE-z1B"/>
+                            <constraint firstItem="BiI-EC-TYK" firstAttribute="leading" secondItem="v8V-ik-5a5" secondAttribute="leading" constant="59" id="Ied-94-2br"/>
                             <constraint firstItem="hMv-AT-ArL" firstAttribute="leading" secondItem="v8V-ik-5a5" secondAttribute="leading" constant="27" id="Ljf-59-J6S"/>
+                            <constraint firstItem="BiI-EC-TYK" firstAttribute="top" secondItem="gah-eH-EFm" secondAttribute="bottom" constant="79" id="Qk4-FK-HuD"/>
                             <constraint firstItem="v8V-ik-5a5" firstAttribute="trailing" secondItem="NeN-NF-rfh" secondAttribute="trailing" constant="20" id="VSV-H8-uRz"/>
+                            <constraint firstItem="BiI-EC-TYK" firstAttribute="top" secondItem="gah-eH-EFm" secondAttribute="bottom" constant="79" id="dTi-Fc-Omm"/>
+                            <constraint firstItem="Ur6-no-QJu" firstAttribute="centerX" secondItem="7b6-gr-tgC" secondAttribute="centerX" id="ef7-tD-baz"/>
                             <constraint firstItem="gah-eH-EFm" firstAttribute="top" secondItem="7b6-gr-tgC" secondAttribute="top" id="fqL-1S-Ebt"/>
+                            <constraint firstItem="Ur6-no-QJu" firstAttribute="leading" secondItem="BiI-EC-TYK" secondAttribute="trailing" constant="18.5" id="jey-fd-Yfq"/>
                             <constraint firstItem="gah-eH-EFm" firstAttribute="centerX" secondItem="7b6-gr-tgC" secondAttribute="centerX" id="or7-zc-0kd"/>
                             <constraint firstItem="NeN-NF-rfh" firstAttribute="top" secondItem="v8V-ik-5a5" secondAttribute="top" constant="32" id="rXF-OG-fnr"/>
+                            <constraint firstItem="BiI-EC-TYK" firstAttribute="leading" secondItem="v8V-ik-5a5" secondAttribute="leading" constant="59" id="uJS-2g-Nzq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v8V-ik-5a5"/>
                     </view>
@@ -76,7 +101,7 @@
     </scenes>
     <resources>
         <image name="home-white" width="400" height="312"/>
-        <image name="logout" width="225" height="225"/>
+        <image name="logout-black" width="400" height="370"/>
         <image name="topBG" width="414" height="120"/>
     </resources>
 </document>
