@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home Screen View Controller-->
+        <scene sceneID="85T-wp-Yw2">
+            <objects>
+                <viewController storyboardIdentifier="HomeScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="htM-Qi-GRg" customClass="HomeScreenViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="fEE-mx-SpD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rg0-VH-foh" userLabel="Stack 1">
+                                <rect key="frame" x="20" y="44" width="374" height="232"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f52-Tr-MrN" userLabel="profle">
+                                        <rect key="frame" x="0.0" y="0.0" width="186" height="232"/>
+                                        <state key="normal" image="Profile"/>
+                                        <connections>
+                                            <action selector="profileTapped:" destination="htM-Qi-GRg" eventType="touchUpInside" id="Fc2-Ga-bR0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjU-9F-vfA" userLabel="EmergencyContact">
+                                        <rect key="frame" x="188" y="0.0" width="186" height="232"/>
+                                        <state key="normal" image="Emergency"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Enp-sU-NVG" userLabel="Stack 2">
+                                <rect key="frame" x="20" y="278" width="374" height="196"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXs-qU-yVt" userLabel="wellnessTests">
+                                        <rect key="frame" x="0.0" y="0.0" width="186" height="196"/>
+                                        <state key="normal" image="Wellness"/>
+                                        <connections>
+                                            <action selector="WellnessTapped:" destination="htM-Qi-GRg" eventType="touchUpInside" id="cMb-17-XKC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugf-Nl-Zuo" userLabel="medication">
+                                        <rect key="frame" x="188" y="0.0" width="186" height="196"/>
+                                        <state key="normal" image="Medication"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mim-W5-zYZ" userLabel="Stack 3">
+                                <rect key="frame" x="20" y="476" width="374" height="192"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYb-qA-KQ8" userLabel="location">
+                                        <rect key="frame" x="0.0" y="0.0" width="186" height="192"/>
+                                        <state key="normal" image="Location"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ch-IM-MQm" userLabel="chat">
+                                        <rect key="frame" x="188" y="0.0" width="186" height="192"/>
+                                        <state key="normal" image="Chat"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="WMQ-FE-Xei" userLabel="Stack 4">
+                                <rect key="frame" x="20" y="670" width="374" height="192"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2v4-he-ByU" userLabel="connect">
+                                        <rect key="frame" x="0.0" y="0.0" width="186" height="192"/>
+                                        <state key="normal" image="Connect"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkO-9j-pI0" userLabel="options">
+                                        <rect key="frame" x="188" y="0.0" width="186" height="192"/>
+                                        <state key="normal" image="Options"/>
+                                        <connections>
+                                            <action selector="optionsTapped:" destination="htM-Qi-GRg" eventType="touchUpInside" id="GoV-8T-uCt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mim-W5-zYZ" firstAttribute="leading" secondItem="kAg-5L-XgN" secondAttribute="leading" constant="20" id="0wc-Yd-wUB"/>
+                            <constraint firstItem="WMQ-FE-Xei" firstAttribute="leading" secondItem="fEE-mx-SpD" secondAttribute="leading" constant="20" id="5Rf-Vw-Oro"/>
+                            <constraint firstItem="rg0-VH-foh" firstAttribute="leading" secondItem="fEE-mx-SpD" secondAttribute="leading" constant="20" id="5Ve-yl-TOB"/>
+                            <constraint firstItem="Enp-sU-NVG" firstAttribute="leading" secondItem="fEE-mx-SpD" secondAttribute="leading" constant="20" id="EPC-ng-rXO"/>
+                            <constraint firstItem="WMQ-FE-Xei" firstAttribute="centerX" secondItem="fEE-mx-SpD" secondAttribute="centerX" id="Fe3-Yb-7yr"/>
+                            <constraint firstItem="WMQ-FE-Xei" firstAttribute="top" secondItem="mim-W5-zYZ" secondAttribute="bottom" constant="2" id="IA0-Yl-deb"/>
+                            <constraint firstItem="rg0-VH-foh" firstAttribute="centerX" secondItem="fEE-mx-SpD" secondAttribute="centerX" id="P1B-bC-hkx"/>
+                            <constraint firstItem="Enp-sU-NVG" firstAttribute="top" secondItem="rg0-VH-foh" secondAttribute="bottom" constant="2" id="Qer-s3-L3v"/>
+                            <constraint firstItem="rg0-VH-foh" firstAttribute="top" secondItem="kAg-5L-XgN" secondAttribute="top" id="YdH-Tx-EKK"/>
+                            <constraint firstAttribute="trailing" secondItem="rg0-VH-foh" secondAttribute="trailing" constant="20" id="bga-4V-koC"/>
+                            <constraint firstAttribute="trailing" secondItem="mim-W5-zYZ" secondAttribute="trailing" constant="20" id="dTK-dw-e4M"/>
+                            <constraint firstAttribute="trailing" secondItem="WMQ-FE-Xei" secondAttribute="trailing" constant="20" id="dZa-xo-AhE"/>
+                            <constraint firstItem="Enp-sU-NVG" firstAttribute="centerX" secondItem="fEE-mx-SpD" secondAttribute="centerX" id="eZ7-eF-PIg"/>
+                            <constraint firstAttribute="trailing" secondItem="Enp-sU-NVG" secondAttribute="trailing" constant="20" id="gNe-5S-VF1"/>
+                            <constraint firstItem="mim-W5-zYZ" firstAttribute="top" secondItem="Enp-sU-NVG" secondAttribute="bottom" constant="2" id="rYb-ba-T0y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kAg-5L-XgN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ArM-DB-9q5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.599999999999994" y="130.88455772113943"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Chat" width="200" height="192"/>
+        <image name="Connect" width="199" height="191"/>
+        <image name="Emergency" width="204" height="232"/>
+        <image name="Location" width="200" height="192"/>
+        <image name="Medication" width="204" height="196"/>
+        <image name="Options" width="200" height="192"/>
+        <image name="Profile" width="202" height="229"/>
+        <image name="Wellness" width="203" height="195"/>
+    </resources>
+</document>
