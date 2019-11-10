@@ -10,6 +10,67 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Mood Graphs View Controller-->
+        <scene sceneID="fYh-s0-aA5">
+            <objects>
+                <viewController id="ghu-jw-5Yl" customClass="MoodGraphsViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tHj-sv-saH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHX-PI-G11" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="129" width="374" height="605"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.97396980259999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ib-oq-Zwo">
+                                <rect key="frame" x="20" y="99" width="39" height="30"/>
+                                <state key="normal" title="Week"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giI-oC-N7k">
+                                <rect key="frame" x="121" y="99" width="44" height="30"/>
+                                <state key="normal" title="Month"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyQ-eD-DdR">
+                                <rect key="frame" x="256" y="99" width="31" height="30"/>
+                                <state key="normal" title="Year"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Average" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4c-WB-oJq">
+                                <rect key="frame" x="123" y="798" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsl-DH-RbH">
+                                <rect key="frame" x="250" y="798" width="89" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4ib-oq-Zwo" firstAttribute="top" secondItem="XoF-s1-WNK" secondAttribute="top" constant="55" id="8eR-cx-LRU"/>
+                            <constraint firstItem="VyQ-eD-DdR" firstAttribute="top" secondItem="XoF-s1-WNK" secondAttribute="top" constant="55" id="HIU-hp-0IY"/>
+                            <constraint firstItem="VyQ-eD-DdR" firstAttribute="leading" secondItem="giI-oC-N7k" secondAttribute="trailing" constant="91" id="PXF-Jy-0dn"/>
+                            <constraint firstItem="XoF-s1-WNK" firstAttribute="trailing" secondItem="VyQ-eD-DdR" secondAttribute="trailing" constant="127" id="bRx-AH-XUi"/>
+                            <constraint firstItem="4ib-oq-Zwo" firstAttribute="leading" secondItem="XoF-s1-WNK" secondAttribute="leading" constant="20" id="foV-Do-otD"/>
+                            <constraint firstItem="giI-oC-N7k" firstAttribute="top" secondItem="XoF-s1-WNK" secondAttribute="top" constant="55" id="rUS-Wu-oBs"/>
+                            <constraint firstItem="giI-oC-N7k" firstAttribute="leading" secondItem="4ib-oq-Zwo" secondAttribute="trailing" constant="62" id="tFc-ui-bYy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XoF-s1-WNK"/>
+                    </view>
+                    <connections>
+                        <outlet property="average" destination="tsl-DH-RbH" id="zGS-TQ-m3g"/>
+                        <outlet property="moodChart" destination="cHX-PI-G11" id="9oY-yg-x28"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="94p-fH-RtU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-868.11594202898561" y="804.91071428571422"/>
+        </scene>
         <!--WellnessTestHome-->
         <scene sceneID="ciD-Zg-lkp">
             <objects>
@@ -158,13 +219,22 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtF-eb-8dg">
+                                <rect key="frame" x="201" y="782" width="40" height="30"/>
+                                <state key="normal" title="Mood"/>
+                                <connections>
+                                    <segue destination="ghu-jw-5Yl" kind="show" id="mfr-ZI-IZL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ept-el-3Nh" firstAttribute="leading" secondItem="wsE-Kq-HOf" secondAttribute="leading" id="1tv-8S-N10"/>
                             <constraint firstItem="B7B-sL-Rqo" firstAttribute="leading" secondItem="wsE-Kq-HOf" secondAttribute="leading" constant="27" id="IcH-SB-Iv5"/>
                             <constraint firstItem="Ept-el-3Nh" firstAttribute="top" secondItem="0hy-mM-YXG" secondAttribute="top" id="Njn-YR-U7x"/>
+                            <constraint firstItem="wsE-Kq-HOf" firstAttribute="bottom" secondItem="rtF-eb-8dg" secondAttribute="bottom" constant="50" id="Wdg-le-Bqc"/>
                             <constraint firstItem="B7B-sL-Rqo" firstAttribute="bottom" secondItem="Ept-el-3Nh" secondAttribute="bottom" constant="-10" id="bRM-qv-oQm"/>
+                            <constraint firstItem="wsE-Kq-HOf" firstAttribute="trailing" secondItem="rtF-eb-8dg" secondAttribute="trailing" constant="173" id="chr-A1-eOz"/>
                             <constraint firstItem="I1j-MW-Djj" firstAttribute="top" secondItem="Ept-el-3Nh" secondAttribute="bottom" constant="20" id="daL-9M-WKn"/>
                             <constraint firstItem="I1j-MW-Djj" firstAttribute="centerX" secondItem="0hy-mM-YXG" secondAttribute="centerX" id="lcY-TO-iGV"/>
                             <constraint firstItem="Ept-el-3Nh" firstAttribute="centerX" secondItem="0hy-mM-YXG" secondAttribute="centerX" id="nkf-ac-WsT"/>
@@ -848,8 +918,9 @@
         <image name="greenBG" width="414" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MZp-q4-Bia"/>
+        <segue reference="b8M-RN-yZw"/>
         <segue reference="NMu-Wh-r5G"/>
         <segue reference="fs1-hl-SVO"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
