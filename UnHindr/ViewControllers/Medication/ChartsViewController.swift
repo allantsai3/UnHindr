@@ -59,6 +59,16 @@ class ChartsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool)
     {
         Auth.auth().removeStateDidChangeListener(handle!)
+        dictMedTaken.removeAll()
+        dictDateTaken.removeAll()
+        dictDayPlan.removeAll()
+        dictDidTakeMed.removeAll()
+        dictMedToTake.removeAll()
+        MedTaken.removeAll()
+        DateTaken.removeAll()
+        medDayPlan.removeAll()
+        GraphData.removeAll()
+        documents.removeAll()
     }
     
     override func viewDidLoad() {
