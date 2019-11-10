@@ -18,6 +18,14 @@
             </objects>
             <point key="canvasLocation" x="746" y="119"/>
         </scene>
+        <!--MotorGame-->
+        <scene sceneID="Gng-tL-Q9a">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MotorGame" id="fyv-CM-K42" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="In0-CN-grp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="705" y="270"/>
+        </scene>
         <!--WellnessTestHome-->
         <scene sceneID="l7K-oo-jkb">
             <objects>
@@ -58,6 +66,9 @@
                                             <constraint firstAttribute="height" constant="140" id="i80-h5-cem"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="MotorGame"/>
+                                        <connections>
+                                            <segue destination="fyv-CM-K42" kind="show" id="rcG-cD-NWw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -127,7 +138,7 @@
         <image name="Cognitive Game2" width="668" height="250"/>
         <image name="MoodSurvey2" width="668" height="250"/>
         <image name="MotorGame" width="334" height="125"/>
-        <image name="greenBG" width="115" height="46"/>
+        <image name="greenBG" width="414" height="120"/>
         <image name="home-white" width="400" height="312"/>
     </resources>
 </document>

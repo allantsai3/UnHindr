@@ -14,14 +14,21 @@
         <scene sceneID="Rpb-n9-bXN">
             <objects>
                 <viewController id="VeW-pG-iBl" customClass="MotorGameViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XoD-fF-TBp">
+                    <view key="view" contentMode="scaleToFill" id="XoD-fF-TBp" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <skView contentMode="scaleToFill" fixedFrame="YES" sceneName="MotorGameScene.sks" translatesAutoresizingMaskIntoConstraints="NO" id="fu4-yP-ZQU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </skView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EU-1M-4VT" userLabel="Home button">
+                                <rect key="frame" x="16" y="32" width="83" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="dk2-Bs-Y5c"/>
+                                    <constraint firstAttribute="height" constant="65" id="kht-dL-yZJ"/>
+                                </constraints>
+                                <state key="normal" image="home-black"/>
+                                <connections>
+                                    <segue destination="5E0-B4-Qou" kind="show" id="0we-c9-aWO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="aJp-eJ-xNd"/>
@@ -31,5 +38,16 @@
             </objects>
             <point key="canvasLocation" x="53.600000000000001" y="163.26836581709148"/>
         </scene>
+        <!--HomeScreen-->
+        <scene sceneID="SUX-Ou-caF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeScreen" id="5E0-B4-Qou" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xQW-U9-ysJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="538" y="-84"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="home-black" width="77" height="59"/>
+    </resources>
 </document>
