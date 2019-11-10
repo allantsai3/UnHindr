@@ -37,6 +37,10 @@
 		9DFB75BE236F7515006321B8 /* mainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB75BC236F7515006321B8 /* mainTabController.swift */; };
 		9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75BF236F7B14006321B8 /* Assets.xcassets */; };
 		CBE5CD7485E703281E2757D0 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */; };
+		CD75214D2378A82300F100AA /* MotorGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD75214C2378A82300F100AA /* MotorGame.storyboard */; };
+		CD75214F2378A87300F100AA /* MotorGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75214E2378A87300F100AA /* MotorGameViewController.swift */; };
+		CD7521512378A93200F100AA /* MotorGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CD7521502378A93200F100AA /* MotorGameScene.sks */; };
+		CD7521532378A95D00F100AA /* MotorGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7521522378A95D00F100AA /* MotorGameScene.swift */; };
 		CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBC4012236E4FE8008934AF /* Settings.storyboard */; };
 		CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC4015236E501B008934AF /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -99,6 +103,10 @@
 		A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr_UnHindrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A52706C5DFD3854AB3653D /* Pods-UnHindr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.debug.xcconfig"; sourceTree = "<group>"; };
 		BC2051C061649210EBAEDB5D /* Pods-UnHindrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.release.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.release.xcconfig"; sourceTree = "<group>"; };
+		CD75214C2378A82300F100AA /* MotorGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MotorGame.storyboard; sourceTree = "<group>"; };
+		CD75214E2378A87300F100AA /* MotorGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorGameViewController.swift; sourceTree = "<group>"; };
+		CD7521502378A93200F100AA /* MotorGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MotorGameScene.sks; sourceTree = "<group>"; };
+		CD7521522378A95D00F100AA /* MotorGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorGameScene.swift; sourceTree = "<group>"; };
 		CDBC4012236E4FE8008934AF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CDBC4015236E501B008934AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D67DC310DD2C16DCFB8FDD88 /* Pods-UnHindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.release.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +159,7 @@
 				98F115E3236D22F90082A1B1 /* Mood */,
 				9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */,
 				2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */,
+				CD75214E2378A87300F100AA /* MotorGameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -242,6 +251,9 @@
 				2DD67107236BCD41005948DF /* Login.storyboard */,
 				2DD67109236BCD41005948DF /* HomeScreen.storyboard */,
 				9DF3F8A12367D82D003CF8B9 /* LaunchScreen.storyboard */,
+				CD75214C2378A82300F100AA /* MotorGame.storyboard */,
+				CD7521502378A93200F100AA /* MotorGameScene.sks */,
+				CD7521522378A95D00F100AA /* MotorGameScene.swift */,
 				CDBC4012236E4FE8008934AF /* Settings.storyboard */,
 				215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */,
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
@@ -398,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98F67921236E85AF00517099 /* Profile.storyboard in Resources */,
+				CD75214D2378A82300F100AA /* MotorGame.storyboard in Resources */,
 				2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */,
 				98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */,
 				2DD6710B236BCD41005948DF /* Login.storyboard in Resources */,
@@ -406,6 +419,7 @@
 				215C15DA236F6E390063F3E4 /* WellnessTestHome.storyboard in Resources */,
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
 				CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */,
+				CD7521512378A93200F100AA /* MotorGameScene.sks in Resources */,
 				9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,10 +555,12 @@
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
 				98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */,
+				CD7521532378A95D00F100AA /* MotorGameScene.swift in Sources */,
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
 				7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */,
 				9DFB75BE236F7515006321B8 /* mainTabController.swift in Sources */,
+				CD75214F2378A87300F100AA /* MotorGameViewController.swift in Sources */,
 				2DE6A77D236E402B00B76282 /* Services.swift in Sources */,
 				9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */,
 				9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */,
