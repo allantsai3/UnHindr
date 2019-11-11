@@ -18,7 +18,7 @@ class MotorGameViewController: UIViewController {
         if let view = self.view as! SKView? {
             // Load the SKScene from MotorGameScene.sks
             if let scene = SKScene(fileNamed: "MotorGameScene") {
-                scene.scaleMode = .resizeFill
+                scene.scaleMode = .aspectFit
                 
                 view.presentScene(scene)
             }

@@ -160,6 +160,7 @@
 				9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */,
 				2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */,
 				CD75214E2378A87300F100AA /* MotorGameViewController.swift */,
+				9DF3F8982367D826003CF8B9 /* AppDelegate.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -244,7 +245,6 @@
 				9DFB75BF236F7B14006321B8 /* Assets.xcassets */,
 				2DE6A77B236E400A00B76282 /* Helpers */,
 				2DD670FC236BBF79005948DF /* ViewControllers */,
-				9DF3F8982367D826003CF8B9 /* AppDelegate.swift */,
 				9DFB75B7236F74CF006321B8 /* Medication.storyboard */,
 				98F115D7236CCDF80082A1B1 /* Mood.storyboard */,
 				98F67920236E85AF00517099 /* Profile.storyboard */,
