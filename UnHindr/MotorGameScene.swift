@@ -17,17 +17,18 @@ class MotorGameScene: SKScene {
     var motionManager: CMMotionManager?
     
     override func didMove(to view: SKView){
-        let background = SKSpriteNode(imageNamed: "White")
-        background.position = CGPoint(x: frame.midX, y: frame.midY)
-        background.alpha = 1
-        background.zPosition = -1
-        addChild(background)
+        //let background = SKSpriteNode(imageNamed: "White")
+        //background.position = CGPoint(x: frame.midX, y: frame.midY)
+        //background.alpha = 1
+       // background.zPosition = -1
+        //addChild(background)
         let marble = Marble(imageNamed: "Marble")
-        let marbleRadius = marble.frame.width/2.0
+
         
         marble.position = CGPoint(x: frame.midX, y: frame.midY)
         marble.name = "Marble"
         marble.size = CGSize(width: marble.size.width / 4.0, height: marble.size.height / 4.0)
+        let marbleRadius = marble.frame.width/2
         
         marble.physicsBody = SKPhysicsBody(circleOfRadius: marbleRadius)
         marble.physicsBody?.allowsRotation = false
@@ -36,7 +37,7 @@ class MotorGameScene: SKScene {
         
         addChild(marble)
         
-        physicsBody = SKPhysicsBody(edgeLoopFrom: frame.inset(by: UIEdgeInsets(top: 20, left: 0, bottom: 100, right: 0)))
+        physicsBody = SKPhysicsBody(edgeLoopFrom: frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)))
         
         motionManager = CMMotionManager()
         motionManager?.startAccelerometerUpdates()
@@ -46,7 +47,7 @@ class MotorGameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         if let accelerometerData = motionManager?.accelerometerData {
-            physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.x * 10, dy: accelerometerData.acceleration.y * 10)
+            physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.x * 3, dy: accelerometerData.acceleration.y * 3)
         }
     }
 }
