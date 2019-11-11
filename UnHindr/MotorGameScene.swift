@@ -38,8 +38,7 @@ class MotorGameScene: SKScene {
         
         marble.position = CGPoint(x: frame.midX, y: frame.midY)
         marble.name = "Marble"
-        marble.size = CGSize(width: marble.size.width / 4.0, height: marble.size.height / 4.0)
-        let marbleRadius = marble.frame.width/2
+
         
         marble.size = CGSize(width: marble.size.width / 2.5, height: marble.size.height / 2.5)
         let marbleRadius = marble.frame.width / 2.0
