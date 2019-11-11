@@ -27,16 +27,19 @@ class MotorGameScene: SKScene {
     var horizGapPos: CGFloat?
     
     override func didMove(to view: SKView){
-        let background = SKSpriteNode(imageNamed: "gridBackground")
-        background.position = CGPoint(x: frame.midX, y: frame.midY)
-        background.alpha = 0.5
-        background.zPosition = -1
+        //let background = SKSpriteNode(imageNamed: "White")
+        //background.position = CGPoint(x: frame.midX, y: frame.midY)
+        //background.alpha = 1
+       // background.zPosition = -1
         //addChild(background)
         
         let marble = Marble(imageNamed: "Marble")
+
         
         marble.position = CGPoint(x: frame.midX, y: frame.midY)
         marble.name = "Marble"
+        marble.size = CGSize(width: marble.size.width / 4.0, height: marble.size.height / 4.0)
+        let marbleRadius = marble.frame.width/2
         
         marble.size = CGSize(width: marble.size.width / 2.5, height: marble.size.height / 2.5)
         let marbleRadius = marble.frame.width / 2.0
@@ -118,7 +121,7 @@ class MotorGameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         if let accelerometerData = motionManager?.accelerometerData {
-            physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.x * 10, dy: accelerometerData.acceleration.y * 10)
+            physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.x * 3, dy: accelerometerData.acceleration.y * 3)
         }
     }
 }
