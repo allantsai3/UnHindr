@@ -30,10 +30,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giI-oC-N7k">
                                 <rect key="frame" x="121" y="99" width="44" height="30"/>
                                 <state key="normal" title="Month"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyQ-eD-DdR">
-                                <rect key="frame" x="256" y="99" width="31" height="30"/>
-                                <state key="normal" title="Year"/>
+                                <connections>
+                                    <segue destination="6OX-ao-DP6" kind="show" id="SUt-yM-gOp"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Average" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4c-WB-oJq">
                                 <rect key="frame" x="123" y="798" width="63" height="21"/>
@@ -49,6 +48,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyQ-eD-DdR">
+                                <rect key="frame" x="297" y="99" width="31" height="30"/>
+                                <state key="normal" title="Year"/>
+                                <connections>
+                                    <segue destination="XMB-Mr-z7v" kind="show" id="g2v-x1-KnP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -69,7 +75,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94p-fH-RtU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-868.11594202898561" y="804.91071428571422"/>
+            <point key="canvasLocation" x="-1365" y="119"/>
+        </scene>
+        <!--Month Mood Graph View Controller-->
+        <scene sceneID="xKn-Jy-F0c">
+            <objects>
+                <viewController id="6OX-ao-DP6" customClass="MonthMoodGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jMz-2x-lFe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iFa-rM-Z7o" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="118" width="374" height="605"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.97396980259999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOX-Ex-HbG">
+                                <rect key="frame" x="20" y="80" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Week"/>
+                                <connections>
+                                    <segue destination="ghu-jw-5Yl" kind="show" id="z2d-cr-qUp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xcB-bG-6F6"/>
+                    </view>
+                    <connections>
+                        <outlet property="monthGraph" destination="iFa-rM-Z7o" id="Eik-VP-fqf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q9T-dy-Tts" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3225" y="819"/>
         </scene>
         <!--WellnessTestHome-->
         <scene sceneID="ciD-Zg-lkp">
@@ -913,6 +952,40 @@
             </objects>
             <point key="canvasLocation" x="2930" y="118"/>
         </scene>
+        <!--Year Mood Graph View Controller-->
+        <scene sceneID="cdV-1h-al7">
+            <objects>
+                <viewController id="XMB-Mr-z7v" customClass="YearMoodGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bij-eh-L12">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbE-Ey-W3L" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="118" width="374" height="605"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.97396980259999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c89-UG-vjH">
+                                <rect key="frame" x="20" y="80" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Week"/>
+                                <connections>
+                                    <segue destination="ghu-jw-5Yl" kind="show" id="10B-tB-nDK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jbA-z0-N43"/>
+                    </view>
+                    <connections>
+                        <outlet property="monthGraph" destination="lbE-Ey-W3L" id="eet-fd-bje"/>
+                        <outlet property="yearGraph" destination="lbE-Ey-W3L" id="qB7-kq-Nvc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jk2-sA-VYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1365" y="1132"/>
+        </scene>
     </scenes>
     <resources>
         <image name="greenBG" width="414" height="120"/>
@@ -921,6 +994,7 @@
         <segue reference="b8M-RN-yZw"/>
         <segue reference="NMu-Wh-r5G"/>
         <segue reference="fs1-hl-SVO"/>
+        <segue reference="10B-tB-nDK"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

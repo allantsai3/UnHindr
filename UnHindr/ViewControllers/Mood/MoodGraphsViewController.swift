@@ -14,12 +14,16 @@ import FirebaseAuth
 
 class MoodGraphsViewController: UIViewController {
     
+    let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
     
-//    @IBOutlet weak var moodChart: BarChartView!
     @IBOutlet weak var moodChart: BarChartView!
     @IBOutlet weak var average: UILabel!
     
     var GraphData: [BarChartDataEntry] = []
+    var moodData: [String:Double] = [:]
+    
+    let dayOfWeek: [String] = ["MON","TUES","WED","THURS","FRI","SAT","SUN"]
+    //var moodDayValues: []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +54,7 @@ class MoodGraphsViewController: UIViewController {
     
     func getMoodData()
     {
-        Services.db.collection("users").document(Services.userRef!).collection("Mood").getDocuments()
+        moodRef.getDocuments()
         {
             (querySnapshot, err) in
             if err != nil // the program will go into this if statement if the user authentication fails
@@ -73,10 +77,11 @@ class MoodGraphsViewController: UIViewController {
                     }
                     let avg = total/i
                     self.average.text = "\((avg.rounded()))"
-//                    dump(self.GraphData)
-                    //print(document.get("Score"))
-                    //print(document.get("Date"))
+
                 }
+                
+                let dayFormat = BarChartFormatter(values: self.dayOfWeek)
+                self.moodChart.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
                 let set = BarChartDataSet(values: self.GraphData, label: "Mood")
                 set.colors = [UIColor.green]
                 let chartData = BarChartData(dataSet: set)
@@ -85,25 +90,26 @@ class MoodGraphsViewController: UIViewController {
             }
 
         }
-        
-        //        (querySnapshot, err) in
-//        if err != nil // the program will go into this if statement if the user authentication fails
-//        {
-//            print("Error getting medication data")
-//        }
-//        else
-//        {
-//            print("Nice")
-//        }
-//        var dataEntries: [BarChartDataEntry] = []
-//        for i in 0..<20 {
-//            let dataEntry = BarChartDataEntry(x: Double(i), y: Double(2*i))
-//            dataEntries.append(dataEntry)
-//        }
-//        let chartDataSet = BarChartDataSet(values: dataEntries, label: "Nice")
-//        let chartData = BarChartData(dataSet: chartDataSet)
-//        moodChart.data = chartData
         //Services.userRef! gets the user ref
+    }
+    
+    // MARK: - Helper class for XAxis labeling of medication graph
+    private class BarChartFormatter: NSObject, IAxisValueFormatter {
+        
+        var values : [String]
+        required init (values : [String]) {
+            self.values = values
+            super.init()
+        }
+        
+        // Function: Convert an array of strings to array of ints
+        // Input:
+        //      1. String array
+        // Output:
+        //      1. The graph will be shown to the user after this function is completed
+        func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+            return values[Int(value)]
+        }
     }
     
     /*
