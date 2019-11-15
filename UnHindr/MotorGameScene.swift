@@ -19,12 +19,24 @@ struct PhysicsBitMask {
 
 class MotorGameScene: SKScene {
     
+    enum wallSpawnPoint :CaseIterable{
+        case right
+        case left
+        //case top
+        //case bottom
+    }
+    
     var wallPair = SKNode()
-    //var moveRemove = SKAction()
+    var moveRemove = SKAction()
+    var moveWalls = SKAction()
     
     var motionManager: CMMotionManager?
     var vertGapPos: CGFloat?
     var horizGapPos: CGFloat?
+    var vertGapScalingFactor: CGFloat?
+    var distance: CGFloat?
+    var minusOrPlusNumber: CGFloat?
+    var minusOrPlusBool = true
     
     override func didMove(to view: SKView){
         //let background = SKSpriteNode(imageNamed: "White")
@@ -52,7 +64,7 @@ class MotorGameScene: SKScene {
         
         addChild(marble)
         
-        vertGapPos = 575
+        vertGapPos = 0
         horizGapPos = 600
         
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)))
@@ -65,15 +77,17 @@ class MotorGameScene: SKScene {
             
             self.createWall()
         })
-        let delay = SKAction.wait(forDuration: 1.5)
+        let delay = SKAction.wait(forDuration: 5)
         let spawnDelay = SKAction.sequence([spawn, delay])
         let gameRunning = SKAction.repeatForever(spawnDelay)
         self.run(gameRunning)
         
-        let distance = CGFloat(self.frame.width + wallPair.frame.width)
-        let moveWalls = SKAction.moveBy(x: -distance, y: 0.0, duration: TimeInterval(0.008 * distance))
-        let removeWalls = SKAction.removeFromParent()
-        var moveRemove = SKAction.sequence([moveWalls, removeWalls])
+        //self.createWall()
+        
+//        let distance = CGFloat(self.frame.width + wallPair.frame.width)
+//        let moveWalls = SKAction.moveBy(x: -distance, y: 0.0, duration: TimeInterval(0.008 * distance))
+//        let removeWalls = SKAction.removeFromParent()
+//        moveRemove = SKAction.sequence([moveWalls, removeWalls])
         //let moveRemoveForever = SKAction.repeatForever(moveRemove)
         //self.run(moveRemoveForever)
     }
@@ -85,11 +99,48 @@ class MotorGameScene: SKScene {
         let topWall = SKSpriteNode(imageNamed: "wallVert")
         let bottomWall = SKSpriteNode(imageNamed: "wallVert")
         
-        topWall.position = CGPoint(x: self.frame.width + topWall.frame.width/2, y: self.frame.height / 2 + vertGapPos!)
-        bottomWall.position = CGPoint(x: self.frame.width + bottomWall.frame.width/2, y: self.frame.height / 2 - vertGapPos!)
+        let vertSize = CGSize(width: topWall.size.width * 2, height: self.frame.height*2)
         
-        topWall.size = CGSize(width: topWall.size.width * 2, height: topWall.size.height * 3)
-        bottomWall.size = CGSize(width: bottomWall.size.width * 2, height: bottomWall.size.height * 3)
+        self.minusOrPlusBool = Bool.random()
+        self.minusOrPlusNumber = self.minusOrPlusBool ? 1 : -1
+        
+        let randomWallSpawnPoint = wallSpawnPoint.allCases.randomElement()
+        
+        switch randomWallSpawnPoint {
+        case .some(.right):
+            self.vertGapScalingFactor = CGFloat.random(in: 3...10)
+        
+            topWall.size = vertSize
+            bottomWall.size = vertSize
+        
+            vertGapPos = self.frame.height*(minusOrPlusNumber!/vertGapScalingFactor!)
+        
+            topWall.position = CGPoint(x: self.frame.width + topWall.frame.width/2, y: self.frame.height + self.frame.height/16 + vertGapPos!)
+            bottomWall.position = CGPoint(x: self.frame.width + bottomWall.frame.width/2, y: vertGapPos! - self.frame.height/16)
+        
+            distance = CGFloat(self.frame.width*2)
+            moveWalls = SKAction.moveBy(x: -distance!, y: 0.0, duration: TimeInterval(0.005 * distance!))
+            
+        case .some(.left):
+            self.vertGapScalingFactor = CGFloat.random(in: 3...10)
+            
+            topWall.size = vertSize
+            bottomWall.size = vertSize
+            
+            vertGapPos = self.frame.height*(minusOrPlusNumber!/vertGapScalingFactor!)
+            
+            topWall.position = CGPoint(x: -topWall.frame.width/2, y: self.frame.height + self.frame.height/16 + vertGapPos!)
+            bottomWall.position = CGPoint(x: -bottomWall.frame.width/2, y: vertGapPos! - self.frame.height/16)
+            
+            distance = CGFloat(self.frame.width*2)
+            moveWalls = SKAction.moveBy(x: distance!, y: 0.0, duration: TimeInterval(0.005 * distance!))
+//        case .some(.top):
+//            print("sup")
+//        case .some(.bottom):
+//            print("sup")
+        case .none:
+            print("sup")
+        }
         
         topWall.physicsBody = SKPhysicsBody(rectangleOf: topWall.size)
         topWall.physicsBody?.categoryBitMask = PhysicsBitMask.Wall
@@ -105,7 +156,6 @@ class MotorGameScene: SKScene {
         bottomWall.physicsBody?.affectedByGravity = false
         bottomWall.physicsBody?.isDynamic = false
         
-        
         topWall.setScale(0.5)
         bottomWall.setScale(0.5)
         
@@ -115,6 +165,10 @@ class MotorGameScene: SKScene {
         wallPair.addChild(bottomWall)
         
         self.addChild(wallPair)
+        
+        let removeWalls = SKAction.removeFromParent()
+        moveRemove = SKAction.sequence([moveWalls, removeWalls])
+        wallPair.run(moveRemove)
     }
     
     
