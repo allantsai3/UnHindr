@@ -15,6 +15,9 @@
 		2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD67109236BCD41005948DF /* HomeScreen.storyboard */; };
 		2DE6A77D236E402B00B76282 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE6A77C236E402B00B76282 /* Services.swift */; };
 		7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7013CBB82370D00E00A1231F /* ChartsViewController.swift */; };
+		70EC827C2378B59800F2CA12 /* MoodGraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC827B2378B59800F2CA12 /* MoodGraphsViewController.swift */; };
+		70EC82832378EDC400F2CA12 /* MonthMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC82822378EDC400F2CA12 /* MonthMoodGraphViewController.swift */; };
+		70EC82852378FA8B00F2CA12 /* YearMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC82842378FA8B00F2CA12 /* YearMoodGraphViewController.swift */; };
 		93FA49CD665592E4B99DB3F3 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */; };
 		98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F115D7236CCDF80082A1B1 /* Mood.storyboard */; };
 		98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115D9236CCED00082A1B1 /* MoodViewController.swift */; };
@@ -75,6 +78,9 @@
 		3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD8E5234FA9D115EE968692 /* Pods-UnHindr-UnHindrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.release.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7013CBB82370D00E00A1231F /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		70EC827B2378B59800F2CA12 /* MoodGraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodGraphsViewController.swift; sourceTree = "<group>"; };
+		70EC82822378EDC400F2CA12 /* MonthMoodGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMoodGraphViewController.swift; sourceTree = "<group>"; };
+		70EC82842378FA8B00F2CA12 /* YearMoodGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YearMoodGraphViewController.swift; path = ViewControllers/Mood/YearMoodGraphViewController.swift; sourceTree = "<group>"; };
 		98F115D7236CCDF80082A1B1 /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
 		98F115D9236CCED00082A1B1 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ2ViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +213,8 @@
 				98F115E6236D23520082A1B1 /* MoodQ3ViewController.swift */,
 				98F115E8236D29B50082A1B1 /* MoodQ4ViewController.swift */,
 				98F115EA236D2B770082A1B1 /* MoodQ5ViewController.swift */,
+				70EC827B2378B59800F2CA12 /* MoodGraphsViewController.swift */,
+				70EC82822378EDC400F2CA12 /* MonthMoodGraphViewController.swift */,
 			);
 			path = Mood;
 			sourceTree = "<group>";
@@ -251,6 +259,7 @@
 				9DF3F8982367D826003CF8B9 /* AppDelegate.swift */,
 				9DFB75B7236F74CF006321B8 /* Medication.storyboard */,
 				98F115D7236CCDF80082A1B1 /* Mood.storyboard */,
+				70EC82842378FA8B00F2CA12 /* YearMoodGraphViewController.swift */,
 				98F67920236E85AF00517099 /* Profile.storyboard */,
 				2DD67107236BCD41005948DF /* Login.storyboard */,
 				2DD67109236BCD41005948DF /* HomeScreen.storyboard */,
@@ -563,6 +572,7 @@
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
 				9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */,
 				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
+				70EC827C2378B59800F2CA12 /* MoodGraphsViewController.swift in Sources */,
 				98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */,
 				CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */,
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
@@ -573,11 +583,14 @@
 				9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */,
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
 				7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */,
+				70EC82852378FA8B00F2CA12 /* YearMoodGraphViewController.swift in Sources */,
+				9DFB75BE236F7515006321B8 /* mainTabController.swift in Sources */,
 				2DE6A77D236E402B00B76282 /* Services.swift in Sources */,
 				9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */,
 				9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */,
 				98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */,
 				98F6791D236E849900517099 /* ProfileViewController.swift in Sources */,
+				70EC82832378EDC400F2CA12 /* MonthMoodGraphViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
