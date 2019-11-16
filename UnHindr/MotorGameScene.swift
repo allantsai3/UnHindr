@@ -1,4 +1,3 @@
-
 /*
  File: [MotorGameScene]
  Creators: [Jake]
@@ -7,6 +6,7 @@
  Updater name: [Jake]
  File description: []
  */
+
 import SpriteKit
 import CoreMotion
 import Foundation
@@ -165,9 +165,11 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
                         }
                     }
                     
-//                    let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
-//                    let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
-//                    present(vc, animated: true, completion: nil)
+                    let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController")
+                    vc.view.frame = (self.view?.frame)!
+                    vc.view.layoutIfNeeded()
+                    self.view?.window?.rootViewController = vc
                 }
             }
         }
