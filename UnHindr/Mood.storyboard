@@ -37,32 +37,32 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="762-5I-BLB">
-                                <rect key="frame" x="121" y="138" width="142" height="20.5"/>
+                                <rect key="frame" x="42" y="138" width="331" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHX-PI-G11" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="193" width="374" height="617"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHX-PI-G11" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="175.5" width="374" height="661.5"/>
                                 <color key="backgroundColor" red="1" green="0.97396980259999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XoF-s1-WNK" firstAttribute="trailing" secondItem="cHX-PI-G11" secondAttribute="trailing" constant="20" id="2dV-cE-cAb"/>
-                            <constraint firstItem="cHX-PI-G11" firstAttribute="top" secondItem="762-5I-BLB" secondAttribute="bottom" constant="61.5" id="6nU-M8-Oav"/>
                             <constraint firstItem="4ib-oq-Zwo" firstAttribute="top" secondItem="XoF-s1-WNK" secondAttribute="top" constant="55" id="8eR-cx-LRU"/>
+                            <constraint firstItem="cHX-PI-G11" firstAttribute="top" secondItem="762-5I-BLB" secondAttribute="bottom" constant="17" id="CIl-jh-4Dc"/>
+                            <constraint firstItem="762-5I-BLB" firstAttribute="leading" secondItem="XoF-s1-WNK" secondAttribute="leading" constant="42" id="Ckd-PA-poe"/>
                             <constraint firstItem="VyQ-eD-DdR" firstAttribute="top" secondItem="XoF-s1-WNK" secondAttribute="top" constant="55" id="HIU-hp-0IY"/>
-                            <constraint firstItem="XoF-s1-WNK" firstAttribute="trailing" secondItem="762-5I-BLB" secondAttribute="trailing" constant="151" id="MM3-cS-4DT"/>
+                            <constraint firstItem="XoF-s1-WNK" firstAttribute="trailing" secondItem="762-5I-BLB" secondAttribute="trailing" constant="41" id="IBz-7X-MZ0"/>
                             <constraint firstItem="VyQ-eD-DdR" firstAttribute="leading" secondItem="giI-oC-N7k" secondAttribute="trailing" constant="91" id="PXF-Jy-0dn"/>
-                            <constraint firstItem="762-5I-BLB" firstAttribute="leading" secondItem="XoF-s1-WNK" secondAttribute="leading" constant="121" id="SlS-Gg-0GZ"/>
-                            <constraint firstItem="762-5I-BLB" firstAttribute="top" secondItem="giI-oC-N7k" secondAttribute="bottom" constant="9" id="U9S-bL-1WD"/>
                             <constraint firstItem="XoF-s1-WNK" firstAttribute="trailing" secondItem="VyQ-eD-DdR" secondAttribute="trailing" constant="127" id="bRx-AH-XUi"/>
                             <constraint firstItem="4ib-oq-Zwo" firstAttribute="leading" secondItem="XoF-s1-WNK" secondAttribute="leading" constant="20" id="foV-Do-otD"/>
                             <constraint firstItem="cHX-PI-G11" firstAttribute="leading" secondItem="XoF-s1-WNK" secondAttribute="leading" constant="20" id="hlo-Pa-ZDo"/>
                             <constraint firstItem="XoF-s1-WNK" firstAttribute="bottom" secondItem="cHX-PI-G11" secondAttribute="bottom" constant="25" id="m2S-Pb-6Kg"/>
                             <constraint firstItem="giI-oC-N7k" firstAttribute="top" secondItem="XoF-s1-WNK" secondAttribute="top" constant="55" id="rUS-Wu-oBs"/>
                             <constraint firstItem="giI-oC-N7k" firstAttribute="leading" secondItem="4ib-oq-Zwo" secondAttribute="trailing" constant="62" id="tFc-ui-bYy"/>
+                            <constraint firstItem="762-5I-BLB" firstAttribute="top" secondItem="4ib-oq-Zwo" secondAttribute="bottom" constant="9" id="tvJ-PF-BDl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XoF-s1-WNK"/>
                     </view>

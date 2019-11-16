@@ -22,11 +22,11 @@ class MoodGraphsViewController: UIViewController {
     
     var GraphData: [BarChartDataEntry] = []
     var moodData: [String:Double] = [:]
-    
-    //let dayOfWeek: [String] = ["MON","TUES","WED","THURS","FRI","SAT","SUN"]
+
     var weekMoodValues: [Int:Double] = [:]
     var dayAverage = Array(repeating: 0, count: 8)
     var days: [Int] = []
+    var stringDays: [String] = []
     
     var dictDayAvg: [Int:Int] = [:]
     
@@ -73,7 +73,7 @@ class MoodGraphsViewController: UIViewController {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "LLLL"
                 let nameOfMonth = dateFormatter.string(from: Date())
-                self.month.text = "\(nameOfMonth)"
+                
                 
                 // other dates
                 //let otherdate = DateFormatter()
@@ -81,6 +81,14 @@ class MoodGraphsViewController: UIViewController {
                 //let someDateTime = otherdate.date(from: "2019/11/3 22:31")
                 //let calendar = Calendar.current
                 
+                //let currentDay = calendar.component(.day, from: someDateTime!)
+                //let currentMonth = calendar.component(.month, from: someDateTime!)
+                //var previousMonth = currentMonth - 1
+                //let previousMonthName = DateFormatter().monthSymbols[previousMonth-1]
+                //let currentYear = calendar.component(.year, from: someDateTime!)
+                //let lastWeekDay = currentDay - 7
+
+
                 //for todays date
                 let today = Date()
                 let calendar = Calendar.current
@@ -90,14 +98,16 @@ class MoodGraphsViewController: UIViewController {
                 let currentYear = calendar.component(.year, from: today)
                 let lastWeekDay = currentDay - 7
                 
-                //let currentDay = calendar.component(.day, from: someDateTime!)
-                //let currentMonth = calendar.component(.month, from: someDateTime!)
-                //let currentYear = calendar.component(.year, from: someDateTime!)
-                //let lastWeekDay = currentDay - 7
+                var previousMonth = currentMonth - 1
+                let previousMonthName = DateFormatter().monthSymbols[previousMonth-1]
+
                 
                 if(lastWeekDay <= 0)
                 {
+                    
                     self.daysInMonth(inMonth: currentMonth, inYear: currentYear, inDay: lastWeekDay)
+                    self.month.text = "\(previousMonthName)-\(nameOfMonth)"
+                    
                     for document in querySnapshot!.documents
                     {
                         let timestamp: Timestamp = document.get("Date") as! Timestamp
@@ -119,27 +129,27 @@ class MoodGraphsViewController: UIViewController {
                             }
                         }
                     }
-                    //dump(self.days)
                     var i = 0
                     while(i < self.days.count)
                     {
-                        print(i)
-                        let dayExists = self.weekMoodValues[i] != nil
+                        let dayExists = self.weekMoodValues[self.days[i]] != nil
+                        print(dayExists)
+                        print(self.days[i])
                         if(dayExists)
                         {
-                            let data = BarChartDataEntry(x: self.weekMoodValues[self.days[i]]!, y: (self.weekMoodValues[i]!)/Double(self.dictDayAvg[i]!))
+                            let data = BarChartDataEntry(x: Double(i), y: (self.weekMoodValues[self.days[i]]!)/Double(self.dictDayAvg[self.days[i]]!))
                             self.GraphData.append(data)
                             
                         }
                         else
                         {
-                            let data = BarChartDataEntry(x: self.weekMoodValues[self.days[i]]!, y: 0)
+                            let data = BarChartDataEntry(x: Double(i), y: 0)
                             self.GraphData.append(data)
                         }
                         i += 1
                     }
-                    //let dayFormat = BarChartFormatter(values: self.dayOfWeek)
-                    //self.moodChart.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
+                    let dayFormat = BarChartFormatter(values: self.stringDays)
+                    self.moodChart.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
                     let set = BarChartDataSet(values: self.GraphData, label: "Mood")
                     set.colors = [UIColor.green]
                     let chartData = BarChartData(dataSet: set)
@@ -148,14 +158,13 @@ class MoodGraphsViewController: UIViewController {
                 }
                 else
                 {
-                    
-                
                 //for todays date
                 //let today = Date()
                 //let calendar = Calendar.current
 
                 //let currentDay = calendar.component(.day, from: today)
                 //let lastWeekDay = currentDay - 7
+                self.month.text = "\(nameOfMonth)"
                 for document in querySnapshot!.documents
                 {
                     let timestamp: Timestamp = document.get("Date") as! Timestamp
@@ -179,8 +188,6 @@ class MoodGraphsViewController: UIViewController {
                         }
                     }
                 }
-                //dump(self.weekMoodValues)
-                //dump(self.dayAverage)
                 for i in lastWeekDay...currentDay
                 {
                     let dayExists = self.weekMoodValues[i] != nil
@@ -197,10 +204,6 @@ class MoodGraphsViewController: UIViewController {
                     }
                 }
             }
-                //dump(self.GraphData)
-                //let dbMonth = calendar.component(.month, from: <#T##Date#>)
-                //let dayFormat = BarChartFormatter(values: self.dayOfWeek)
-                //self.moodChart.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
                 let set = BarChartDataSet(values: self.GraphData, label: "Mood")
                 set.colors = [UIColor.green]
                 let chartData = BarChartData(dataSet: set)
@@ -209,19 +212,15 @@ class MoodGraphsViewController: UIViewController {
             }
 
         }
-        //Services.userRef! gets the user ref
     }
     
     func daysInMonth(inMonth: Int, inYear: Int, inDay: Int)
     {
-        //print(inYear)
-        //print(inMonth-1)
         var previousMonth = inMonth-1
         var year = inYear
         var day = inDay
         let forwardDay = inDay
         var i = 1
-        //print(day)
         if(previousMonth == 0) // if the previous month was january of that year
         {
             previousMonth = 12
@@ -233,7 +232,6 @@ class MoodGraphsViewController: UIViewController {
         
         let range = calendar.range(of: .day, in: .month, for: date)!
         var numDays = range.count
-        //print(numDays) // 31
         while(abs(forwardDay)-i > 0)
         {
             days.append(abs(forwardDay)-i)
@@ -244,6 +242,12 @@ class MoodGraphsViewController: UIViewController {
             days.append(numDays)
             day += 1
             numDays -= 1
+        }
+        var j = 7
+        while(j >= 0)
+        {
+            stringDays.append(String(days[j]))
+            j -= 1
         }
     }
     
