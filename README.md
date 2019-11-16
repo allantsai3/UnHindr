@@ -16,14 +16,17 @@ TODO
 ## Features
 
 * [ ] Connectivity between caregiver and patient with the following features (caregiver/patient pairing)
-    * [ ] Tremor measurement and analysis
-    * [ ] Medication reminder and recording
+    * [ ] Medication reminder, recording and graphical display
     * [ ] Emergency dial to caregiver
     * [ ] GPS tracking
-    * [ ] Typing assistance within the app  
+    * [ ] Mood tracking and graphical display
     
-* [ ] Cognitive and Physical development
-    * [ ] Provide set of games to improve cognitive and tremor levels
+* [ ] Motor game
+    * [ ] Ball tilting game that exercises precise motor movements to direct the ball using gyroscope
+    * [ ] store and provide visual data to the subject and caregivers
+    
+* [ ] Cognitive game
+    * [ ] Card matching game that exercises memory skills
     * [ ] store and provide visual data to the subject and caregivers
     
 ## Installation and setup

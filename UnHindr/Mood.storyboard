@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="63F-ia-wO8">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="63F-ia-wO8">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +21,7 @@
             <objects>
                 <viewController storyboardIdentifier="MoodViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="63F-ia-wO8" userLabel="MoodViewController" customClass="MoodViewController" customModule="UnHindr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0hy-mM-YXG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
                             <userLayoutGuide location="355" affinity="maxX"/>
@@ -38,8 +36,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" misplaced="YES" axis="vertical" distribution="fillProportionally" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="I1j-MW-Djj">
-                                <rect key="frame" x="40" y="154" width="335" height="537"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="I1j-MW-Djj">
+                                <rect key="frame" x="39.5" y="154" width="335" height="537"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose the most accurate answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0U-vI-kx4">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
@@ -165,7 +163,7 @@
                             <constraint firstItem="B7B-sL-Rqo" firstAttribute="leading" secondItem="wsE-Kq-HOf" secondAttribute="leading" constant="27" id="IcH-SB-Iv5"/>
                             <constraint firstItem="Ept-el-3Nh" firstAttribute="top" secondItem="0hy-mM-YXG" secondAttribute="top" id="Njn-YR-U7x"/>
                             <constraint firstItem="B7B-sL-Rqo" firstAttribute="bottom" secondItem="Ept-el-3Nh" secondAttribute="bottom" constant="-10" id="bRM-qv-oQm"/>
-                            <constraint firstItem="I1j-MW-Djj" firstAttribute="top" secondItem="Ept-el-3Nh" secondAttribute="bottom" constant="20" id="daL-9M-WKn"/>
+                            <constraint firstItem="I1j-MW-Djj" firstAttribute="top" secondItem="Ept-el-3Nh" secondAttribute="bottom" constant="34" id="daL-9M-WKn"/>
                             <constraint firstItem="I1j-MW-Djj" firstAttribute="centerX" secondItem="0hy-mM-YXG" secondAttribute="centerX" id="lcY-TO-iGV"/>
                             <constraint firstItem="Ept-el-3Nh" firstAttribute="centerX" secondItem="0hy-mM-YXG" secondAttribute="centerX" id="nkf-ac-WsT"/>
                             <constraint firstItem="wsE-Kq-HOf" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="I1j-MW-Djj" secondAttribute="bottom" constant="5" id="vDv-HP-dY0"/>
@@ -191,7 +189,7 @@
             <objects>
                 <viewController storyboardIdentifier="MoodQ2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cKW-nV-GZc" userLabel="Q2" customClass="MoodQ2ViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tI4-ua-fCG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="fqR-wo-OcR">
@@ -357,7 +355,7 @@
             <objects>
                 <viewController storyboardIdentifier="MoodQ3ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J0h-Uk-eHJ" userLabel="Q3" customClass="MoodQ3ViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xgw-GL-D42">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="bOb-sg-0WO">
@@ -481,7 +479,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question III" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLg-Zd-6eJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question III" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLg-Zd-6eJ">
                                 <rect key="frame" x="20" y="77" width="145" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -490,9 +488,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tLg-Zd-6eJ" firstAttribute="bottom" secondItem="bOb-sg-0WO" secondAttribute="bottom" constant="-10" id="0Ij-vG-ksE"/>
+                            <constraint firstItem="tLg-Zd-6eJ" firstAttribute="bottom" secondItem="bOb-sg-0WO" secondAttribute="bottom" constant="-7" id="0Ij-vG-ksE"/>
                             <constraint firstItem="eCo-M6-i5L" firstAttribute="top" secondItem="bOb-sg-0WO" secondAttribute="bottom" constant="20" id="9OR-Z7-dPY"/>
-                            <constraint firstItem="tLg-Zd-6eJ" firstAttribute="leading" secondItem="snL-WD-G6Z" secondAttribute="leading" constant="27" id="Qw1-kg-TA8"/>
+                            <constraint firstItem="tLg-Zd-6eJ" firstAttribute="leading" secondItem="snL-WD-G6Z" secondAttribute="leading" constant="20" id="Qw1-kg-TA8"/>
                             <constraint firstItem="eCo-M6-i5L" firstAttribute="centerX" secondItem="xgw-GL-D42" secondAttribute="centerX" id="T4K-cI-2yc"/>
                             <constraint firstItem="bOb-sg-0WO" firstAttribute="top" secondItem="xgw-GL-D42" secondAttribute="top" id="WoB-rq-NCa"/>
                             <constraint firstItem="bOb-sg-0WO" firstAttribute="leading" secondItem="snL-WD-G6Z" secondAttribute="leading" id="qkD-eb-sg9"/>
@@ -520,7 +518,7 @@
             <objects>
                 <viewController storyboardIdentifier="MoodQ4ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cgY-R1-A2I" userLabel="Q4" customClass="MoodQ4ViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HQK-sG-hGy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="mIP-HF-rqT">
@@ -684,7 +682,7 @@
             <objects>
                 <viewController storyboardIdentifier="MoodQ5ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H3b-yb-cxj" userLabel="Q5" customClass="MoodQ5ViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9fx-aC-0Iq" userLabel="View" customClass="Mood">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="grd-UI-feW">
@@ -841,7 +839,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAG-A1-qRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2930" y="118"/>
+            <point key="canvasLocation" x="2801" y="118"/>
         </scene>
     </scenes>
     <resources>
@@ -849,7 +847,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MZp-q4-Bia"/>
-        <segue reference="NMu-Wh-r5G"/>
+        <segue reference="JgE-uC-FgB"/>
         <segue reference="fs1-hl-SVO"/>
     </inferredMetricsTieBreakers>
 </document>

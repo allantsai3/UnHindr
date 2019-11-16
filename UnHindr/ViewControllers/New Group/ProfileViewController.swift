@@ -14,7 +14,7 @@ import FirebaseFirestore
 import FirebaseAuth
 
 class ProfileViewController: UIViewController {
-    
+
     //Outlets
     @IBOutlet weak var FirstNameTF: UITextField!
     @IBOutlet weak var lastNameTF: UITextField!
@@ -77,7 +77,7 @@ class ProfileViewController: UIViewController {
     // Output:
     //      1. Reference to user data
     func getUserInfo(_ userdoc: String, completionHandler: @escaping (_ result: Bool? ) -> Void){
-        Services.db.collection("users").document(userdoc).addSnapshotListener { (documentSnapshot, error) in
+        Services.userProfileRef.addSnapshotListener { (documentSnapshot, error) in
             
             if error != nil {
                 //error
@@ -153,9 +153,6 @@ class ProfileViewController: UIViewController {
     // Output:
     //      1. Reads the text fields for valid input and sends data to firebase
     private func sendUpdateToDB(){
-        //Reference to current user's settings
-        let profileRef = Services.db.collection("users").document(Services.userRef!)
-        
         // Check to see if update successful
         let validFields: Bool = true
         // List of changed fields
@@ -179,7 +176,7 @@ class ProfileViewController: UIViewController {
         
         
         if validFields{
-            profileRef.updateData(fields)
+            Services.userProfileRef.updateData(fields)
         }
     }
     

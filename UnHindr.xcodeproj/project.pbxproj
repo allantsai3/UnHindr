@@ -15,6 +15,17 @@
 		2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD67109236BCD41005948DF /* HomeScreen.storyboard */; };
 		2DE6A77D236E402B00B76282 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE6A77C236E402B00B76282 /* Services.swift */; };
 		7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7013CBB82370D00E00A1231F /* ChartsViewController.swift */; };
+		8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB2237B88D80083B445 /* CogGameViewController.swift */; };
+		8176FAB5237B896B0083B445 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB4237B896B0083B445 /* CardModel.swift */; };
+		8176FAB7237B8A9C0083B445 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB6237B8A9C0083B445 /* Card.swift */; };
+		8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */; };
+		81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B5908D2378F8DD00BA49AF /* CogGame.storyboard */; };
+		81BDBD9F237F8E9C00F4C970 /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9B237F8E9B00F4C970 /* shuffle.wav */; };
+		81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9C237F8E9B00F4C970 /* dingcorrect.wav */; };
+		81BDBDA1237F8E9C00F4C970 /* dingwrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9D237F8E9C00F4C970 /* dingwrong.wav */; };
+		81BDBDA2237F8E9C00F4C970 /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9E237F8E9C00F4C970 /* cardflip.wav */; };
+		81BDBDA4237F8F9000F4C970 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BDBDA3237F8F9000F4C970 /* AVFoundation.framework */; };
+		81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDBDA5237F8FDB00F4C970 /* SoundManager.swift */; };
 		93FA49CD665592E4B99DB3F3 /* Pods_UnHindr_UnHindrUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */; };
 		98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F115D7236CCDF80082A1B1 /* Mood.storyboard */; };
 		98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F115D9236CCED00082A1B1 /* MoodViewController.swift */; };
@@ -25,6 +36,8 @@
 		98F6791D236E849900517099 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F6791C236E849900517099 /* ProfileViewController.swift */; };
 		98F67921236E85AF00517099 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F67920236E85AF00517099 /* Profile.storyboard */; };
 		9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */; };
+		9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C641B2378B50F00F0C058 /* Constants.swift */; };
+		9DAEB52E237FC408008A94BD /* FullMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAEB52D237FC407008A94BD /* FullMedicationViewController.swift */; };
 		9DE33C6E236F98BD00855C78 /* DatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */; };
 		9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8982367D826003CF8B9 /* AppDelegate.swift */; };
 		9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */; };
@@ -34,8 +47,11 @@
 		9DFA139F2370F17D00F8B7B5 /* UnHindrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */; };
 		9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75B7236F74CF006321B8 /* Medication.storyboard */; };
 		9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB75BB236F7515006321B8 /* MedicationViewController.swift */; };
-		9DFB75BE236F7515006321B8 /* mainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB75BC236F7515006321B8 /* mainTabController.swift */; };
 		9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFB75BF236F7B14006321B8 /* Assets.xcassets */; };
+		9E4EAB32237E5E8400FC051B /* CaregiverHomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4EAB30237E5E8400FC051B /* CaregiverHomeScreen.storyboard */; };
+		9E4EAB33237E5E8400FC051B /* ModeChoice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */; };
+		9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */; };
+		9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */; };
 		CBE5CD7485E703281E2757D0 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */; };
 		CD75214F2378A87300F100AA /* MotorGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75214E2378A87300F100AA /* MotorGameViewController.swift */; };
 		CD7521512378A93200F100AA /* MotorGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CD7521502378A93200F100AA /* MotorGameScene.sks */; };
@@ -74,6 +90,17 @@
 		3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD8E5234FA9D115EE968692 /* Pods-UnHindr-UnHindrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.release.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7013CBB82370D00E00A1231F /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		8176FAB2237B88D80083B445 /* CogGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameViewController.swift; sourceTree = "<group>"; };
+		8176FAB4237B896B0083B445 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		8176FAB6237B8A9C0083B445 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		81B5908D2378F8DD00BA49AF /* CogGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CogGame.storyboard; sourceTree = "<group>"; };
+		81BDBD9B237F8E9B00F4C970 /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
+		81BDBD9C237F8E9B00F4C970 /* dingcorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingcorrect.wav; sourceTree = "<group>"; };
+		81BDBD9D237F8E9C00F4C970 /* dingwrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingwrong.wav; sourceTree = "<group>"; };
+		81BDBD9E237F8E9C00F4C970 /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
+		81BDBDA3237F8F9000F4C970 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		81BDBDA5237F8FDB00F4C970 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		98F115D7236CCDF80082A1B1 /* Mood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mood.storyboard; sourceTree = "<group>"; };
 		98F115D9236CCED00082A1B1 /* MoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
 		98F115E4236D23380082A1B1 /* MoodQ2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQ2ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +110,8 @@
 		98F6791C236E849900517099 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		98F67920236E85AF00517099 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationHomeViewController.swift; sourceTree = "<group>"; };
+		9D6C641B2378B50F00F0C058 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9DAEB52D237FC407008A94BD /* FullMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMedicationViewController.swift; sourceTree = "<group>"; };
 		9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTests.swift; sourceTree = "<group>"; };
 		9DF3F8952367D826003CF8B9 /* UnHindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnHindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF3F8982367D826003CF8B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,8 +127,11 @@
 		9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9DFB75B8236F74CF006321B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Medication.storyboard; sourceTree = "<group>"; };
 		9DFB75BB236F7515006321B8 /* MedicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationViewController.swift; sourceTree = "<group>"; };
-		9DFB75BC236F7515006321B8 /* mainTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainTabController.swift; sourceTree = "<group>"; };
 		9DFB75BF236F7B14006321B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E4EAB30237E5E8400FC051B /* CaregiverHomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CaregiverHomeScreen.storyboard; sourceTree = "<group>"; };
+		9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModeChoice.storyboard; sourceTree = "<group>"; };
+		9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeChoiceViewController.swift; sourceTree = "<group>"; };
+		9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverHomeScreenViewController.swift; sourceTree = "<group>"; };
 		A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr_UnHindrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A52706C5DFD3854AB3653D /* Pods-UnHindr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.debug.xcconfig"; sourceTree = "<group>"; };
 		BC2051C061649210EBAEDB5D /* Pods-UnHindrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.release.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BDBDA4237F8F9000F4C970 /* AVFoundation.framework in Frameworks */,
 				CBE5CD7485E703281E2757D0 /* Pods_UnHindr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +185,7 @@
 		2DD670FC236BBF79005948DF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9E4EAB36237E5FE400FC051B /* ModeChoice */,
 				215C15DD236F73610063F3E4 /* WellnessTestHome */,
 				9DFB75BA236F7515006321B8 /* Medication */,
 				98F6791B236E847600517099 /* Profile */,
@@ -161,6 +195,7 @@
 				2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */,
 				CD75214E2378A87300F100AA /* MotorGameViewController.swift */,
 				9DF3F8982367D826003CF8B9 /* AppDelegate.swift */,
+				9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -169,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				2DE6A77C236E402B00B76282 /* Services.swift */,
+				9D6C641B2378B50F00F0C058 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -189,11 +225,37 @@
 		7AC9719345D1AB48A6CAA879 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81BDBDA3237F8F9000F4C970 /* AVFoundation.framework */,
 				3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */,
 				A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */,
 				03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81B590912378F8F900BA49AF /* CogGame */ = {
+			isa = PBXGroup;
+			children = (
+				81BDBD9A237F8E4600F4C970 /* Sounds */,
+				81B5908D2378F8DD00BA49AF /* CogGame.storyboard */,
+				8176FAB2237B88D80083B445 /* CogGameViewController.swift */,
+				8176FAB4237B896B0083B445 /* CardModel.swift */,
+				8176FAB6237B8A9C0083B445 /* Card.swift */,
+				8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */,
+				81BDBDA5237F8FDB00F4C970 /* SoundManager.swift */,
+			);
+			path = CogGame;
+			sourceTree = "<group>";
+		};
+		81BDBD9A237F8E4600F4C970 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				81BDBD9E237F8E9C00F4C970 /* cardflip.wav */,
+				81BDBD9C237F8E9B00F4C970 /* dingcorrect.wav */,
+				81BDBD9D237F8E9C00F4C970 /* dingwrong.wav */,
+				81BDBD9B237F8E9B00F4C970 /* shuffle.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		98F115E3236D22F90082A1B1 /* Mood */ = {
@@ -242,6 +304,7 @@
 		9DF3F8972367D826003CF8B9 /* UnHindr */ = {
 			isa = PBXGroup;
 			children = (
+				81B590912378F8F900BA49AF /* CogGame */,
 				9DFB75BF236F7B14006321B8 /* Assets.xcassets */,
 				2DE6A77B236E400A00B76282 /* Helpers */,
 				2DD670FC236BBF79005948DF /* ViewControllers */,
@@ -250,11 +313,13 @@
 				98F67920236E85AF00517099 /* Profile.storyboard */,
 				2DD67107236BCD41005948DF /* Login.storyboard */,
 				2DD67109236BCD41005948DF /* HomeScreen.storyboard */,
+				9E4EAB30237E5E8400FC051B /* CaregiverHomeScreen.storyboard */,
 				9DF3F8A12367D82D003CF8B9 /* LaunchScreen.storyboard */,
 				CD7521972378C73C00F100AA /* MotorGame.storyboard */,
 				CD7521502378A93200F100AA /* MotorGameScene.sks */,
 				CD7521522378A95D00F100AA /* MotorGameScene.swift */,
 				CDBC4012236E4FE8008934AF /* Settings.storyboard */,
+				9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */,
 				215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */,
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
@@ -287,9 +352,17 @@
 				7013CBB82370D00E00A1231F /* ChartsViewController.swift */,
 				9D627A0D236FD4240027B6B7 /* MedicationHomeViewController.swift */,
 				9DFB75BB236F7515006321B8 /* MedicationViewController.swift */,
-				9DFB75BC236F7515006321B8 /* mainTabController.swift */,
+				9DAEB52D237FC407008A94BD /* FullMedicationViewController.swift */,
 			);
 			path = Medication;
+			sourceTree = "<group>";
+		};
+		9E4EAB36237E5FE400FC051B /* ModeChoice */ = {
+			isa = PBXGroup;
+			children = (
+				9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */,
+			);
+			path = ModeChoice;
 			sourceTree = "<group>";
 		};
 		CDBC4014236E4FF2008934AF /* Settings */ = {
@@ -409,18 +482,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81BDBD9F237F8E9C00F4C970 /* shuffle.wav in Resources */,
 				98F67921236E85AF00517099 /* Profile.storyboard in Resources */,
 				CD7521952378C73C00F100AA /* MotorGame.storyboard in Resources */,
 				2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */,
 				98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */,
+				81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */,
 				2DD6710B236BCD41005948DF /* Login.storyboard in Resources */,
 				9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */,
+				81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */,
+				81BDBDA1237F8E9C00F4C970 /* dingwrong.wav in Resources */,
 				9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */,
 				215C15DA236F6E390063F3E4 /* WellnessTestHome.storyboard in Resources */,
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
+				9E4EAB33237E5E8400FC051B /* ModeChoice.storyboard in Resources */,
 				CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */,
 				CD7521512378A93200F100AA /* MotorGameScene.sks in Resources */,
 				9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */,
+				81BDBDA2237F8E9C00F4C970 /* cardflip.wav in Resources */,
+				9E4EAB32237E5E8400FC051B /* CaregiverHomeScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,20 +628,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */,
 				9DF3F89B2367D826003CF8B9 /* LoginViewController.swift in Sources */,
+				9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */,
 				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
+				8176FAB7237B8A9C0083B445 /* Card.swift in Sources */,
 				98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */,
 				CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */,
+				81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */,
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
+				8176FAB5237B896B0083B445 /* CardModel.swift in Sources */,
+				9DAEB52E237FC408008A94BD /* FullMedicationViewController.swift in Sources */,
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
+				8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */,
 				98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */,
 				CD7521532378A95D00F100AA /* MotorGameScene.swift in Sources */,
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
+				9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */,
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
 				7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */,
 				9DFB75BE236F7515006321B8 /* mainTabController.swift in Sources */,
 				CD75214F2378A87300F100AA /* MotorGameViewController.swift in Sources */,
 				2DE6A77D236E402B00B76282 /* Services.swift in Sources */,
+				8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */,
 				9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */,
 				9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */,
 				98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */,
@@ -767,8 +856,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H5FTKK29SB;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UnHindr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -788,8 +877,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H5FTKK29SB;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UnHindr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

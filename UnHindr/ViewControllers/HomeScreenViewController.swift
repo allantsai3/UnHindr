@@ -38,25 +38,4 @@ class HomeScreenViewController : UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
-    // MARK: - Transitions storyboard to Profile screen
-    // Input:
-    //      Profile button tapped
-    // Output:
-    //      Switch from Home Menu to Profile
-    @IBAction func profileTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as UIViewController
-        present(vc, animated: true, completion: nil)
-    }
-    
-    // MARK: - Transitions storyboard to Medication screen
-    // Input:
-    //      Medication button tapped
-    // Output:
-    //      Switch from Home Menu to Medication
-    @IBAction func medicationTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Medication", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "mainTabController") as UIViewController
-        present(vc, animated: true, completion: nil)
-    }
 }

@@ -1,6 +1,6 @@
 /*
  File: [AppDelegate.swift]
- Creators: [Allen (auto generated code)]
+ Creators: [Allan (auto generated code)]
  Date created: [28/10/2018]
  Date updated: [28/10/2019]
  Updater name: [Allan]

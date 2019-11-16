@@ -2,8 +2,8 @@
  File: [MedicationViewController.swift]
  Creators: [Jake, Sina]
  Date created: [29/10/2019]
- Date updated: [03/11/2019]
- Updater name: [Sina]
+ Date updated: [10/11/2019]
+ Updater name: [Sina, Allan]
  File description: [Controls the Add New Med screen]
  */
 
@@ -15,13 +15,21 @@ import Firebase
 
 
 class MedicationViewController: UIViewController {
-    @IBOutlet weak var checkMon: UIImageView!
-    @IBOutlet weak var checkTues: UIImageView!
-    @IBOutlet weak var checkWed: UIImageView!
-    @IBOutlet weak var checkThur: UIImageView!
-    @IBOutlet weak var checkFri: UIImageView!
-    @IBOutlet weak var checkSat: UIImageView!
-    @IBOutlet weak var checkSun: UIImageView!
+//    @IBOutlet weak var checkMon: UIImageView!
+//    @IBOutlet weak var checkTues: UIImageView!
+//    @IBOutlet weak var checkWed: UIImageView!
+//    @IBOutlet weak var checkThur: UIImageView!
+//    @IBOutlet weak var checkFri: UIImageView!
+//    @IBOutlet weak var checkSat: UIImageView!
+//    @IBOutlet weak var checkSun: UIImageView!
+    
+    @IBOutlet weak var monButton: UIButton!
+    @IBOutlet weak var tuesButton: UIButton!
+    @IBOutlet weak var wedButton: UIButton!
+    @IBOutlet weak var thursButton: UIButton!
+    @IBOutlet weak var friButton: UIButton!
+    @IBOutlet weak var satButton: UIButton!
+    @IBOutlet weak var sunButton: UIButton!
     @IBOutlet weak var medFieldName: UITextField!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var dosageLabel: UILabel!
@@ -41,17 +49,6 @@ class MedicationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        //Use alpha values for checkmark image views as indicators of which days the user wants
-        //alpha = 0 => Day not included
-        //alpha = 1 => Day is included
-        checkMon.alpha = 0
-        checkTues.alpha = 0
-        checkWed.alpha = 0
-        checkThur.alpha = 0
-        checkFri.alpha = 0
-        checkSat.alpha = 0
-        checkSun.alpha = 0
         
         configureMedNameText()
         configureTapGesture()
@@ -124,8 +121,16 @@ class MedicationViewController: UIViewController {
     @objc func timeChanged(timePicker: UIDatePicker) {
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "hh:mm a"
-         self.ReminderTime = timeFormatter.string(from: timePicker.date)
-         timeInputTextField.text = self.ReminderTime
+        
+        let timeString = timeFormatter.string(from: timePicker.date)
+        timeInputTextField.text = timeString
+        
+        // Change the database time storing into 24H format
+        var arr = timeString.components(separatedBy: [":", " "])
+        if arr[2] == "PM" {
+            arr[0] = String(Int(arr[0])! + 12)
+        }
+        self.ReminderTime = arr[0] + ":" + arr[1]
     }
     
     // MARK - Tapping Mon box toggles checkmark between shown and hidden. Store value in day array
@@ -134,12 +139,12 @@ class MedicationViewController: UIViewController {
     // Output:
     //      1. Check is hidden if button is tapped while check is shown, check is shown if button is tapped while hidden, alpha value is stored in day array
     @IBAction func monButtonTapped(_ sender: Any) {
-        if (checkMon.alpha == 1){
-            checkMon.alpha = 0
+        if (self.dayOFWeek["Monday"] == 1){
             self.dayOFWeek["Monday"] = 0
+            monButton.setImage(UIImage(named: "monNoCheck.png"), for: UIControl.State.normal)
         }
         else {
-            checkMon.alpha = 1
+            monButton.setImage(UIImage(named: "MonCheck.png"), for: UIControl.State.normal)
             self.dayOFWeek["Monday"] = 1
         }
         view.endEditing(true)
@@ -151,13 +156,13 @@ class MedicationViewController: UIViewController {
     // Output:
     //      1. Check is hidden if button is tapped while check is shown, check is shown if button is tapped while hidden, alpha value is stored in day array
     @IBAction func tuesButtonTapped(_ sender: Any) {
-        if (checkTues.alpha == 1){
-            checkTues.alpha = 0
+        if (self.dayOFWeek["Tuesday"] == 1){
             self.dayOFWeek["Tuesday"] = 0
+            tuesButton.setImage(UIImage(named: "tuesNoCheck.png"), for: UIControl.State.normal)
         }
         else {
-            checkTues.alpha = 1
             self.dayOFWeek["Tuesday"] = 1
+            tuesButton.setImage(UIImage(named: "tuesCheck.png"), for: UIControl.State.normal)
         }
         view.endEditing(true)
     }
@@ -168,13 +173,13 @@ class MedicationViewController: UIViewController {
     // Output:
     //      1. Check is hidden if button is tapped while check is shown, check is shown if button is tapped while hidden, alpha value is stored in day array
     @IBAction func wedButtonTapped(_ sender: Any) {
-        if (checkWed.alpha == 1){
-            checkWed.alpha = 0
+        if (self.dayOFWeek["Wednesday"] == 1){
             self.dayOFWeek["Wednesday"] = 0
+            wedButton.setImage(UIImage(named: "wedNoCheck.png"), for: UIControl.State.normal)
         }
         else {
-            checkWed.alpha = 1
              self.dayOFWeek["Wednesday"] = 1
+             wedButton.setImage(UIImage(named: "wedCheck.png"), for: UIControl.State.normal)
         }
         view.endEditing(true)
     }
@@ -185,13 +190,13 @@ class MedicationViewController: UIViewController {
     // Output:
     //      1. Check is hidden if button is tapped while check is shown, check is shown if button is tapped while hidden, alpha value is stored in day array
     @IBAction func thursButtonPressed(_ sender: Any) {
-        if (checkThur.alpha == 1){
-            checkThur.alpha = 0
+        if (self.dayOFWeek["Thursday"] == 1){
             self.dayOFWeek["Thursday"] = 0
+            thursButton.setImage(UIImage(named: "thursNoCheck.png"), for: UIControl.State.normal)
         }
         else {
-            checkThur.alpha = 1
             self.dayOFWeek["Thursday"] = 1
+            thursButton.setImage(UIImage(named: "thursCheck.png"), for: UIControl.State.normal)
         }
         view.endEditing(true)
     }
@@ -202,13 +207,13 @@ class MedicationViewController: UIViewController {
     // Output:
     //      1. Check is hidden if button is tapped while check is shown, check is shown if button is tapped while hidden, alpha value is stored in day array
     @IBAction func friButtonPressed(_ sender: Any) {
-        if (checkFri.alpha == 1){
-            checkFri.alpha = 0
+        if (self.dayOFWeek["Friday"] == 1){
             self.dayOFWeek["Friday"] = 0
+            friButton.setImage(UIImage(named: "friNoCheck.png"), for: UIControl.State.normal)
         }
         else {
-            checkFri.alpha = 1
             self.dayOFWeek["Friday"] = 1
+            friButton.setImage(UIImage(named: "friCheck.png"), for: UIControl.State.normal)
         }
         view.endEditing(true)
     }
@@ -219,13 +224,13 @@ class MedicationViewController: UIViewController {
     // Output:
     //      1. Check is hidden if button is tapped while check is shown, check is shown if button is tapped while hidden, alpha value is stored in day array
     @IBAction func satButtonPressed(_ sender: Any) {
-        if (checkSat.alpha == 1){
-            checkSat.alpha = 0
+        if (self.dayOFWeek["Saturday"] == 1){
             self.dayOFWeek["Saturday"] = 0
+            satButton.setImage(UIImage(named: "saturday.png"), for: UIControl.State.normal)
         }
         else {
-            checkSat.alpha = 1
             self.dayOFWeek["Saturday"] = 1
+            satButton.setImage(UIImage(named: "satCheck.png"), for: UIControl.State.normal)
 
         }
         view.endEditing(true)
@@ -237,13 +242,13 @@ class MedicationViewController: UIViewController {
     // Output:
     //      1. Check is hidden if button is tapped while check is shown, check is shown if button is tapped while hidden, alpha value is stored in day array
     @IBAction func sunButtonPressed(_ sender: Any) {
-        if (checkSun.alpha == 1){
-            checkSun.alpha = 0
+        if (self.dayOFWeek["Sunday"] == 1){
             self.dayOFWeek["Sunday"] = 0
+            sunButton.setImage(UIImage(named: "sunday.png"), for: UIControl.State.normal)
         }
         else {
-            checkSun.alpha = 1
             self.dayOFWeek["Sunday"] = 1
+            sunButton.setImage(UIImage(named: "sunCheck.png"), for: UIControl.State.normal)
         }
         view.endEditing(true)
     }
@@ -256,6 +261,7 @@ class MedicationViewController: UIViewController {
     @IBAction func addMedTapped(_ sender: Any) {
         self.storeToDB()
         view.endEditing(true)
+         performSegue(withIdentifier: "ToMedHome", sender: self)
     }
     
     // MARK - Cancels medication, saves no data
@@ -264,8 +270,8 @@ class MedicationViewController: UIViewController {
     // Output:
     //      1. Returns User to MyMeds screen (done in stroyboard)
     @IBAction func cancelMedTapped(_ sender: Any) {
-        //go back to med screen
         view.endEditing(true)
+         performSegue(withIdentifier: "ToMedHome", sender: self)
     }
 
     // MARK: - Control the value of the dosage label through a stepper

@@ -133,25 +133,8 @@ class UnHindrUITests: XCTestCase {
         XCTAssert(disagreeButton.exists)
         XCTAssert(stronglyDisagreeButton.exists)
         
-        //Check back button behavior
-        app.buttons["Back"].tap()
-        XCTAssert(app.buttons["Back"].waitForExistence(timeout: 5))
-        app.buttons["Back"].tap()
-        XCTAssert(app.buttons["Back"].waitForExistence(timeout: 5))
-        app.buttons["Back"].tap()
-        XCTAssert(app.buttons["Back"].waitForExistence(timeout: 5))
-        app.buttons["Back"].tap()
         
         //Finish the test
-        XCTAssert(stronglyDisagreeButton.waitForExistence(timeout: 5))
-        stronglyDisagreeButton.tap()
-        nextButton.tap()
-        stronglyDisagreeButton.tap()
-        nextButton.tap()
-        stronglyDisagreeButton.tap()
-        nextButton.tap()
-        stronglyDisagreeButton.tap()
-        nextButton.tap()
         stronglyDisagreeButton.tap()
         app.buttons["Done!"].tap()
         
@@ -169,10 +152,14 @@ class UnHindrUITests: XCTestCase {
         XCTAssert(app.buttons["Medication"].waitForExistence(timeout: 5))
         app.buttons["Medication"].tap()
         
-        //Check tab bars
-        let tabBarsQuery = app.tabBars
-        tabBarsQuery.children(matching: .button).element(boundBy: 1).tap()
-        tabBarsQuery.children(matching: .button).element(boundBy: 0).tap()
+//        //Check medication graph
+//        XCTAssert(app.buttons["MyMedsButton"].waitForExistence(timeout: 5))
+//        app.buttons["MyMedsButton"].tap()
+//
+//        // TODO: Additional checks with medication graph
+//
+//        XCTAssert(app.buttons["MyLogButton"].waitForExistence(timeout: 5))
+//        app.buttons["MyLogButton"].tap()
         
         //Navigate to add new medication plan
         XCTAssert(app.buttons["Add new"].exists)
@@ -181,34 +168,36 @@ class UnHindrUITests: XCTestCase {
         //Check under add new medication plan
         XCTAssert(app.textFields["Medication Name"].exists)
         
-        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 2).children(matching: .other).element
-        let stepper = element.children(matching: .stepper).element(boundBy: 0)
-        XCTAssert(stepper.buttons["Increment"].exists)
-        XCTAssert(stepper.buttons["Decrement"].exists)
+//        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 2).children(matching: .other).element
+//        let stepper = element.children(matching: .stepper).element(boundBy: 0)
+//        XCTAssert(stepper.buttons["Increment"].exists)
+//        XCTAssert(stepper.buttons["Decrement"].exists)
+//
+//        let stepper2 = element.children(matching: .stepper).element(boundBy: 1)
+//        XCTAssert(stepper2.buttons["Increment"].exists)
+//        XCTAssert(stepper2.buttons["Decrement"].exists)
         
-        let stepper2 = element.children(matching: .stepper).element(boundBy: 1)
-        XCTAssert(stepper2.buttons["Increment"].exists)
-        XCTAssert(stepper2.buttons["Decrement"].exists)
-        XCTAssert(app.buttons["monday"].exists)
-        XCTAssert(app.buttons["tuesday"].exists)
-        XCTAssert(app.buttons["wednesday"].exists)
-        XCTAssert(app.buttons["thursday"].exists)
-        XCTAssert(app.buttons["friday"].exists)
-        XCTAssert(app.buttons["saturday"].exists)
-        XCTAssert(app.buttons["sunday"].exists)
-        XCTAssert(app.textFields["00:00"].exists)
-        XCTAssert(app.buttons["Add"].exists)
-        XCTAssert(app.buttons["Cancel"].exists)
         
-        //Navigate back to meds plan home page
-        app.buttons["Cancel"].tap()
-        XCTAssert(app.buttons["Remove"].exists)
-        XCTAssert(app.buttons["Full med schedule"].exists)
-        XCTAssert(app.buttons["home white"].exists)
+//        XCTAssert(app.buttons["monday"].exists)
+//        XCTAssert(app.buttons["tuesday"].exists)
+//        XCTAssert(app.buttons["wednesday"].exists)
+//        XCTAssert(app.buttons["thursday"].exists)
+//        XCTAssert(app.buttons["friday"].exists)
+//        XCTAssert(app.buttons["saturday"].exists)
+//        XCTAssert(app.buttons["sunday"].exists)
+//        XCTAssert(app.textFields["00:00"].exists)
+//        XCTAssert(app.buttons["Add"].exists)
+//        XCTAssert(app.buttons["Cancel"].exists)
         
-        //check for navigation back to home screen
-        app.buttons["home white"].tap()
-        XCTAssert(app.buttons["Medication"].waitForExistence(timeout: 5))
+//        //Navigate back to meds plan home page
+//        app.buttons["Cancel"].tap()
+//        XCTAssert(app.buttons["Remove"].exists)
+//        XCTAssert(app.buttons["Full med schedule"].exists)
+//        XCTAssert(app.buttons["home white"].exists)
+//        
+//        //check for navigation back to home screen
+//        app.buttons["home white"].tap()
+//        XCTAssert(app.buttons["Medication"].waitForExistence(timeout: 5))
         
     }
     
@@ -228,6 +217,46 @@ class UnHindrUITests: XCTestCase {
         XCTAssert(app.textFields["Email"].exists)
     }
     
+    //test the scroll view in the profile
+    func testProfileScrollView(){
+        let app = XCUIApplication()
+        loginToHomeScreen(app)
+        app.buttons["CaregiverProfile"].tap()
+        
+         XCTAssert(app.buttons["Save Button"].exists)
+        let scrollViewsQuery = app.scrollViews
+        let element = scrollViewsQuery.otherElements.containing(.image, identifier:"Menu BG").children(matching: .other).element
+        element.swipeUp()
+        
+        let elementsQuery = scrollViewsQuery.otherElements
+        let backButtonButton = elementsQuery.buttons["Back Button"]
+        backButtonButton.tap()
+        app.buttons["Profile"].tap()
+        
+        let dateOfBirthTextField = elementsQuery.textFields["Date of Birth"]
+        dateOfBirthTextField.swipeUp()
+        elementsQuery.textFields["City"].tap()
+        elementsQuery.textFields["Country"].tap()
+        elementsQuery.textFields["Address"].tap()
+        elementsQuery.textFields["Gender"].tap()
+        elementsQuery.textFields["Cell"].tap()
+        dateOfBirthTextField.tap()
+        
+        let emailNameTextField = elementsQuery.textFields["Email Name"]
+        emailNameTextField.tap()
+        element.swipeDown()
+        element.tap()
+        emailNameTextField.tap()
+        elementsQuery.textFields["Last Name"].tap()
+        elementsQuery.textFields["First Name"].tap()
+        element.swipeUp()
+        elementsQuery.buttons["Save Button"].tap()
+        backButtonButton.tap()
+        
+        
+    }
+    
+    
     // MARK: - Helper Functions
     // Input:
     //      1. Current application instance
@@ -240,9 +269,8 @@ class UnHindrUITests: XCTestCase {
         app.secureTextFields["Password"].tap()
         app.secureTextFields["Password"].typeText("testtest\n")
         app.buttons["Login Button"].tap()
-        
         //Wait
-        XCTAssert(app.buttons["Profile"].waitForExistence(timeout: 5))
+        XCTAssert(app.buttons["Options"].waitForExistence(timeout: 5))
     }
 
 }

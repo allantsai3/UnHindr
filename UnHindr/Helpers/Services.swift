@@ -1,10 +1,11 @@
-//
-//  Services.swift
-//  UnHindr
-//
-//  Created by Allan on 2019-11-02.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [Services.swift]
+ Creators: [Allan]
+ Date created: [29/10/2019]
+ Date updated: [10/11/2019]
+ Updater name: [Allan]
+ File description: [Services file for database references]
+ */
 
 import Foundation
 import UIKit
@@ -22,6 +23,15 @@ class Services {
     
     // Static reference to Firestore root
     static let db = Firestore.firestore()
+    
+    // User profile reference
+    static let userProfileRef = db.collection("users").document(userRef!)
+    
+    // Medication plan reference
+    static let medicationPlanRef = db.collection("users").document(userRef!).collection("MedicationPlan")
+    
+    // Medication history reference
+    static let medicationHistoryRef = db.collection("users").document(userRef!).collection("Medication")
     
     // MARK: - Retrieve reference to a patient's data
     // Input:
@@ -41,6 +51,33 @@ class Services {
                     completionHandler(result)
                 }
         }
+    }
+    
+}
+
+extension Date {
+    enum Weekday: String, CaseIterable {
+        case Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+        
+        static var asArray: [Weekday] {
+            return self.allCases
+        }
+        
+        func asInt() -> Int {
+            return Weekday.asArray.firstIndex(of: self)!
+        }
+    }
+    
+    static func isToday(_ timestamp: Timestamp) -> Bool {
+        return Calendar.current.isDateInToday(timestamp.dateValue())
+    }
+    
+    static func getDayOfWeek(_ timestamp: Timestamp) -> Date.Weekday {
+        // Get date of week from NSDate value
+        print("Timestamp: \(timestamp.dateValue())")
+        let index = Calendar.current.component(.weekday, from: timestamp.dateValue())
+        print("Date of week \(index)")
+        return Weekday.asArray[index-1]
     }
     
 }
