@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="63F-ia-wO8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="63F-ia-wO8">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,11 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHX-PI-G11" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="129" width="374" height="605"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.97396980259999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ib-oq-Zwo">
                                 <rect key="frame" x="20" y="99" width="39" height="30"/>
                                 <state key="normal" title="Week"/>
@@ -34,20 +29,6 @@
                                     <segue destination="6OX-ao-DP6" kind="show" id="SUt-yM-gOp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Average" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4c-WB-oJq">
-                                <rect key="frame" x="123" y="798" width="63" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsl-DH-RbH">
-                                <rect key="frame" x="250" y="798" width="89" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyQ-eD-DdR">
                                 <rect key="frame" x="297" y="99" width="31" height="30"/>
                                 <state key="normal" title="Year"/>
@@ -55,27 +36,44 @@
                                     <segue destination="XMB-Mr-z7v" kind="show" id="g2v-x1-KnP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="762-5I-BLB">
+                                <rect key="frame" x="121" y="138" width="142" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHX-PI-G11" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="193" width="374" height="617"/>
+                                <color key="backgroundColor" red="1" green="0.97396980259999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="XoF-s1-WNK" firstAttribute="trailing" secondItem="cHX-PI-G11" secondAttribute="trailing" constant="20" id="2dV-cE-cAb"/>
+                            <constraint firstItem="cHX-PI-G11" firstAttribute="top" secondItem="762-5I-BLB" secondAttribute="bottom" constant="61.5" id="6nU-M8-Oav"/>
                             <constraint firstItem="4ib-oq-Zwo" firstAttribute="top" secondItem="XoF-s1-WNK" secondAttribute="top" constant="55" id="8eR-cx-LRU"/>
                             <constraint firstItem="VyQ-eD-DdR" firstAttribute="top" secondItem="XoF-s1-WNK" secondAttribute="top" constant="55" id="HIU-hp-0IY"/>
+                            <constraint firstItem="XoF-s1-WNK" firstAttribute="trailing" secondItem="762-5I-BLB" secondAttribute="trailing" constant="151" id="MM3-cS-4DT"/>
                             <constraint firstItem="VyQ-eD-DdR" firstAttribute="leading" secondItem="giI-oC-N7k" secondAttribute="trailing" constant="91" id="PXF-Jy-0dn"/>
+                            <constraint firstItem="762-5I-BLB" firstAttribute="leading" secondItem="XoF-s1-WNK" secondAttribute="leading" constant="121" id="SlS-Gg-0GZ"/>
+                            <constraint firstItem="762-5I-BLB" firstAttribute="top" secondItem="giI-oC-N7k" secondAttribute="bottom" constant="9" id="U9S-bL-1WD"/>
                             <constraint firstItem="XoF-s1-WNK" firstAttribute="trailing" secondItem="VyQ-eD-DdR" secondAttribute="trailing" constant="127" id="bRx-AH-XUi"/>
                             <constraint firstItem="4ib-oq-Zwo" firstAttribute="leading" secondItem="XoF-s1-WNK" secondAttribute="leading" constant="20" id="foV-Do-otD"/>
+                            <constraint firstItem="cHX-PI-G11" firstAttribute="leading" secondItem="XoF-s1-WNK" secondAttribute="leading" constant="20" id="hlo-Pa-ZDo"/>
+                            <constraint firstItem="XoF-s1-WNK" firstAttribute="bottom" secondItem="cHX-PI-G11" secondAttribute="bottom" constant="25" id="m2S-Pb-6Kg"/>
                             <constraint firstItem="giI-oC-N7k" firstAttribute="top" secondItem="XoF-s1-WNK" secondAttribute="top" constant="55" id="rUS-Wu-oBs"/>
                             <constraint firstItem="giI-oC-N7k" firstAttribute="leading" secondItem="4ib-oq-Zwo" secondAttribute="trailing" constant="62" id="tFc-ui-bYy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XoF-s1-WNK"/>
                     </view>
                     <connections>
-                        <outlet property="average" destination="tsl-DH-RbH" id="zGS-TQ-m3g"/>
+                        <outlet property="month" destination="762-5I-BLB" id="axF-Pw-mEr"/>
                         <outlet property="moodChart" destination="cHX-PI-G11" id="9oY-yg-x28"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94p-fH-RtU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1365" y="119"/>
+            <point key="canvasLocation" x="-1365.217391304348" y="118.52678571428571"/>
         </scene>
         <!--Month Mood Graph View Controller-->
         <scene sceneID="xKn-Jy-F0c">
@@ -994,7 +992,7 @@
         <segue reference="b8M-RN-yZw"/>
         <segue reference="NMu-Wh-r5G"/>
         <segue reference="fs1-hl-SVO"/>
-        <segue reference="10B-tB-nDK"/>
+        <segue reference="mfr-ZI-IZL"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
