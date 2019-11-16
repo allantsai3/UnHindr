@@ -1,14 +1,21 @@
+//File: [ChartsViewController]
+//Creators: [Johnston]
+//Date created: [11/10/2019]
+//Updater name: [Johnston]
+//File description: [Reads values from the data]
+//
 //
 //  MonthmonthGraphViewController.swift
-//  UnHindr
+//
 //
 //  Created by Johnston Yang on 11/10/19.
-//  Copyright © 2019 Sigma. All rights reserved.
 //
 
 import UIKit
+import Foundation
 import Charts
-
+import FirebaseFirestore
+import FirebaseAuth
 
 class MonthMoodGraphViewController: UIViewController {
 
@@ -24,10 +31,9 @@ class MonthMoodGraphViewController: UIViewController {
         self.title = "Stacked Bar Chart"
         monthGraph.maxVisibleCount = 40
         monthGraph.drawBarShadowEnabled = false
-        monthGraph.drawValueAboveBarEnabled = false
+        monthGraph.drawValueAboveBarEnabled = true
         monthGraph.highlightFullBarEnabled = false
         monthGraph.doubleTapToZoomEnabled = false
-        monthGraph.animate(xAxisDuration: 2.0, yAxisDuration: 4.0)
         let leftAxis = monthGraph.leftAxis
         leftAxis.axisMinimum = 0
         monthGraph.rightAxis.enabled = false
@@ -42,6 +48,7 @@ class MonthMoodGraphViewController: UIViewController {
         l.formToTextSpace = 8
         l.xEntrySpace = 6
         monthGraph.animate(xAxisDuration: 1.0, yAxisDuration: 2.0)
+        xAxis.drawGridLinesEnabled = false
         // Do any additional setup after loading the view.
     }
     
@@ -76,32 +83,14 @@ class MonthMoodGraphViewController: UIViewController {
                 }
                 else
                 {
-                    var i: Double = 0
-                    var total: Double = 0
-                    var data: Double = 0
-                    print("Why hello there")
+                    let today = Date()
+                    let calendar = Calendar.current
+                    let currentMonth = calendar.component(.month, from: today)
                     for document in querySnapshot!.documents
                     {
-                        if(i <= 28)
-                        {
-                            data = data + (document.get("Score") as! Double)
-//                            print(data)
-                            if(i == 7 || i == 14 || i == 21 || i == 28)
-                            {
-                                print(i)
-                                let inputdata = BarChartDataEntry(x: Double(i/7), y: data/7)
-                                self.GraphData.append(inputdata)
-                                data = 0
-                                
-                            }
-//                            self.GraphData.append(inputdata)
-//                            self.dayofMonth.append("November \(i)")
-//                            total += document.get("Score") as! Double
-                            i += 1
-                        }
-//                        let avg = total/i
-//                        self.average.text = "\((avg.rounded()))"
+                        
                     }
+                }
                     
 //                    let dayFormat = BarChartFormatter(values: self.dayofMonth)
 //                    self.monthGraph.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
@@ -111,10 +100,10 @@ class MonthMoodGraphViewController: UIViewController {
 //                    dump(self.GraphData)
                     self.monthGraph.fitBars = true
                     self.monthGraph.data = chartData
-                }
+            }
                 
-        }
     }
+}
     /*
     // MARK: - Navigation
 
@@ -125,4 +114,4 @@ class MonthMoodGraphViewController: UIViewController {
     }
     */
 
-}
+

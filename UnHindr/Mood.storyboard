@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="63F-ia-wO8">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="63F-ia-wO8">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,37 +13,37 @@
             <objects>
                 <viewController id="ghu-jw-5Yl" customClass="MoodGraphsViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tHj-sv-saH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ib-oq-Zwo">
-                                <rect key="frame" x="20" y="99" width="39" height="30"/>
+                                <rect key="frame" x="20" y="55" width="39" height="30"/>
                                 <state key="normal" title="Week"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giI-oC-N7k">
-                                <rect key="frame" x="121" y="99" width="44" height="30"/>
+                                <rect key="frame" x="121" y="55" width="44" height="30"/>
                                 <state key="normal" title="Month"/>
                                 <connections>
                                     <segue destination="6OX-ao-DP6" kind="show" id="SUt-yM-gOp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyQ-eD-DdR">
-                                <rect key="frame" x="297" y="99" width="31" height="30"/>
-                                <state key="normal" title="Year"/>
-                                <connections>
-                                    <segue destination="XMB-Mr-z7v" kind="show" id="g2v-x1-KnP"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="762-5I-BLB">
-                                <rect key="frame" x="42" y="138" width="331" height="20.5"/>
+                                <rect key="frame" x="42" y="94" width="331" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHX-PI-G11" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="175.5" width="374" height="661.5"/>
+                                <rect key="frame" x="20" y="131.5" width="374" height="651.5"/>
                                 <color key="backgroundColor" red="1" green="0.97396980259999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyQ-eD-DdR">
+                                <rect key="frame" x="297" y="55" width="31" height="30"/>
+                                <state key="normal" title="Year"/>
+                                <connections>
+                                    <segue destination="XMB-Mr-z7v" kind="show" id="g2v-x1-KnP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -66,6 +64,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XoF-s1-WNK"/>
                     </view>
+                    <navigationItem key="navigationItem" id="22b-PR-Ryi"/>
                     <connections>
                         <outlet property="month" destination="762-5I-BLB" id="axF-Pw-mEr"/>
                         <outlet property="moodChart" destination="cHX-PI-G11" id="9oY-yg-x28"/>
@@ -80,11 +79,11 @@
             <objects>
                 <viewController id="6OX-ao-DP6" customClass="MonthMoodGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jMz-2x-lFe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iFa-rM-Z7o" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="118" width="374" height="605"/>
+                                <rect key="frame" x="20" y="159" width="374" height="605"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.97396980259999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -96,17 +95,38 @@
                                     <segue destination="ghu-jw-5Yl" kind="show" id="z2d-cr-qUp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnR-cy-838">
+                                <rect key="frame" x="140" y="80" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Month"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCG-Kq-z1u">
+                                <rect key="frame" x="300" y="80" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Year"/>
+                                <connections>
+                                    <segue destination="XMB-Mr-z7v" kind="show" id="9vn-FK-BH7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWV-sQ-qC4">
+                                <rect key="frame" x="20" y="118" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xcB-bG-6F6"/>
                     </view>
+                    <navigationItem key="navigationItem" id="g8M-l1-hys"/>
                     <connections>
-                        <outlet property="monthGraph" destination="iFa-rM-Z7o" id="Eik-VP-fqf"/>
+                        <outlet property="monthGraph" destination="iFa-rM-Z7o" id="em0-Iv-suf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9T-dy-Tts" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3225" y="819"/>
+            <point key="canvasLocation" x="-3225" y="119"/>
         </scene>
         <!--WellnessTestHome-->
         <scene sceneID="ciD-Zg-lkp">
@@ -121,7 +141,7 @@
             <objects>
                 <viewController storyboardIdentifier="MoodViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="63F-ia-wO8" userLabel="MoodViewController" customClass="MoodViewController" customModule="UnHindr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0hy-mM-YXG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
                             <userLayoutGuide location="355" affinity="maxX"/>
@@ -257,7 +277,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtF-eb-8dg">
-                                <rect key="frame" x="201" y="782" width="40" height="30"/>
+                                <rect key="frame" x="201" y="728" width="40" height="30"/>
                                 <state key="normal" title="Mood"/>
                                 <connections>
                                     <segue destination="ghu-jw-5Yl" kind="show" id="mfr-ZI-IZL"/>
@@ -298,7 +318,7 @@
             <objects>
                 <viewController storyboardIdentifier="MoodQ2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cKW-nV-GZc" userLabel="Q2" customClass="MoodQ2ViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tI4-ua-fCG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="fqR-wo-OcR">
@@ -464,7 +484,7 @@
             <objects>
                 <viewController storyboardIdentifier="MoodQ3ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J0h-Uk-eHJ" userLabel="Q3" customClass="MoodQ3ViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xgw-GL-D42">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="bOb-sg-0WO">
@@ -627,7 +647,7 @@
             <objects>
                 <viewController storyboardIdentifier="MoodQ4ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cgY-R1-A2I" userLabel="Q4" customClass="MoodQ4ViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HQK-sG-hGy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="mIP-HF-rqT">
@@ -791,7 +811,7 @@
             <objects>
                 <viewController storyboardIdentifier="MoodQ5ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H3b-yb-cxj" userLabel="Q5" customClass="MoodQ5ViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9fx-aC-0Iq" userLabel="View" customClass="Mood">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="grd-UI-feW">
@@ -955,26 +975,47 @@
             <objects>
                 <viewController id="XMB-Mr-z7v" customClass="YearMoodGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bij-eh-L12">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbE-Ey-W3L" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="118" width="374" height="605"/>
+                                <rect key="frame" x="20" y="146" width="374" height="605"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.97396980259999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c89-UG-vjH">
-                                <rect key="frame" x="20" y="80" width="39" height="30"/>
+                                <rect key="frame" x="20" y="56" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Week"/>
                                 <connections>
                                     <segue destination="ghu-jw-5Yl" kind="show" id="10B-tB-nDK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpA-eR-rFt">
+                                <rect key="frame" x="149" y="56" width="44" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Month"/>
+                                <connections>
+                                    <segue destination="6OX-ao-DP6" kind="show" id="EV5-9h-dxc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir8-d4-Vld">
+                                <rect key="frame" x="293" y="56" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Year"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zwh-ra-XWC">
+                                <rect key="frame" x="20" y="103" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="jbA-z0-N43"/>
                     </view>
+                    <navigationItem key="navigationItem" id="u3C-iu-Kt0"/>
                     <connections>
                         <outlet property="monthGraph" destination="lbE-Ey-W3L" id="eet-fd-bje"/>
                         <outlet property="yearGraph" destination="lbE-Ey-W3L" id="qB7-kq-Nvc"/>
@@ -982,17 +1023,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jk2-sA-VYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1365" y="1132"/>
+            <point key="canvasLocation" x="-2319" y="996"/>
         </scene>
     </scenes>
     <resources>
         <image name="greenBG" width="414" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="9vn-FK-BH7"/>
         <segue reference="b8M-RN-yZw"/>
         <segue reference="NMu-Wh-r5G"/>
         <segue reference="fs1-hl-SVO"/>
-        <segue reference="mfr-ZI-IZL"/>
+        <segue reference="EV5-9h-dxc"/>
+        <segue reference="z2d-cr-qUp"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
