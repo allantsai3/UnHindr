@@ -88,7 +88,11 @@ class MonthMoodGraphViewController: UIViewController {
                     let currentMonth = calendar.component(.month, from: today)
                     for document in querySnapshot!.documents
                     {
-                        
+                        let timestamp: Timestamp = document.get("Date") as! Timestamp
+                        let dbDate: Date = timestamp.dateValue()
+                        let dbMonth = calendar.component(.month, from: dbDate)
+                        print("db Month = \(dbMonth)")
+                        print("today Month = \(currentMonth)")
                     }
                 }
                     
