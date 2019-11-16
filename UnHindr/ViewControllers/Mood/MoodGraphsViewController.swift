@@ -1,9 +1,14 @@
+//File: [ChartsViewController]
+//Creators: [Johnston]
+//Date created: [11/12/2019]
+//Updater name: [Johnston]
+//File description: [Reads values from the data]
+//
 //
 //  MoodGraphsViewController.swift
-//  UnHindr
 //
-//  Created by Johnston Yang on 11/10/19.
-//  Copyright © 2019 Sigma. All rights reserved.
+//
+//  Created by Johnston Yang on 11/12/19.
 //
 
 import UIKit
@@ -20,7 +25,7 @@ class MoodGraphsViewController: UIViewController {
     @IBOutlet weak var moodChart: BarChartView!
     @IBOutlet weak var month: UILabel!
     
-    
+    // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     var moodData: [String:Double] = [:]
 
@@ -31,12 +36,13 @@ class MoodGraphsViewController: UIViewController {
     
     var dictDayAvg: [Int:Int] = [:]
     
+    // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         getMoodData()
         
         //Sets up the chart properties
-        self.title = "Stacked Bar Chart"
+        self.title = "Mood Bar Chart"
         moodChart.maxVisibleCount = 40
         moodChart.drawBarShadowEnabled = false
         moodChart.drawValueAboveBarEnabled = true
@@ -61,25 +67,31 @@ class MoodGraphsViewController: UIViewController {
         
     }
     
+    // MARK: - Obtain mood data from firebase
+    // Input:
+    //      1. None
+    // Output:
+    //      1. Mood Graph is created using the data from the user in firebase
     func getMoodData()
     {
-        
         // gets all the documents for this particular user
         moodRef.getDocuments()
         {
             (querySnapshot, err) in
-            if err != nil // the program will go into this if statement if the user authentication fails
+            // the program will go into this if statement if the user authentication fails
+            if err != nil
             {
                 print("Error getting medication data")
             }
+            // the program will go into this else statement if the user authentication succeeds
             else
             {
+                // the next three lines recieves the current month
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "LLLL"
                 let nameOfMonth = dateFormatter.string(from: Date())
                 
-                
-                // other dates
+                // commented out block from line 95 - 105 is a test for other dates
                 //let otherdate = DateFormatter()
                 //otherdate.dateFormat = "yyyy/MM/dd HH:mm"
                 //let someDateTime = otherdate.date(from: "2019/11/3 22:31")
@@ -91,70 +103,80 @@ class MoodGraphsViewController: UIViewController {
                 //let previousMonthName = DateFormatter().monthSymbols[previousMonth-1]
                 //let currentYear = calendar.component(.year, from: someDateTime!)
                 //let lastWeekDay = currentDay - 7
-
-
-                //for todays date
+                
+                // grabs todays date
                 let today = Date()
                 let calendar = Calendar.current
-                
+                // breaks up the date into day month and year components
                 let currentDay = calendar.component(.day, from: today)
                 let currentMonth = calendar.component(.month, from: today)
                 let currentYear = calendar.component(.year, from: today)
+                // calculates 7 days in the past and gets the previous month's name
                 let lastWeekDay = currentDay - 7
-                
-                var previousMonth = currentMonth - 1
+                let previousMonth = currentMonth - 1
                 let previousMonthName = DateFormatter().monthSymbols[previousMonth-1]
 
-                // checks if the lastWeekDay variable is negative. If it is negative, that means it goes to the previous month
+                // checks if the lastWeekDay variable is negative.
+                // If it is negative or 0, that means it needs to get the previous months as well
                 if(lastWeekDay <= 0)
                 {
-                    
+                    // function that gets how many days are in the last month and puts those days into stringDays and days array
                     self.daysInMonth(inMonth: currentMonth, inYear: currentYear, inDay: lastWeekDay)
                     self.month.text = "\(previousMonthName)-\(nameOfMonth)"
-                    
+                    // iterates through all of the documents for this user
                     for document in querySnapshot!.documents
                     {
                         // gets the date numbers of the timestamp
                         let timestamp: Timestamp = document.get("Date") as! Timestamp
                         let dbDate: Date = timestamp.dateValue()
-                        
+                        // gets the date of the database value
                         let dbDay = calendar.component(.day, from: dbDate)
-                        
+                        // checks if dbDay is inside the days array
+                        // if dbDay is not inside the days array skip this entire if statement
                         if (self.days.contains(dbDay))
                         {
+                            // checks if dbDay is already inside weekMoodValues dictionary
                             let keyExists = self.weekMoodValues[dbDay] != nil
                             if(keyExists)
                             {
+                                // adds the score found from dbDay into the correct spot in the dictionary
                                 self.weekMoodValues[dbDay] = (self.weekMoodValues[dbDay]!) + (document.get("Score") as! Double)
+                                // increments the average by one
                                 self.dictDayAvg[dbDay]! += 1
                             }
                             else{
+                                // sets the value of the new dbDay key to equal to the score
                                 self.weekMoodValues[dbDay] = (document.get("Score") as! Double)
+                                // sets the average to 1
                                 self.dictDayAvg[dbDay] = 1
                             }
                         }
                     }
+                    // while loop is to place the mood values into the bar chart
                     var i = 0
                     while(i < self.days.count)
                     {
+                        // checks if a key value of days[i] exists inside the dictionary
                         let dayExists = self.weekMoodValues[self.days[i]] != nil
-                        print(dayExists)
-                        print(self.days[i])
                         if(dayExists)
                         {
+                            // places data into the graph data array
                             let data = BarChartDataEntry(x: Double(i), y: (self.weekMoodValues[self.days[i]]!)/Double(self.dictDayAvg[self.days[i]]!))
                             self.GraphData.append(data)
                             
                         }
                         else
                         {
+                            // if the key value days[i] does not exist, set the value equal to 0 for that day
                             let data = BarChartDataEntry(x: Double(i), y: 0)
                             self.GraphData.append(data)
                         }
                         i += 1
                     }
+                    // formats the x values to have the correct values
                     let dayFormat = BarChartFormatter(values: self.stringDays)
                     self.moodChart.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
+                    // formatting the graph
                     let set = BarChartDataSet(values: self.GraphData, label: "Mood")
                     set.colors = [UIColor.green]
                     let chartData = BarChartData(dataSet: set)
@@ -163,93 +185,112 @@ class MoodGraphsViewController: UIViewController {
                 }
                 else
                 {
-                //for todays date
-                //let today = Date()
-                //let calendar = Calendar.current
-
-                //let currentDay = calendar.component(.day, from: today)
-                //let lastWeekDay = currentDay - 7
-                self.month.text = "\(nameOfMonth)"
-                for document in querySnapshot!.documents
-                {
-                    let timestamp: Timestamp = document.get("Date") as! Timestamp
-                    let dbDate: Date = timestamp.dateValue()
-
-                    let dbDay = calendar.component(.day, from: dbDate)
-
-                    if (dbDay >= lastWeekDay && dbDay <= currentDay)
+                    // if lastweekday is a positive value
+                    self.month.text = "\(nameOfMonth)"
+                    for document in querySnapshot!.documents
                     {
-                        let keyExists = self.weekMoodValues[dbDay] != nil
-                        if(keyExists)
+                        // grabs the timestamp and gets the date of that timestamp
+                        let timestamp: Timestamp = document.get("Date") as! Timestamp
+                        let dbDate: Date = timestamp.dateValue()
+                        // converts the date into a day
+                        let dbDay = calendar.component(.day, from: dbDate)
+                        // checks if dbDay is greater than or equal to lastweekday and if dbDay is less than or equal to the currentDay
+                        if (dbDay >= lastWeekDay && dbDay <= currentDay)
                         {
-                            self.weekMoodValues[dbDay] = (self.weekMoodValues[dbDay]!) + (document.get("Score") as! Double)
-                            self.dayAverage[(currentDay-dbDay)] += 1
+                            // checks if dbDay exists in the dictionary already
+                            let keyExists = self.weekMoodValues[dbDay] != nil
+                            if(keyExists)
+                            {
+                                // if the key exists add the score from the database on top of the value found in the dictionary
+                                self.weekMoodValues[dbDay] = (self.weekMoodValues[dbDay]!) + (document.get("Score") as! Double)
+                                // increments the correct value inside the dayAverage array
+                                self.dayAverage[(currentDay-dbDay)] += 1
+                            }
+                            else{
+                                // if the key does not exist
+                                // make a new key of dbDay with the score value found from the database
+                                self.weekMoodValues[dbDay] = (document.get("Score") as! Double)
+                                // increments the correct value inside the dayAverage array
+                                self.dayAverage[(currentDay-dbDay)] += 1
+                            }
+                        }
+                    }
+                    // insert the data values into the graphData array
+                    for i in lastWeekDay...currentDay
+                    {
+                        // checks if the that day already exists in the weekMoodValues
+                        let dayExists = self.weekMoodValues[i] != nil
+                        if(dayExists)
+                        {
+                            // inserts the data into the graphData array
+                            let data = BarChartDataEntry(x: Double(i), y: (self.weekMoodValues[i]!)/Double(self.dayAverage[(currentDay-i)]))
+                            self.GraphData.append(data)
                             
                         }
-                        else{
-                            self.weekMoodValues[dbDay] = (document.get("Score") as! Double)
-                            self.dayAverage[(currentDay-dbDay)] += 1
-                            
+                        else
+                        {
+                            // inserts the default value of zero for keys that do not exist
+                            let data = BarChartDataEntry(x: Double(i), y: 0)
+                            self.GraphData.append(data)
                         }
                     }
                 }
-                for i in lastWeekDay...currentDay
-                {
-                    let dayExists = self.weekMoodValues[i] != nil
-                    if(dayExists)
-                    {
-                        let data = BarChartDataEntry(x: Double(i), y: (self.weekMoodValues[i]!)/Double(self.dayAverage[(currentDay-i)]))
-                        self.GraphData.append(data)
-                        
-                    }
-                    else
-                    {
-                        let data = BarChartDataEntry(x: Double(i), y: 0)
-                        self.GraphData.append(data)
-                    }
-                }
-            }
+                // formatting the graph
                 let set = BarChartDataSet(values: self.GraphData, label: "Mood")
                 set.colors = [UIColor.green]
                 let chartData = BarChartData(dataSet: set)
                 self.moodChart.fitBars = true
                 self.moodChart.data = chartData
             }
-
         }
     }
     
     
-    
+    // MARK: - Create the day and stringDay arrays
+    // Input:
+    //      1. The month as an int
+    //      2. The year as an int
+    //      3. The day as an int
+    // Output:
+    //      1. day array with all the days in the week
+    //      2. stringDay array with all the days in the week as a string
     func daysInMonth(inMonth: Int, inYear: Int, inDay: Int)
     {
+        // grabs the previous month
         var previousMonth = inMonth-1
         var year = inYear
         var day = inDay
         let forwardDay = inDay
         var i = 1
-        if(previousMonth == 0) // if the previous month was january of that year
+        // if the previous month was January of that year
+        if(previousMonth == 0)
         {
+            // sets the previous month to December
             previousMonth = 12
-            year = year - 1 // gets previous year
+            // gets the previous year
+            year = year - 1
         }
-        let dateComponents = DateComponents(year: inYear, month: inMonth-1)
+        // grabs the date components of the year and the previousMonth
+        let dateComponents = DateComponents(year: year, month: previousMonth)
         let calendar = Calendar.current
         let date = calendar.date(from: dateComponents)!
-        
+        // counts the number of days for that month and stores the value in numDays
         let range = calendar.range(of: .day, in: .month, for: date)!
         var numDays = range.count
+        // appends the day values into the days array on the current month
         while(abs(forwardDay)-i > 0)
         {
             days.append(abs(forwardDay)-i)
             i += 1
         }
+        // appends the day values into the days array on the previous month
         while(day <= 0)
         {
             days.append(numDays)
             day += 1
             numDays -= 1
         }
+        // takes the days values and reverses the order for stringDays array
         var j = 7
         while(j >= 0)
         {
