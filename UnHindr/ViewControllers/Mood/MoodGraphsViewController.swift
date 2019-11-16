@@ -14,6 +14,7 @@ import FirebaseAuth
 
 class MoodGraphsViewController: UIViewController {
     
+    // gets the correct user database values
     let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
     
     @IBOutlet weak var moodChart: BarChartView!
@@ -33,6 +34,7 @@ class MoodGraphsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getMoodData()
+        
         //Sets up the chart properties
         self.title = "Stacked Bar Chart"
         moodChart.maxVisibleCount = 40
@@ -61,6 +63,8 @@ class MoodGraphsViewController: UIViewController {
     
     func getMoodData()
     {
+        
+        // gets all the documents for this particular user
         moodRef.getDocuments()
         {
             (querySnapshot, err) in
@@ -101,7 +105,7 @@ class MoodGraphsViewController: UIViewController {
                 var previousMonth = currentMonth - 1
                 let previousMonthName = DateFormatter().monthSymbols[previousMonth-1]
 
-                
+                // checks if the lastWeekDay variable is negative. If it is negative, that means it goes to the previous month
                 if(lastWeekDay <= 0)
                 {
                     
@@ -110,6 +114,7 @@ class MoodGraphsViewController: UIViewController {
                     
                     for document in querySnapshot!.documents
                     {
+                        // gets the date numbers of the timestamp
                         let timestamp: Timestamp = document.get("Date") as! Timestamp
                         let dbDate: Date = timestamp.dateValue()
                         
@@ -214,6 +219,8 @@ class MoodGraphsViewController: UIViewController {
         }
     }
     
+    
+    
     func daysInMonth(inMonth: Int, inYear: Int, inDay: Int)
     {
         var previousMonth = inMonth-1
@@ -251,7 +258,7 @@ class MoodGraphsViewController: UIViewController {
         }
     }
     
-    // MARK: - Helper class for XAxis labeling of medication graph
+    // MARK: - Helper class for XAxis labeling of mood graph
     private class BarChartFormatter: NSObject, IAxisValueFormatter {
         
         var values : [String]
