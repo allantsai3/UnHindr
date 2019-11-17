@@ -2,7 +2,7 @@
 //Creators: [Johnston]
 //Date created: [11/12/2019]
 //Updater name: [Johnston]
-//File description: [Reads values from the data]
+//File description: [Reads mood data values from firebase]
 //
 //
 //  MoodGraphsViewController.swift
@@ -27,7 +27,6 @@ class MoodGraphsViewController: UIViewController {
     
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
-    var moodData: [String:Double] = [:]
 
     var weekMoodValues: [Int:Double] = [:]
     var dayAverage = Array(repeating: 0, count: 8)

@@ -15,10 +15,15 @@
 		2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD67109236BCD41005948DF /* HomeScreen.storyboard */; };
 		2DE6A77D236E402B00B76282 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE6A77C236E402B00B76282 /* Services.swift */; };
 		7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7013CBB82370D00E00A1231F /* ChartsViewController.swift */; };
+		7030115E2381FAEB009A8294 /* WellnessGraphs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7030115D2381FAEA009A8294 /* WellnessGraphs.storyboard */; };
+		703011602381FD5A009A8294 /* CogGameGraphs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7030115F2381FD5A009A8294 /* CogGameGraphs.storyboard */; };
+		703011682381FFB7009A8294 /* CogGameGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703011672381FFB7009A8294 /* CogGameGraphViewController.swift */; };
+		7030116A23820A10009A8294 /* CogGameMonthlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7030116923820A10009A8294 /* CogGameMonthlyViewController.swift */; };
+		7030116C23820DA6009A8294 /* cogYearlyGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7030116B23820DA6009A8294 /* cogYearlyGraphViewController.swift */; };
 		70EC827C2378B59800F2CA12 /* MoodGraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC827B2378B59800F2CA12 /* MoodGraphsViewController.swift */; };
 		70EC82832378EDC400F2CA12 /* MonthMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC82822378EDC400F2CA12 /* MonthMoodGraphViewController.swift */; };
 		70EC82852378FA8B00F2CA12 /* YearMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC82842378FA8B00F2CA12 /* YearMoodGraphViewController.swift */; };
-		70F2B3C12380DC990002B587 /* WellnessGraphs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F2B3C02380DC990002B587 /* WellnessGraphs.storyboard */; };
+		70F2B3C12380DC990002B587 /* MoodGraphs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F2B3C02380DC990002B587 /* MoodGraphs.storyboard */; };
 		8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB2237B88D80083B445 /* CogGameViewController.swift */; };
 		8176FAB5237B896B0083B445 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB4237B896B0083B445 /* CardModel.swift */; };
 		8176FAB7237B8A9C0083B445 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB6237B8A9C0083B445 /* Card.swift */; };
@@ -90,10 +95,15 @@
 		3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD8E5234FA9D115EE968692 /* Pods-UnHindr-UnHindrUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr-UnHindrUITests.release.xcconfig"; path = "Target Support Files/Pods-UnHindr-UnHindrUITests/Pods-UnHindr-UnHindrUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7013CBB82370D00E00A1231F /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		7030115D2381FAEA009A8294 /* WellnessGraphs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WellnessGraphs.storyboard; sourceTree = "<group>"; };
+		7030115F2381FD5A009A8294 /* CogGameGraphs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CogGameGraphs.storyboard; sourceTree = "<group>"; };
+		703011672381FFB7009A8294 /* CogGameGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameGraphViewController.swift; sourceTree = "<group>"; };
+		7030116923820A10009A8294 /* CogGameMonthlyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameMonthlyViewController.swift; sourceTree = "<group>"; };
+		7030116B23820DA6009A8294 /* cogYearlyGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cogYearlyGraphViewController.swift; sourceTree = "<group>"; };
 		70EC827B2378B59800F2CA12 /* MoodGraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodGraphsViewController.swift; sourceTree = "<group>"; };
 		70EC82822378EDC400F2CA12 /* MonthMoodGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMoodGraphViewController.swift; sourceTree = "<group>"; };
 		70EC82842378FA8B00F2CA12 /* YearMoodGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMoodGraphViewController.swift; sourceTree = "<group>"; };
-		70F2B3C02380DC990002B587 /* WellnessGraphs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WellnessGraphs.storyboard; sourceTree = "<group>"; };
+		70F2B3C02380DC990002B587 /* MoodGraphs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoodGraphs.storyboard; sourceTree = "<group>"; };
 		8176FAB2237B88D80083B445 /* CogGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameViewController.swift; sourceTree = "<group>"; };
 		8176FAB4237B896B0083B445 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		8176FAB6237B8A9C0083B445 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -241,6 +251,9 @@
 				8176FAB6237B8A9C0083B445 /* Card.swift */,
 				8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */,
 				81BDBDA5237F8FDB00F4C970 /* SoundManager.swift */,
+				703011672381FFB7009A8294 /* CogGameGraphViewController.swift */,
+				7030116923820A10009A8294 /* CogGameMonthlyViewController.swift */,
+				7030116B23820DA6009A8294 /* cogYearlyGraphViewController.swift */,
 			);
 			path = CogGame;
 			sourceTree = "<group>";
@@ -320,7 +333,9 @@
 				CDBC4012236E4FE8008934AF /* Settings.storyboard */,
 				9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */,
 				215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */,
-				70F2B3C02380DC990002B587 /* WellnessGraphs.storyboard */,
+				70F2B3C02380DC990002B587 /* MoodGraphs.storyboard */,
+				7030115D2381FAEA009A8294 /* WellnessGraphs.storyboard */,
+				7030115F2381FD5A009A8294 /* CogGameGraphs.storyboard */,
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
 			);
@@ -485,6 +500,7 @@
 				81BDBD9F237F8E9C00F4C970 /* shuffle.wav in Resources */,
 				98F67921236E85AF00517099 /* Profile.storyboard in Resources */,
 				2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */,
+				7030115E2381FAEB009A8294 /* WellnessGraphs.storyboard in Resources */,
 				98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */,
 				81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */,
 				2DD6710B236BCD41005948DF /* Login.storyboard in Resources */,
@@ -496,7 +512,8 @@
 				9DF3F8C72367D880003CF8B9 /* GoogleService-Info.plist in Resources */,
 				9E4EAB33237E5E8400FC051B /* ModeChoice.storyboard in Resources */,
 				CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */,
-				70F2B3C12380DC990002B587 /* WellnessGraphs.storyboard in Resources */,
+				703011602381FD5A009A8294 /* CogGameGraphs.storyboard in Resources */,
+				70F2B3C12380DC990002B587 /* MoodGraphs.storyboard in Resources */,
 				9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */,
 				81BDBDA2237F8E9C00F4C970 /* cardflip.wav in Resources */,
 				9E4EAB32237E5E8400FC051B /* CaregiverHomeScreen.storyboard in Resources */,
@@ -635,12 +652,15 @@
 				8176FAB7237B8A9C0083B445 /* Card.swift in Sources */,
 				98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */,
 				CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */,
+				7030116A23820A10009A8294 /* CogGameMonthlyViewController.swift in Sources */,
+				7030116C23820DA6009A8294 /* cogYearlyGraphViewController.swift in Sources */,
 				81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */,
 				215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */,
 				8176FAB5237B896B0083B445 /* CardModel.swift in Sources */,
 				9DAEB52E237FC408008A94BD /* FullMedicationViewController.swift in Sources */,
 				98F115DA236CCED00082A1B1 /* MoodViewController.swift in Sources */,
 				8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */,
+				703011682381FFB7009A8294 /* CogGameGraphViewController.swift in Sources */,
 				98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */,
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
 				9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */,

@@ -60,7 +60,7 @@ class YearMoodGraphViewController: UIViewController {
                 (querySnapshot, err) in
                 if err != nil // the program will go into this if statement if the user authentication fails
                 {
-                    print("Error getting medication data")
+                    print("Error getting yearly mood data")
                 }
                 else
                 {

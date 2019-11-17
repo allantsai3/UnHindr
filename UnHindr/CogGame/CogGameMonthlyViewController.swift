@@ -1,14 +1,9 @@
-//File: [ChartsViewController]
-//Creators: [Johnston]
-//Date created: [11/10/2019]
-//Updater name: [Johnston]
-//File description: [Reads values from the data]
 //
+//  CogGameMonthlyViewController.swift
+//  UnHindr
 //
-//  MonthmonthGraphViewController.swift
-//
-//
-//  Created by Johnston Yang on 11/10/19.
+//  Created by Johnston Yang on 2019-11-17.
+//  Copyright © 2019 Sigma. All rights reserved.
 //
 
 import UIKit
@@ -17,13 +12,13 @@ import Charts
 import FirebaseFirestore
 import FirebaseAuth
 
-class MonthMoodGraphViewController: UIViewController {
+class CogGameMonthlyViewController: UIViewController {
 
-    @IBOutlet weak var monthGraph: BarChartView!
-    @IBOutlet weak var monthName: UILabel!
+    @IBOutlet weak var month: UILabel!
+    @IBOutlet weak var cogMonthGraph: BarChartView!
     
+    let cogRef = Services.db.collection("users").document(Services.userRef!).collection("CogGameData")
     
-    let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
     var GraphData: [BarChartDataEntry] = []
     
     var monthMoodValues: [Int:Double] = [:]
@@ -32,19 +27,20 @@ class MonthMoodGraphViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getMoodData()
+        getCogGameData()
+        
         self.title = "Bar Chart"
-        monthGraph.maxVisibleCount = 40
-        monthGraph.drawBarShadowEnabled = false
-        monthGraph.drawValueAboveBarEnabled = true
-        monthGraph.highlightFullBarEnabled = false
-        monthGraph.doubleTapToZoomEnabled = false
-        let leftAxis = monthGraph.leftAxis
+        cogMonthGraph.maxVisibleCount = 40
+        cogMonthGraph.drawBarShadowEnabled = false
+        cogMonthGraph.drawValueAboveBarEnabled = true
+        cogMonthGraph.highlightFullBarEnabled = false
+        cogMonthGraph.doubleTapToZoomEnabled = false
+        let leftAxis = cogMonthGraph.leftAxis
         leftAxis.axisMinimum = 0
-        monthGraph.rightAxis.enabled = false
-        let xAxis = monthGraph.xAxis
+        cogMonthGraph.rightAxis.enabled = false
+        let xAxis = cogMonthGraph.xAxis
         xAxis.labelPosition = .bottom
-        let l = monthGraph.legend
+        let l = cogMonthGraph.legend
         l.horizontalAlignment = .center
         l.verticalAlignment = .bottom
         l.orientation = .horizontal
@@ -52,33 +48,32 @@ class MonthMoodGraphViewController: UIViewController {
         l.form = .square
         l.formToTextSpace = 8
         l.xEntrySpace = 6
-        monthGraph.animate(xAxisDuration: 1.0, yAxisDuration: 2.0)
+        cogMonthGraph.animate(xAxisDuration: 1.0, yAxisDuration: 2.0)
         xAxis.drawGridLinesEnabled = false
         // Do any additional setup after loading the view.
     }
     
-    func getMoodData()
+    func getCogGameData()
     {
-        moodRef.getDocuments()
+        cogRef.getDocuments()
             {
-                (querySnapshot, err) in
-                if err != nil // the program will go into this if statement if the user authentication fails
-                {
-                    print("Error getting monthly mood data")
+                (querySnapshot,err) in
+                if err != nil{
+                    print("Error getting monthly cognitive game data")
                 }
                 else
                 {
                     // testing other months
-//                    let otherdate = DateFormatter()
-//                    otherdate.dateFormat = "yyyy/MM/dd HH:mm"
-//                    let someDateTime = otherdate.date(from: "2019/10/3 22:31")
-//                    let currentMonth = 10
+                    //                    let otherdate = DateFormatter()
+                    //                    otherdate.dateFormat = "yyyy/MM/dd HH:mm"
+                    //                    let someDateTime = otherdate.date(from: "2019/10/3 22:31")
+                    //                    let currentMonth = 10
                     let today = Date()
                     let calendar = Calendar.current
                     let currentMonth = calendar.component(.month, from: today)
                     let currentMonthName = DateFormatter().monthSymbols[currentMonth-1]
                     let currentYear = calendar.component(.year, from: today)
-                    self.monthName.text = "\(currentMonthName)"
+                    self.month.text = "\(currentMonthName)"
                     
                     for document in querySnapshot!.documents
                     {
@@ -127,15 +122,15 @@ class MonthMoodGraphViewController: UIViewController {
                     let set = BarChartDataSet(values: self.GraphData, label: "Mood")
                     set.colors = [UIColor.green]
                     let chartData = BarChartData(dataSet: set)
-                    self.monthGraph.fitBars = true
-                    self.monthGraph.data = chartData
-                    self.monthGraph.setVisibleXRangeMaximum(7)
-                    self.monthGraph.moveViewToX(Double(numDays-7))
-                    //self.monthGraph.xAxis.setLabelCount(numDays, force: true)
+                    self.cogMonthGraph.fitBars = true
+                    self.cogMonthGraph.data = chartData
+                    self.cogMonthGraph.setVisibleXRangeMaximum(7)
+                    self.cogMonthGraph.moveViewToX(Double(numDays-7))
+                    //self.cogMonthGraph.xAxis.setLabelCount(numDays, force: true)
                 }
-            }
+        }
     }
-}
+
     /*
     // MARK: - Navigation
 
@@ -146,4 +141,4 @@ class MonthMoodGraphViewController: UIViewController {
     }
     */
 
-
+}
