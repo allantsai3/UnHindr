@@ -90,6 +90,11 @@ class MonthMoodGraphViewController: UIViewController {
                 }
                 else
                 {
+                    // testing other months
+//                    let otherdate = DateFormatter()
+//                    otherdate.dateFormat = "yyyy/MM/dd HH:mm"
+//                    let someDateTime = otherdate.date(from: "2019/10/3 22:31")
+//                    let currentMonth = 10
                     let today = Date()
                     let calendar = Calendar.current
                     let currentMonth = calendar.component(.month, from: today)
@@ -101,7 +106,7 @@ class MonthMoodGraphViewController: UIViewController {
                         let timestamp: Timestamp = document.get("Date") as! Timestamp
                         let dbDate: Date = timestamp.dateValue()
                         let dbMonth = calendar.component(.month, from: dbDate)
-                        let dbDay = calendar.component(.month, from: dbDate)
+                        let dbDay = calendar.component(.day, from: dbDate)
                         if(dbMonth == currentMonth)
                         {
                             // checks if dbDay is already inside weekMoodValues dictionary
@@ -124,8 +129,9 @@ class MonthMoodGraphViewController: UIViewController {
                     // counts the number of days for that month and stores the value in numDays
                     let range = calendar.range(of: .day, in: .month, for: today)!
                     let numDays = range.count
-                    var i = 0
-                    while (i < numDays)
+                    print(numDays)
+                    var i = 1
+                    while (i <= numDays)
                     {
                         let dayExists = self.monthMoodValues[i] != nil
                         if(dayExists)
@@ -145,7 +151,8 @@ class MonthMoodGraphViewController: UIViewController {
                     self.monthGraph.fitBars = true
                     self.monthGraph.data = chartData
                     self.monthGraph.setVisibleXRangeMaximum(10)
-                    self.monthGraph.moveViewToX(21)
+                    self.monthGraph.moveViewToX(Double(numDays-10))
+                    //self.monthGraph.xAxis.setLabelCount(numDays, force: true)
                 }
             }
     }
