@@ -29,7 +29,7 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
         case left
     }
     
-    var marble = SKSpriteNode(imageNamed: "Marble")
+    var marble = SKSpriteNode()
     
     var wallPair = SKNode()
     var moveRemove = SKAction()
@@ -103,11 +103,12 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
         endGameLabel.fontSize = 80
         endGameLabel.fontColor = UIColor.black
         endGameLabel.numberOfLines = 0
-        endGameLabel.text = "Game Over! \nYou lasted for \(scoreCounter) seconds! \nPlay again?"
+        endGameLabel.text = "Game Over! \nYou lasted for \(scoreCounter) second(s)! \nPlay again?"
         endGameLabel.zPosition = 5
         endGameLabel.horizontalAlignmentMode = .center
         
         //Initializes the marble to be moved by the user. Initializes its physics body properties and places it in the scene
+        marble = SKSpriteNode(imageNamed: "Marble")
         marble.position = CGPoint(x: frame.midX, y: frame.midY)
         marble.name = "Marble"
         marble.size = CGSize(width: marble.size.width / 2.5, height: marble.size.height / 2.5)
@@ -235,6 +236,11 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
             if (touchedEdge == false) {
             touchedEdge = true
             timer.invalidate()
+            marble.physicsBody?.affectedByGravity = false
+            marble.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            for child in 0..<(self.children.count) {
+                self.children[child].isPaused = true
+                }
             endGameLabel.text = "Game Over! \nYou lasted for \(scoreCounter) seconds! \nPlay again?"
             endGameLabel.horizontalAlignmentMode = .center
             endGameLabel.verticalAlignmentMode = .center
