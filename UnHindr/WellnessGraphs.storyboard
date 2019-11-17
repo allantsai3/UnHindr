@@ -60,6 +60,9 @@
                                 <state key="normal" title="Year">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="mdv-bo-yLO" kind="show" id="Yei-Yt-NL7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqL-2i-Ppj">
                                 <rect key="frame" x="135" y="65" width="133" height="58"/>
@@ -116,6 +119,9 @@
                                 <rect key="frame" x="289" y="180" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Year"/>
+                                <connections>
+                                    <segue destination="mdv-bo-yLO" kind="show" id="1AC-Wh-h4k"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhF-5e-N0g">
                                 <rect key="frame" x="0.0" y="211" width="414" height="36"/>
@@ -151,7 +157,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMI-5y-jbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="Tc2-qF-mtB"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="-110.49107142857143"/>
+            <point key="canvasLocation" x="897" y="-110"/>
+        </scene>
+        <!--Year Mood Graph View Controller-->
+        <scene sceneID="M25-B4-HdA">
+            <objects>
+                <viewController id="mdv-bo-yLO" customClass="YearMoodGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rrJ-Aj-nXm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="dK2-CW-ioh">
+                                <rect key="frame" x="0.0" y="31" width="414" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aII-Dv-HWV">
+                                <rect key="frame" x="164" y="71" width="86" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5pZ-Rc-GpW" kind="show" id="smJ-fa-eie"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlA-aX-jHM">
+                                <rect key="frame" x="20" y="172" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Week"/>
+                                <connections>
+                                    <segue destination="ZcH-HD-W6d" kind="show" id="owg-Ys-esR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Sn-Uc-Uja">
+                                <rect key="frame" x="164" y="172" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Month"/>
+                                <connections>
+                                    <segue destination="J8Q-jX-sPu" kind="show" id="QCe-Qi-Eqz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03w-M7-tMY">
+                                <rect key="frame" x="313" y="172" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Year"/>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A8j-tT-Sib" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="240" width="414" height="598"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnU-d9-aq9">
+                                <rect key="frame" x="0.0" y="198" width="414" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="enO-7f-3Yk"/>
+                    </view>
+                    <connections>
+                        <outlet property="numYear" destination="BnU-d9-aq9" id="qyv-ib-WAa"/>
+                        <outlet property="yearGraph" destination="A8j-tT-Sib" id="txx-BW-SRr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J9n-r1-l8A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1753.6231884057972" y="-110.49107142857143"/>
         </scene>
         <!--WellnessTestHome-->
         <scene sceneID="iic-h6-tXI">
@@ -161,13 +236,16 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Np-sK-O9n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="-554"/>
+            <point key="canvasLocation" x="986" y="-604"/>
         </scene>
     </scenes>
     <resources>
         <image name="greenBG" width="414" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QPF-tG-42D"/>
+        <segue reference="smJ-fa-eie"/>
+        <segue reference="1AC-Wh-h4k"/>
+        <segue reference="QCe-Qi-Eqz"/>
+        <segue reference="owg-Ys-esR"/>
     </inferredMetricsTieBreakers>
 </document>

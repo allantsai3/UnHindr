@@ -25,7 +25,6 @@ class MonthMoodGraphViewController: UIViewController {
     
     let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
     var GraphData: [BarChartDataEntry] = []
-    var dayofMonth: [String] = []
     
     var monthMoodValues: [Int:Double] = [:]
     var dayAverage = Array(repeating: 0, count: 31)
@@ -34,7 +33,7 @@ class MonthMoodGraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getMoodData()
-        self.title = "Stacked Bar Chart"
+        self.title = "Bar Chart"
         monthGraph.maxVisibleCount = 40
         monthGraph.drawBarShadowEnabled = false
         monthGraph.drawValueAboveBarEnabled = true
@@ -59,26 +58,6 @@ class MonthMoodGraphViewController: UIViewController {
         //monthGraph.set
     }
     
-    // MARK: - Helper class for XAxis labeling of medication graph
-    private class BarChartFormatter: NSObject, IAxisValueFormatter {
-        
-        var values : [String]
-        required init (values : [String]) {
-            self.values = values
-            super.init()
-        }
-        
-        // Function: Convert an array of strings to array of ints
-        // Input:
-        //      1. String array
-        // Output:
-        //      1. The graph will be shown to the user after this function is completed
-        func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-            return values[Int(value)]
-        }
-    }
-    
-
     func getMoodData()
     {
         moodRef.getDocuments()
@@ -99,6 +78,7 @@ class MonthMoodGraphViewController: UIViewController {
                     let calendar = Calendar.current
                     let currentMonth = calendar.component(.month, from: today)
                     let currentMonthName = DateFormatter().monthSymbols[currentMonth-1]
+                    let currentYear = calendar.component(.year, from: today)
                     self.monthName.text = "\(currentMonthName)"
                     
                     for document in querySnapshot!.documents
@@ -150,8 +130,8 @@ class MonthMoodGraphViewController: UIViewController {
                     let chartData = BarChartData(dataSet: set)
                     self.monthGraph.fitBars = true
                     self.monthGraph.data = chartData
-                    self.monthGraph.setVisibleXRangeMaximum(10)
-                    self.monthGraph.moveViewToX(Double(numDays-10))
+                    self.monthGraph.setVisibleXRangeMaximum(7)
+                    self.monthGraph.moveViewToX(Double(numDays-7))
                     //self.monthGraph.xAxis.setLabelCount(numDays, force: true)
                 }
             }
