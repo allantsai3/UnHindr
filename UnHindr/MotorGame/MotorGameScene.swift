@@ -2,7 +2,7 @@
  File: [MotorGameScene]
  Creators: [Jake]
  Date created: [10/11/2019]
- Date updated: [16/11/2019]
+ Date updated: [17/11/2019]
  Updater name: [Jake]
  File description: [Controls the Motor Game Wellness test]
  */
@@ -80,7 +80,7 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)))
         physicsBody?.categoryBitMask = PhysicsBitMask.Edge
         
-        //Initializes the end game label
+        //Initializes the start game label
         startGameLabel.position = CGPoint(x: self.frame.width / 2, y: self.frame.height * 2 / 3)
         startGameLabel.fontSize = 60
         startGameLabel.fontColor = UIColor.black
@@ -129,7 +129,7 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
         createScene()
     }
     
-    // MARK: - Creates "Retry" and "Quit" buttons that restart the game and save score and timestamp to database while exiting to the home screen, respectively.
+    // MARK: - Creates "Retry" and "Quit" buttons that restart the game, and save score and timestamp to database while exiting to the home screen.
     // Input:
     //      1. None
     // Output:
@@ -162,7 +162,7 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
     //      1. Touches on the screen
     //      2. UI Event
     // Output:
-    //      1. If the screen is tapped at the start of the game, the startGame label disappears, the marble is controlled with screen tilt, the score counter is inrementing, and walls start spawning
+    //      1. If the screen is tapped at the start of the game, the startGame label disappears, the marble is controlled with screen tilt, the score counter starts incrementing, and walls start spawning
     //      2. The game is restarted if "Retry" button is tapped
     //      3. Score and Timestamp data are sent to database and screen is transitioned to Home Menu if "Quit" button is tapped
 
@@ -223,11 +223,11 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    // MARK: - Detecs contact between physics bodies in the Physcis World
+    // MARK: - Detects contact between physics bodies in the Physcis World
     // Input:
     //      1. Contact between two physics bodies
     // Output:
-    //      1. If contct happened between the marble and an edge of the screen, display end game text and call createEndGameButtons()
+    //      1. If contact happened between the marble and an edge of the screen, stop all movement, display end game text and call createEndGameButtons()
     func didBegin(_ contact: SKPhysicsContact) {
         let firstBody = contact.bodyA
         let secondBody = contact.bodyB
