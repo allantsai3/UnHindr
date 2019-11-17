@@ -26,6 +26,16 @@
             </objects>
             <point key="canvasLocation" x="-596" y="-130"/>
         </scene>
+        <!--WellnessGraphs-->
+        <scene sceneID="3P8-m5-5Hf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WellnessGraphs" id="96g-0N-kDL" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="8Kj-Mf-FBJ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E9f-4h-FPg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="815" y="27"/>
+        </scene>
         <!--WellnessTestHome-->
         <scene sceneID="l7K-oo-jkb">
             <objects>
@@ -104,6 +114,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8S-89-p9A">
+                                <rect key="frame" x="155" y="94" width="43" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Graph"/>
+                                <connections>
+                                    <segue destination="96g-0N-kDL" kind="show" id="qPv-2E-iw5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>

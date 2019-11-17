@@ -20,6 +20,8 @@ import FirebaseAuth
 class MonthMoodGraphViewController: UIViewController {
 
     @IBOutlet weak var monthGraph: BarChartView!
+    @IBOutlet weak var monthName: UILabel!
+    
     
     let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
     var GraphData: [BarChartDataEntry] = []
