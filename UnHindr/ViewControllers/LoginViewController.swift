@@ -14,11 +14,9 @@ import FirebaseFirestore
 
 class LoginViewController: UIViewController {
     //used to navigate user to the correct homescreen
-    private var isPatient = true
+    private var isPatient = false
     // to determine which button is pressed (login/signup) - used in viewWillDisappear
-    private var isSignUp = 0
-    //place holder for users data
-    private var datacollection: [String: Any]? = [:]
+    private var isSignUp = false
     
     // MARK: - Outlets
     //Input fields for username and password
@@ -40,8 +38,8 @@ class LoginViewController: UIViewController {
     // Output:
     //      1. Configure user info upon log in
     override func viewWillDisappear(_ animated: Bool) {
-        if(isSignUp==0){
-            //without isSignUp check the code crashes when sign up is pressed because it will run the below code below and its missing some backend stuff thats being done when log in is tapped and all
+        // Handler is not created if the signup transition button is created, therefore we don't need to deallocate the listener
+        if(!isSignUp){
             Auth.auth().removeStateDidChangeListener(Services.handle!)
         }
 
@@ -73,9 +71,41 @@ class LoginViewController: UIViewController {
                         return
                     }
                     Services.userRef = userref
+                    // Obtain the mode status (see if patient or caregiver)
+                    self!.fetchModeStatus(Services.userRef!) { (result) in
+                        if (result!){
+                            strongSelf.transitionToHomeScreen()
+                        }
+                        else {
+                            // Error fetching user mode
+                        }
+                    }
                 })
+                
             }
-            strongSelf.transitionToHomeScreen()
+            
+        }
+    }
+    
+    // Fetch caregiver mode status using a completion handler
+    // Input:
+    //      1. User reference
+    // Output:
+    //      1. Update the local mode value
+    private func fetchModeStatus(_ userdoc: String, completionHandler: @escaping (_ result: Bool? ) -> Void){
+        Services.userProfileRef.addSnapshotListener { (documentSnapshot, err) in
+            if err != nil {
+                //error
+            }
+            else{
+                guard let document = documentSnapshot else {
+                    print("Error fetching user document")
+                    return
+                }
+                self.isPatient = document.get("isPatient") as! Bool
+                let result = true
+                completionHandler(result)
+            }
             
         }
     }
@@ -143,42 +173,20 @@ class LoginViewController: UIViewController {
     // Action: If successful -> Navigate to home menu
     //         else not successful -> display error message
     @IBAction func loginTapped(_ sender: Any) {
-        if (Services.userRef != nil) {
-            self.getUserInfo(Services.userRef!, completionHandler: { (complete) in
-                if complete == true {
-                    self.isPatient = (self.datacollection?["isPatient"] as? Bool)!
-                }
-                else{
-                    print("----------------Failed to get user data--------------")
-                }
-                
-            })
-        }
-        authenticateLogin()
-    }
-    
-    // MARK: - Retrieve reference to a patient's data
-    // Input:
-    //      1. unique UID of a user
-    // Output:
-    //      1. Reference to user data
-    func getUserInfo(_ userdoc: String, completionHandler: @escaping (_ result: Bool? ) -> Void){
-        Services.db.collection("users").document(userdoc).addSnapshotListener { (documentSnapshot, error) in
-            
-            if error != nil {
-                //error
-            }
-            else{
-                guard let document = documentSnapshot else {
-                    print("Error fetching user document")
-                    return
-                }
-                self.datacollection = document.data()
-                let result = true
-                completionHandler(result)
-            }
-            
-        }
+//        if (Services.userRef != nil) {
+//            self.getUserInfo(Services.userRef!, completionHandler: { (complete) in
+//                if complete == true {
+//                    self.isPatient = (self.datacollection?["isPatient"] as? Bool)!
+//                    self.authenticateLogin()
+//                }
+//                else{
+//                    print("----------------Failed to get user data--------------")
+//                }
+//
+//            })
+//        }
+        
+        self.authenticateLogin()
     }
     
     // MARK: - Segue functions for navigation to adjacent views
@@ -186,7 +194,7 @@ class LoginViewController: UIViewController {
     // Activation: When pressed
     // Action: If successful -> Navigate to ModeChoice
     @IBAction func signUpTapped(_ sender: UIButton) {
-        self.isSignUp = 1
+        self.isSignUp = true
         let storyboard = UIStoryboard(name: "ModeChoice", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ModeChoiceViewController") as UIViewController
         present(vc, animated: true, completion: nil)

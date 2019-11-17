@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="htM-Qi-GRg">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="htM-Qi-GRg">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,33 +36,33 @@
                                 <rect key="frame" x="2" y="44" width="371" height="734"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rg0-VH-foh" userLabel="Stack 1">
-                                        <rect key="frame" x="0.0" y="0.0" width="371" height="208.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="371" height="209"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f52-Tr-MrN" userLabel="profle">
-                                                <rect key="frame" x="0.0" y="0.0" width="183.66666666666666" height="208.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184" height="209"/>
                                                 <state key="normal" image="Profile"/>
                                                 <connections>
                                                     <segue destination="UAW-SP-lXV" kind="presentation" id="n5A-rk-vut"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjU-9F-vfA" userLabel="EmergencyContact">
-                                                <rect key="frame" x="185.66666666666663" y="0.0" width="185.33333333333337" height="208.33333333333334"/>
+                                                <rect key="frame" x="186" y="0.0" width="185" height="209"/>
                                                 <state key="normal" image="Emergency"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Enp-sU-NVG" userLabel="Stack 2">
-                                        <rect key="frame" x="0.0" y="210.33333333333337" width="371" height="175.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="211" width="371" height="176.33333333333337"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXs-qU-yVt" userLabel="wellnessTests">
-                                                <rect key="frame" x="0.0" y="0.0" width="184" height="175.66666666666666"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="176.33333333333334"/>
                                                 <state key="normal" image="Wellness"/>
                                                 <connections>
                                                     <segue destination="3Zx-zs-cWA" kind="show" id="9rj-Cz-XIB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugf-Nl-Zuo" userLabel="medication">
-                                                <rect key="frame" x="186" y="0.0" width="185" height="175.66666666666666"/>
+                                                <rect key="frame" x="186.66666666666663" y="0.0" width="184.33333333333337" height="176.33333333333334"/>
                                                 <state key="normal" image="Medication"/>
                                                 <connections>
                                                     <segue destination="noV-tN-kQm" kind="presentation" id="Akn-Nr-GEA"/>
@@ -73,27 +71,27 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mim-W5-zYZ" userLabel="Stack 3">
-                                        <rect key="frame" x="0.0" y="388" width="371" height="172.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="389.33333333333331" width="371" height="172.99999999999994"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYb-qA-KQ8" userLabel="location">
-                                                <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="172.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="185" height="173"/>
                                                 <state key="normal" image="Location"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ch-IM-MQm" userLabel="chat">
-                                                <rect key="frame" x="186.66666666666663" y="0.0" width="184.33333333333337" height="172.33333333333334"/>
+                                                <rect key="frame" x="187" y="0.0" width="184" height="173"/>
                                                 <state key="normal" image="Chat"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="WMQ-FE-Xei" userLabel="Stack 4">
-                                        <rect key="frame" x="0.0" y="562.33333333333337" width="371" height="171.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="564.33333333333337" width="371" height="169.66666666666663"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2v4-he-ByU" userLabel="connect">
-                                                <rect key="frame" x="0.0" y="0.0" width="184" height="171.66666666666666"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="169.66666666666666"/>
                                                 <state key="normal" image="Connect"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkO-9j-pI0" userLabel="options">
-                                                <rect key="frame" x="186" y="0.0" width="185" height="171.66666666666666"/>
+                                                <rect key="frame" x="186.66666666666663" y="0.0" width="184.33333333333337" height="169.66666666666666"/>
                                                 <state key="normal" image="Options"/>
                                                 <connections>
                                                     <action selector="optionsTapped:" destination="htM-Qi-GRg" eventType="touchUpInside" id="GoV-8T-uCt"/>

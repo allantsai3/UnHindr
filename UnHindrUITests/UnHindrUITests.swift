@@ -217,6 +217,46 @@ class UnHindrUITests: XCTestCase {
         XCTAssert(app.textFields["Email"].exists)
     }
     
+    //test the scroll view in the profile
+    func testProfileScrollView(){
+        let app = XCUIApplication()
+        loginToHomeScreen(app)
+        app.buttons["CaregiverProfile"].tap()
+        
+         XCTAssert(app.buttons["Save Button"].exists)
+        let scrollViewsQuery = app.scrollViews
+        let element = scrollViewsQuery.otherElements.containing(.image, identifier:"Menu BG").children(matching: .other).element
+        element.swipeUp()
+        
+        let elementsQuery = scrollViewsQuery.otherElements
+        let backButtonButton = elementsQuery.buttons["Back Button"]
+        backButtonButton.tap()
+        app.buttons["Profile"].tap()
+        
+        let dateOfBirthTextField = elementsQuery.textFields["Date of Birth"]
+        dateOfBirthTextField.swipeUp()
+        elementsQuery.textFields["City"].tap()
+        elementsQuery.textFields["Country"].tap()
+        elementsQuery.textFields["Address"].tap()
+        elementsQuery.textFields["Gender"].tap()
+        elementsQuery.textFields["Cell"].tap()
+        dateOfBirthTextField.tap()
+        
+        let emailNameTextField = elementsQuery.textFields["Email Name"]
+        emailNameTextField.tap()
+        element.swipeDown()
+        element.tap()
+        emailNameTextField.tap()
+        elementsQuery.textFields["Last Name"].tap()
+        elementsQuery.textFields["First Name"].tap()
+        element.swipeUp()
+        elementsQuery.buttons["Save Button"].tap()
+        backButtonButton.tap()
+        
+        
+    }
+    
+    
     // MARK: - Helper Functions
     // Input:
     //      1. Current application instance
@@ -229,9 +269,8 @@ class UnHindrUITests: XCTestCase {
         app.secureTextFields["Password"].tap()
         app.secureTextFields["Password"].typeText("testtest\n")
         app.buttons["Login Button"].tap()
-        
         //Wait
-        XCTAssert(app.buttons["Profile"].waitForExistence(timeout: 5))
+        XCTAssert(app.buttons["Options"].waitForExistence(timeout: 5))
     }
 
 }
