@@ -39,7 +39,6 @@ class ChartsViewController: UIViewController {
     }()
     var MedTaken: [Double] = []
     var DateTaken: [Date] = []
-//    var medDayPlan: [String] = []
     var GraphData: [BarChartDataEntry] = []
     let dayOfWeek: [String] = ["MON","TUES","WED","THURS","FRI","SAT","SUN"]
     
@@ -59,16 +58,6 @@ class ChartsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool)
     {
         Auth.auth().removeStateDidChangeListener(handle!)
-//        self.MedTaken.removeAll()
-//        self.DateTaken.removeAll()
-//        //self.medDayPlan.removeAll()
-//        self.GraphData.removeAll()
-//        self.dictMedTaken.removeAll()
-//        self.dictDateTaken.removeAll()
-//        self.dictDayPlan.removeAll()
-//        self.dictDidTakeMed.removeAll()
-//        self.dictMedToTake.removeAll()
-//        self.documents.removeAll()
     }
     
     override func viewDidLoad() {
@@ -78,11 +67,7 @@ class ChartsViewController: UIViewController {
         // compares the day between the the day the user has taken to the days they are suppose to take it
         //self.compareDate(dateTaken: self.dictDateTaken,dayPlan: self.dictDayPlan)
         // begins plotting the data to the stacked bar chart
-        
-        //self.setChartData(medAmount: self.dictMedTaken,dayPlan: self.dictDayPlan,userTaken: self.dictDidTakeMed, allMedToTake: self.dictMedToTake)
 
-            
-        
         // Setting up the stacked bar chart properties
         self.title = "Stacked Bar Chart"
         chtChart.maxVisibleCount = 40
@@ -124,45 +109,67 @@ class ChartsViewController: UIViewController {
                 else
                 { // the program will go into this else statment if the user authentication is successful
                     // the for loop will go through each doucment and look at the data that is inside each document
+                    let calendar = Calendar.current
+                    let takeMed = [Double](repeating: 0, count: 7)
                     for document in querySnapshot!.documents
                     {
+                        
                         self.MedTaken.removeAll() // removes all data that is already inside the array 'MedTaken'
                         self.DateTaken.removeAll() // removes all data that is already inside the array 'DateTaken'
                         let med = document.get("Medication") as! String
-                        let quantity = document.get("Quantity")
-                        self.MedTaken.append(quantity as! Double)
-                        if let timestamp = document.get("Date") as? Timestamp
+                        let quantity = document.get("Quantity") as! Double
+                        //self.MedTaken.append(quantity)
+                        let keyExistsIntial = self.dictMedTaken[med] != nil
+                        if(!keyExistsIntial)
                         {
-                            let date = timestamp.dateValue()
-                            self.DateTaken.append(date)
+                            self.dictMedTaken[med] = takeMed
                         }
+                        let timestamp = document.get("Date") as! Timestamp
+                        let date = timestamp.dateValue()
+                        let dbDay = calendar.component(.weekday, from: date)
+                        //self.DateTaken.append(date)
+                        
                         let keyExists = self.dictMedTaken[med] != nil // checks if that particular key exists in the dictionary 'MedTaken'
                         if(keyExists)
                         { // the key already exists in the dictionary
-                            if var arr = self.dictMedTaken[med] // arr gets the current values inside 'dictMedTaken' with a certain key value 'med'
+                            // change things here
+                            if(dbDay == 1) //Monday
                             {
-                                arr.append(self.MedTaken[0]) // the new medication is appended to the arr array
-                                self.dictMedTaken[med] = arr // the modified arr is the new value of 'dictMedTaken[med]'
+                                self.dictMedTaken[med]![0] = quantity
                             }
-                            if var arr = self.dictDateTaken[med] // arr gets the current values inside 'dictDateTaken' with a certain key value 'med'
+                            else if(dbDay == 2)
                             {
-                                arr.append(self.DateTaken[0]) // the new date is appended to the arr array
-                                self.dictDateTaken[med] = arr // the modified arr is the new value of 'dictDateTaken[med]'
+                                self.dictMedTaken[med]![1] = quantity
+                            }
+                            else if(dbDay == 3)
+                            {
+                                self.dictMedTaken[med]![2] = quantity
+                            }
+                            else if (dbDay == 4)
+                            {
+                                self.dictMedTaken[med]![3] = quantity
+                            }
+                            else if (dbDay == 5)
+                            {
+                                self.dictMedTaken[med]![4] = quantity
+                            }
+                            else if(dbDay == 6)
+                            {
+                                self.dictMedTaken[med]![5] = quantity
+                            }
+                            else if(dbDay == 7)
+                            {
+                                self.dictMedTaken[med]![6] = quantity
                             }
                         }
-                        else
-                        { // the key does not exist in the dictionary
-                            self.dictMedTaken[med] = self.MedTaken // add the new medication to the dictMedTaken
-                            self.dictDateTaken[med] = self.DateTaken // add the new medication to the dictDateTaken
-                        }
+//                        else
+//                        { // the key does not exist in the dictionary
+//                            self.dictMedTaken[med] = self.MedTaken // add the new medication to the dictMedTaken
+//                            self.dictDateTaken[med] = self.DateTaken // add the new medication to the dictDateTaken
+//                        }
                     }
                     self.getDBMedicationPlan()
-                    
-
                 }
-            
-            
-            
         } //end of getDBMedicationData function
     }
     
@@ -201,23 +208,8 @@ func getDBMedicationPlan()
                     tmpDayArray.append(date) //date variable is appended to the 'tmpDayArray'
                 }
                 let keyExists = self.dictDayPlan[med] != nil // grabs a boolean to see if the key 'dictDayPlan[med]' already exists
-                if(keyExists)
+                if(!keyExists)
                 { // the key already exists in the dictionary
-//                    if var arr = self.dictDayPlan[med] // arr gets the current values inside 'dictDayPlan' with a certain key value 'med'
-//                    {
-//                        print(med)
-//                        dump(arr)
-//                        dump(self.dictDayPlan)
-//                        dump(self.medDayPlan)
-//                        for count in 0..<(arr.count)
-//                        {
-//                            arr.append(self.medDayPlan[count]) // appends the new 'medDayPlan[count]' to the arr variable
-//                        }
-//                        self.dictDayPlan[med] = arr // places the modified array into the 'dictDayPlan' after adding a new Day
-//                    }
-                }
-                else
-                { // the key does not exist in the dictionary
                     self.dictDayPlan[med] = tmpDayArray // adds a new dictionary value for the medication and the days they are suppose to be taken
                 }
             }
@@ -297,16 +289,14 @@ func getDBMedicationPlan()
                         }
                 }
             }
+            dump(dictDidTakeMed)
         }
-//                print("dictMedTaken") // empty
-//                dump(self.dictMedTaken)
-//                print("dictDayPlan")
-//                dump(self.dictDayPlan)
-//                print("dictDidTakeMed") // empty
-//                dump(self.dictDidTakeMed)
-//                print("dictMedToTake")
-//                dump(self.dictMedToTake)
-    self.setChartData(medAmount: self.dictMedTaken,dayPlan: self.dictDayPlan,userTaken: self.dictDidTakeMed, allMedToTake: self.dictMedToTake)
+        //print("dictMedTaken")
+        dump(self.dictMedTaken)
+        dump(self.dictDayPlan)
+        dump(self.dictDidTakeMed)
+        dump(self.dictMedToTake)
+        self.setChartData(medAmount: self.dictMedTaken,dayPlan: self.dictDayPlan,userTaken: self.dictDidTakeMed, allMedToTake: self.dictMedToTake)
     }
     
     // MARK: - Uses the data from the previous functions and creates the stacked bar chart.
@@ -315,22 +305,12 @@ func getDBMedicationPlan()
     //      1. The medAmount dictionary which is of type [String:[Double]]
     //      2. The dayPlan dictionary which is of type [String:[String]]
     //      3. The allMedToTake dictionary which is of type [String:Double]
+    //      4. The userTaken dictionary which is of type [String:[Bool]]
     // Output:
     //      1. The graph will be shown to the user after this function is completed
     func setChartData(medAmount: [String:[Double]],dayPlan: [String:[String]],userTaken: [String:[Bool]], allMedToTake: [String:Double])
     {
         // This days array contains all the days of the week
-        
-//        print("dictMedTaken") // empty
-//        dump(self.dictMedTaken)
-//        print("dictDayPlan")
-//        dump(self.dictDayPlan)
-//        print("dictDidTakeMed") // empty
-//        dump(self.dictDidTakeMed)
-//        print("dictMedToTake")
-//        dump(self.dictMedToTake)
-//        print("dictMedTaken")
-//        dump(self.dictMedTaken)
         for (Med,_) in dayPlan
         {
             for i in 0..<dayPlan[Med]!.count
@@ -340,87 +320,89 @@ func getDBMedicationPlan()
                 var Missed: Double = 0
                 if(keyExists)
                 { // if the exists in the dictionary
-                let date: String = dayPlan[Med]![i] //days of the medication plan
-                if(date == "Monday") //compare medication plan day to each day of the week
-                {
-                    if(userTaken[Med]![0] == true) // if the medication plan day and day of week matches and the user has taken the medication
+                    let date: String = dayPlan[Med]![i] //days of the medication plan
+//                    dump(dayPlan)
+//                    dump(userTaken)
+                    if(date == "Monday") //compare medication plan day to each day of the week
                     {
-                        Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
+                        if(userTaken[Med]![0] == true) // if the medication plan day and day of week matches and the user has taken the medication
+                        {
+                            Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
+                        }
+                        else //didnt take medication
+                        {
+                            Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
+                        }
                     }
-                    else //didnt take medication
+                    else if(date == "Tuesday")
                     {
-                        Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
+                        if(userTaken[Med]![1] == true) // if the medication plan day and day of week matches and the user has taken the medication
+                        {
+                            Taken = medAmount[Med]![1] // sets the taken value to how much the user has taken
+                        }
+                        else //didnt take medication
+                        {
+                            Missed = medAmount[Med]![1] // sets the missed value to how much the user has taken
+                        }
                     }
-                }
-                else if(date == "Tuesday")
-                {
-                    if(userTaken[Med]![1] == true) // if the medication plan day and day of week matches and the user has taken the medication
+                    else if(date == "Wednesday")
                     {
-                        Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
+                        if(userTaken[Med]![2] == true) // if the medication plan day and day of week matches and the user has taken the medication
+                        {
+                            Taken = medAmount[Med]![2] // sets the taken value to how much the user has taken
+                        }
+                        else // if the medication plan day and day of week does not matches and the user has taken the medication
+                        {
+                            Missed = medAmount[Med]![2] // sets the missed value to how much the user has taken
+                        }
                     }
-                    else //didnt take medication
+                    else if(date == "Thursday")
                     {
-                        Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
+                        if(userTaken[Med]![3] == true) // if the medication plan day and day of week matches and the user has taken the medication
+                        {
+                            Taken = medAmount[Med]![3] // sets the taken value to how much the user has taken
+                        }
+                        else // if the medication plan day and day of week does not matches and the user has taken the medication
+                        {
+                            Missed = medAmount[Med]![3] // sets the missed value to how much the user has taken
+                        }
                     }
-                }
-                else if(date == "Wednesday")
-                {
-                    if(userTaken[Med]![2] == true) // if the medication plan day and day of week matches and the user has taken the medication
+                    else if(date == "Friday")
                     {
-                        Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
+                        if(userTaken[Med]![4] == true) // if the medication plan day and day of week matches and the user has taken the medication
+                        {
+                            Taken = medAmount[Med]![4] // sets the taken value to how much the user has taken
+                        }
+                        else // if the medication plan day and day of week does not matches and the user has taken the medication
+                        {
+                            Missed = medAmount[Med]![4] // sets the missed value to how much the user has taken
+                        }
                     }
-                    else // if the medication plan day and day of week does not matches and the user has taken the medication
+                    else if(date == "Saturday")
                     {
-                        Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
+                        if(userTaken[Med]![5] == true) // if the medication plan day and day of week matches and the user has taken the medication
+                        {
+                            Taken = medAmount[Med]![5] // sets the taken value to how much the user has taken
+                        }
+                        else // if the medication plan day and day of week does not matches and the user has taken the medication
+                        {
+                            Missed = medAmount[Med]![5] // sets the missed value to how much the user has taken
+                        }
                     }
-                }
-                else if(date == "Thursday")
-                {
-                    if(userTaken[Med]![3] == true) // if the medication plan day and day of week matches and the user has taken the medication
+                    else if(date == "Sunday")
                     {
-                        Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
+                        if(userTaken[Med]![6] == true) // if the medication plan day and day of week matches and the user has taken the medication
+                        {
+                            Taken = medAmount[Med]![6] // sets the taken value to how much the user has taken
+                        }
+                        else // if the medication plan day and day of week does not matches and the user has taken the medication
+                        {
+                            Missed = medAmount[Med]![6] // sets the missed value to how much the user has taken
+                        }
                     }
-                    else // if the medication plan day and day of week does not matches and the user has taken the medication
-                    {
-                        Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
-                    }
-                }
-                else if(date == "Friday")
-                {
-                    if(userTaken[Med]![4] == true) // if the medication plan day and day of week matches and the user has taken the medication
-                    {
-                        Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
-                    }
-                    else // if the medication plan day and day of week does not matches and the user has taken the medication
-                    {
-                        Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
-                    }
-                }
-                else if(date == "Saturday")
-                {
-                    if(userTaken[Med]![5] == true) // if the medication plan day and day of week matches and the user has taken the medication
-                    {
-                        Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
-                    }
-                    else // if the medication plan day and day of week does not matches and the user has taken the medication
-                    {
-                        Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
-                    }
-                }
-                else if(date == "Sunday")
-                {
-                    if(userTaken[Med]![6] == true) // if the medication plan day and day of week matches and the user has taken the medication
-                    {
-                        Taken = medAmount[Med]![0] // sets the taken value to how much the user has taken
-                    }
-                    else // if the medication plan day and day of week does not matches and the user has taken the medication
-                    {
-                        Missed = medAmount[Med]![0] // sets the missed value to how much the user has taken
-                    }
-                }
-                        // takes all the data and enters it into the barchartdataentry function
-                        let data = BarChartDataEntry(x: Double(i), yValues: [Taken, Missed], data: "Group Chart" as AnyObject)
-                        GraphData.append(data) // appends the data into the graph
+                    // takes all the data and enters it into the barchartdataentry function
+                    let data = BarChartDataEntry(x: Double(i), yValues: [Taken, Missed], data: "Group Chart" as AnyObject)
+                    GraphData.append(data) // appends the data into the graph
                 }
             else
                 {

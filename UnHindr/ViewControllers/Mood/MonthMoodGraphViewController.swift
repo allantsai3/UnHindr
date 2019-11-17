@@ -27,6 +27,10 @@ class MonthMoodGraphViewController: UIViewController {
     var GraphData: [BarChartDataEntry] = []
     var dayofMonth: [String] = []
     
+    var monthMoodValues: [Int:Double] = [:]
+    var dayAverage = Array(repeating: 0, count: 31)
+    var dictDayAvg: [Int:Int] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getMoodData()
@@ -52,6 +56,7 @@ class MonthMoodGraphViewController: UIViewController {
         monthGraph.animate(xAxisDuration: 1.0, yAxisDuration: 2.0)
         xAxis.drawGridLinesEnabled = false
         // Do any additional setup after loading the view.
+        //monthGraph.set
     }
     
     // MARK: - Helper class for XAxis labeling of medication graph
@@ -88,26 +93,61 @@ class MonthMoodGraphViewController: UIViewController {
                     let today = Date()
                     let calendar = Calendar.current
                     let currentMonth = calendar.component(.month, from: today)
+                    let currentMonthName = DateFormatter().monthSymbols[currentMonth-1]
+                    self.monthName.text = "\(currentMonthName)"
+                    
                     for document in querySnapshot!.documents
                     {
                         let timestamp: Timestamp = document.get("Date") as! Timestamp
                         let dbDate: Date = timestamp.dateValue()
                         let dbMonth = calendar.component(.month, from: dbDate)
-                        print("db Month = \(dbMonth)")
-                        print("today Month = \(currentMonth)")
+                        let dbDay = calendar.component(.month, from: dbDate)
+                        if(dbMonth == currentMonth)
+                        {
+                            // checks if dbDay is already inside weekMoodValues dictionary
+                            let keyExists = self.monthMoodValues[dbDay] != nil
+                            if(keyExists)
+                            {
+                                // adds the score found from dbDay into the correct spot in the dictionary
+                                self.monthMoodValues[dbDay] = (self.monthMoodValues[dbDay]!) + (document.get("Score") as! Double)
+                                // increments the average by one
+                                self.dictDayAvg[dbDay]! += 1
+                            }
+                            else{
+                                // sets the value of the new dbDay key to equal to the score
+                                self.monthMoodValues[dbDay] = (document.get("Score") as! Double)
+                                // sets the average to 1
+                                self.dictDayAvg[dbDay] = 1
+                            }
+                        }
                     }
-                }
-                    
-//                    let dayFormat = BarChartFormatter(values: self.dayofMonth)
-//                    self.monthGraph.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
+                    // counts the number of days for that month and stores the value in numDays
+                    let range = calendar.range(of: .day, in: .month, for: today)!
+                    let numDays = range.count
+                    var i = 0
+                    while (i < numDays)
+                    {
+                        let dayExists = self.monthMoodValues[i] != nil
+                        if(dayExists)
+                        {
+                            let data = BarChartDataEntry(x: Double(i), y: (self.monthMoodValues[i]!)/Double(self.dictDayAvg[i]!))
+                            self.GraphData.append(data)
+                        }
+                        else{
+                            let data = BarChartDataEntry(x: Double(i), y: 0)
+                            self.GraphData.append(data)
+                        }
+                        i += 1
+                    }
                     let set = BarChartDataSet(values: self.GraphData, label: "Mood")
                     set.colors = [UIColor.green]
                     let chartData = BarChartData(dataSet: set)
-//                    dump(self.GraphData)
                     self.monthGraph.fitBars = true
                     self.monthGraph.data = chartData
+                    self.monthGraph.setVisibleXRangeMaximum(10)
+                    self.monthGraph.moveViewToX(21)
+                }
             }
-                
     }
 }
     /*
