@@ -12,5 +12,6 @@ class Constants {
     
     static let medicationVelocityThreshold = 300.0
     
+    static let motorGameGravityScaler = 20.0
     
 }

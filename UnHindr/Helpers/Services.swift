@@ -33,6 +33,8 @@ class Services {
     // Medication history reference
     static let medicationHistoryRef = db.collection("users").document(userRef!).collection("Medication")
     
+    static let motorGameRef = db.collection("users").document(userRef!).collection("MotorGameData")
+    
     // MARK: - Retrieve reference to a patient's data
     // Input:
     //      1. unique UID of a user

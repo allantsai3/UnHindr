@@ -193,7 +193,6 @@
 				98F115E3236D22F90082A1B1 /* Mood */,
 				9DF3F89A2367D826003CF8B9 /* LoginViewController.swift */,
 				2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */,
-				CD75214E2378A87300F100AA /* MotorGameViewController.swift */,
 				9DF3F8982367D826003CF8B9 /* AppDelegate.swift */,
 				9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */,
 			);
@@ -304,6 +303,7 @@
 		9DF3F8972367D826003CF8B9 /* UnHindr */ = {
 			isa = PBXGroup;
 			children = (
+				CD86D3692380C3AB006E1340 /* MotorGame */,
 				81B590912378F8F900BA49AF /* CogGame */,
 				9DFB75BF236F7B14006321B8 /* Assets.xcassets */,
 				2DE6A77B236E400A00B76282 /* Helpers */,
@@ -315,9 +315,6 @@
 				2DD67109236BCD41005948DF /* HomeScreen.storyboard */,
 				9E4EAB30237E5E8400FC051B /* CaregiverHomeScreen.storyboard */,
 				9DF3F8A12367D82D003CF8B9 /* LaunchScreen.storyboard */,
-				CD7521972378C73C00F100AA /* MotorGame.storyboard */,
-				CD7521502378A93200F100AA /* MotorGameScene.sks */,
-				CD7521522378A95D00F100AA /* MotorGameScene.swift */,
 				CDBC4012236E4FE8008934AF /* Settings.storyboard */,
 				9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */,
 				215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */,
@@ -363,6 +360,17 @@
 				9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */,
 			);
 			path = ModeChoice;
+			sourceTree = "<group>";
+		};
+		CD86D3692380C3AB006E1340 /* MotorGame */ = {
+			isa = PBXGroup;
+			children = (
+				CD75214E2378A87300F100AA /* MotorGameViewController.swift */,
+				CD7521972378C73C00F100AA /* MotorGame.storyboard */,
+				CD7521502378A93200F100AA /* MotorGameScene.sks */,
+				CD7521522378A95D00F100AA /* MotorGameScene.swift */,
+			);
+			path = MotorGame;
 			sourceTree = "<group>";
 		};
 		CDBC4014236E4FF2008934AF /* Settings */ = {
@@ -647,7 +655,6 @@
 				9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */,
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
 				7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */,
-				9DFB75BE236F7515006321B8 /* mainTabController.swift in Sources */,
 				CD75214F2378A87300F100AA /* MotorGameViewController.swift in Sources */,
 				2DE6A77D236E402B00B76282 /* Services.swift in Sources */,
 				8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */,
@@ -855,9 +862,9 @@
 			baseConfigurationReference = B4A52706C5DFD3854AB3653D /* Pods-UnHindr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5FTKK29SB;
 				INFOPLIST_FILE = UnHindr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -876,9 +883,9 @@
 			baseConfigurationReference = D67DC310DD2C16DCFB8FDD88 /* Pods-UnHindr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5FTKK29SB;
 				INFOPLIST_FILE = UnHindr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

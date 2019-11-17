@@ -23,7 +23,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>test</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Login</string>
+	<string>MotorGame</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>UIRequiredDeviceCapabilities</key>
