@@ -1,3 +1,8 @@
+//File: [MotorGameGraphViewController]
+//Creators: [Johnston]
+//Date created: [11/17/2019]
+//Updater name: [Johnston]
+//File description: [Reads mood data values from firebase]
 //
 //  MotorGameGraphViewController.swift
 //  UnHindr
@@ -17,9 +22,10 @@ class MotorGameGraphViewController: UIViewController {
     @IBOutlet weak var motorWeeklyGraph: BarChartView!
     @IBOutlet weak var monthLabel: UILabel!
     
-    
+    // gets the correct user database values
     let motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
     
+    // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     var motorData: [Int:Double] = [:]
     var dayAverage = Array(repeating: 0, count: 8)
@@ -27,10 +33,13 @@ class MotorGameGraphViewController: UIViewController {
     var stringDays: [String] = []
     var dictDayAvg: [Int:Int] = [:]
     
+    // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
         getMotorData()
+        
+        // Sets up the chart properties
         self.title = "Cog Bar Chart"
         motorWeeklyGraph.maxVisibleCount = 40
         motorWeeklyGraph.drawBarShadowEnabled = false
@@ -52,26 +61,33 @@ class MotorGameGraphViewController: UIViewController {
         l.formToTextSpace = 8
         l.xEntrySpace = 6
         xAxis.drawGridLinesEnabled = false
-        // Do any additional setup after loading the view.
     }
     
+    // MARK: - Obtain motor data from firebase
+    // Input:
+    //      1. None
+    // Output:
+    //      1. Motor Graph is created using the data from the user in firebase
     func getMotorData()
     {
+        // gets all the documents for this particular user
         motorRef.getDocuments()
             {
                 (querySnapshot,err) in
+                // the program will go into this if statement if the user authentication fails
                 if err != nil
                 {
-                    print("Error getting medication data")
+                    print("Error getting motor data")
                 }
                 else
                 {
+                    // the program will go into this else statement if the user authentication succeeds
                     // the next three lines recieves the current month
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "LLLL"
                     let nameOfMonth = dateFormatter.string(from: Date())
                     
-                    // commented out block from line 95 - 105 is a test for other dates
+                    // commented out block from line 90 - 101 is a test for other dates
                     //let otherdate = DateFormatter()
                     //otherdate.dateFormat = "yyyy/MM/dd HH:mm"
                     //let someDateTime = otherdate.date(from: "2019/11/3 22:31")

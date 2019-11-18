@@ -5,7 +5,7 @@
 //File description: [Reads values from the data]
 //
 //
-//  MonthmonthGraphViewController.swift
+//  MonthMoodGraphViewController.swift
 //
 //
 //  Created by Johnston Yang on 11/10/19.
@@ -22,17 +22,21 @@ class MonthMoodGraphViewController: UIViewController {
     @IBOutlet weak var monthGraph: BarChartView!
     @IBOutlet weak var monthName: UILabel!
     
-    
+    // gets the correct user database values
     let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
+    // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     
     var monthMoodValues: [Int:Double] = [:]
     var dayAverage = Array(repeating: 0, count: 31)
     var dictDayAvg: [Int:Int] = [:]
     
+    // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         getMoodData()
+        
+        //Sets up the chart properties
         self.title = "Bar Chart"
         monthGraph.maxVisibleCount = 40
         monthGraph.drawBarShadowEnabled = false
@@ -54,16 +58,22 @@ class MonthMoodGraphViewController: UIViewController {
         l.xEntrySpace = 6
         monthGraph.animate(xAxisDuration: 1.0, yAxisDuration: 2.0)
         xAxis.drawGridLinesEnabled = false
-        // Do any additional setup after loading the view.
     }
     
+    // MARK: - Obtain the months mood data from firebase
+    // Input:
+    //      1. None
+    // Output:
+    //      1. The monthly mood graph is created and displayed for the user to see
     func getMoodData()
     {
+        // gets all the documents for this particular user
         moodRef.getDocuments()
             {
                 (querySnapshot, err) in
-                if err != nil // the program will go into this if statement if the user authentication fails
+                if err != nil
                 {
+                    // the program will go into this if statement if the user authentication fails
                     print("Error getting monthly mood data")
                 }
                 else
@@ -73,22 +83,30 @@ class MonthMoodGraphViewController: UIViewController {
 //                    otherdate.dateFormat = "yyyy/MM/dd HH:mm"
 //                    let someDateTime = otherdate.date(from: "2019/10/3 22:31")
 //                    let currentMonth = 10
+                    // grabs today's date
                     let today = Date()
                     let calendar = Calendar.current
+                    // gets the month of today's date
                     let currentMonth = calendar.component(.month, from: today)
+                    // gets the name of the month of today's date
                     let currentMonthName = DateFormatter().monthSymbols[currentMonth-1]
-                    let currentYear = calendar.component(.year, from: today)
+                    // sets the monthName label to be the name of the month
                     self.monthName.text = "\(currentMonthName)"
-                    
+                    // iterates through all of the documents for this user
                     for document in querySnapshot!.documents
                     {
+                        // gets the date numbers of the timestamp from firebase
                         let timestamp: Timestamp = document.get("Date") as! Timestamp
+                        // gets the date of the timestamp
                         let dbDate: Date = timestamp.dateValue()
+                        // gets the month of the timestamp
                         let dbMonth = calendar.component(.month, from: dbDate)
+                        // gets the day of the timestamp
                         let dbDay = calendar.component(.day, from: dbDate)
+                        // checks if the month from the database matches with today's month
                         if(dbMonth == currentMonth)
                         {
-                            // checks if dbDay is already inside weekMoodValues dictionary
+                            // checks if dbDay is already inside monthMoodValues dictionary
                             let keyExists = self.monthMoodValues[dbDay] != nil
                             if(keyExists)
                             {
@@ -108,30 +126,35 @@ class MonthMoodGraphViewController: UIViewController {
                     // counts the number of days for that month and stores the value in numDays
                     let range = calendar.range(of: .day, in: .month, for: today)!
                     let numDays = range.count
-                    print(numDays)
                     var i = 1
+                    // goes through all of the days of the month
+                    // checks each day inside the monthMoodValues dictionary
                     while (i <= numDays)
                     {
+                        // checks if the day exists in the dictionary
                         let dayExists = self.monthMoodValues[i] != nil
                         if(dayExists)
                         {
+                            // sets data as the average of all database values of that particular day
                             let data = BarChartDataEntry(x: Double(i), y: (self.monthMoodValues[i]!)/Double(self.dictDayAvg[i]!))
                             self.GraphData.append(data)
                         }
                         else{
+                            // if the key does not exist, set that day equal to 0
                             let data = BarChartDataEntry(x: Double(i), y: 0)
                             self.GraphData.append(data)
                         }
                         i += 1
                     }
+                    // finialize setup of graph after the data has been inputted
                     let set = BarChartDataSet(values: self.GraphData, label: "Mood")
                     set.colors = [UIColor.green]
                     let chartData = BarChartData(dataSet: set)
                     self.monthGraph.fitBars = true
                     self.monthGraph.data = chartData
+                    // allows for the graph to be swiped left or right
                     self.monthGraph.setVisibleXRangeMaximum(7)
                     self.monthGraph.moveViewToX(Double(numDays-7))
-                    //self.monthGraph.xAxis.setLabelCount(numDays, force: true)
                 }
             }
     }

@@ -22,8 +22,10 @@ class CogGameGraphViewController: UIViewController {
     @IBOutlet weak var cogGraph: BarChartView!
     @IBOutlet weak var month: UILabel!
     
+    // gets the correct user database values
     let cogRef = Services.db.collection("users").document(Services.userRef!).collection("CogGameData")
     
+    // storing the graph data
     var GraphData: [BarChartDataEntry] = []
     var cogData: [Int:Double] = [:]
     var dayAverage = Array(repeating: 0, count: 8)
@@ -32,10 +34,12 @@ class CogGameGraphViewController: UIViewController {
     
     var dictDayAvg: [Int:Int] = [:]
     
+    // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         getCogData()
         
+        // Sets up the chart properties
         self.title = "Cog Bar Chart"
         cogGraph.maxVisibleCount = 40
         cogGraph.drawBarShadowEnabled = false
@@ -57,26 +61,33 @@ class CogGameGraphViewController: UIViewController {
         l.formToTextSpace = 8
         l.xEntrySpace = 6
         xAxis.drawGridLinesEnabled = false
-        // Do any additional setup after loading the view.
     }
     
+    // MARK: - Obtain cognitive data from firebase
+    // Input:
+    //      1. None
+    // Output:
+    //      1. Cognitive Graph is created using the data from the user in firebase
     func getCogData()
     {
+        // gets all the documents for this particular user
         cogRef.getDocuments()
         {
             (querySnapshot,err) in
+            // the program will go into this if statement if the user authentication fails
                 if err != nil
                 {
-                        print("Error getting medication data")
+                        print("Error getting cognitive data")
                 }
                 else
                 {
+                    // the program will go into this if the user authentication succeeds
                     // the next three lines recieves the current month
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "LLLL"
                     let nameOfMonth = dateFormatter.string(from: Date())
                     
-                    // commented out block from line 95 - 105 is a test for other dates
+                    // commented out block from line 90 - 105 is a test for other dates
                     //let otherdate = DateFormatter()
                     //otherdate.dateFormat = "yyyy/MM/dd HH:mm"
                     //let someDateTime = otherdate.date(from: "2019/11/3 22:31")
@@ -107,6 +118,7 @@ class CogGameGraphViewController: UIViewController {
                     {
                         // function that gets how many days are in the last month and puts those days into stringDays and days array
                         self.daysInMonth(inMonth: currentMonth, inYear: currentYear, inDay: lastWeekDay)
+                        // displays the previous month and the current month
                         self.month.text = "\(previousMonthName)-\(nameOfMonth)"
                         // iterates through all of the documents for this user
                         for document in querySnapshot!.documents
@@ -171,6 +183,7 @@ class CogGameGraphViewController: UIViewController {
                     else
                     {
                         // if lastweekday is a positive value
+                        // sets the month text as the current month
                         self.month.text = "\(nameOfMonth)"
                         for document in querySnapshot!.documents
                         {
