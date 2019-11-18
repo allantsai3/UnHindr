@@ -14,8 +14,8 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-// MARK: - Bit mask to track physics properties of entities involved in the Motor Game
-struct PhysicsBitMask {
+// MARK: - Category to track physics properties of entities involved in the Motor Game
+struct PhysicsCategory {
     static let Marble : UInt32 = 0x1 << 1
     static let Wall : UInt32 = 0x1 << 2
     static let Edge : UInt32 = 0x1 << 3
@@ -28,6 +28,8 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
         case right
         case left
     }
+    
+    var accessibleElements: [UIAccessibilityElement] = []
     
     var marble = SKSpriteNode()
     
@@ -74,11 +76,18 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
     // Output:
     //      1. Marble is on screen and affected by phone tilt after screen is tapped, score label is on screen.
     func createScene() {
+        isAccessibilityElement = false
+        startGameLabel.isAccessibilityElement = true
+        endGameLabel.isAccessibilityElement = true
+        restartButton.isAccessibilityElement = true
+        quitButton.isAccessibilityElement = true
+        
+        
         self.physicsWorld.contactDelegate = self
         
         //Sets the physics body of the screen edge
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)))
-        physicsBody?.categoryBitMask = PhysicsBitMask.Edge
+        physicsBody?.categoryBitMask = PhysicsCategory.Edge
         
         //Initializes the start game label
         startGameLabel.position = CGPoint(x: self.frame.width / 2, y: self.frame.height * 2 / 3)
@@ -86,6 +95,7 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
         startGameLabel.fontColor = UIColor.black
         startGameLabel.numberOfLines = 0
         startGameLabel.text = "Tilt your screen to control the marble,\ntry to last as long a possible without \ntouching the edge of the screen.\nTap to begin!"
+        startGameLabel.accessibilityValue = "Tilt your screen to control the marble,\ntry to last as long a possible without \ntouching the edge of the screen.\nTap to begin!"
         startGameLabel.zPosition = 5
         startGameLabel.horizontalAlignmentMode = .center
         self.addChild(startGameLabel)
@@ -116,9 +126,9 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
         marble.physicsBody = SKPhysicsBody(circleOfRadius: marbleRadius)
         marble.physicsBody?.affectedByGravity = false
         marble.physicsBody?.allowsRotation = false
-        marble.physicsBody?.categoryBitMask = PhysicsBitMask.Marble
-        marble.physicsBody?.collisionBitMask = PhysicsBitMask.Wall | PhysicsBitMask.Edge
-        marble.physicsBody?.contactTestBitMask = PhysicsBitMask.Edge
+        marble.physicsBody?.categoryBitMask = PhysicsCategory.Marble
+        marble.physicsBody?.collisionBitMask = PhysicsCategory.Wall | PhysicsCategory.Edge
+        marble.physicsBody?.contactTestBitMask = PhysicsCategory.Edge
         
         addChild(marble)
         
@@ -139,10 +149,12 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
         restartButton.position = CGPoint(x: self.frame.width / 4, y: self.frame.height * 2 / 5)
         restartButton.size = CGSize(width: self.frame.width * 5 / 14, height: self.frame.height / 10)
         restartButton.zPosition = 6
+        restartButton.accessibilityLabel = "RestartButton"
         quitButton = SKSpriteNode(imageNamed: "Quit")
         quitButton.position = CGPoint(x: self.frame.width * 3 / 4, y: self.frame.height * 2 / 5)
         quitButton.size = CGSize(width: self.frame.width * 5 / 14, height: self.frame.height / 10)
         quitButton.zPosition = 6
+        quitButton.accessibilityLabel = "QuitButton"
         self.addChild(restartButton)
         self.addChild(quitButton)
     }
@@ -232,7 +244,7 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
         let firstBody = contact.bodyA
         let secondBody = contact.bodyB
         
-        if (firstBody.categoryBitMask == PhysicsBitMask.Marble && secondBody.categoryBitMask == PhysicsBitMask.Edge || firstBody.categoryBitMask == PhysicsBitMask.Edge && secondBody.categoryBitMask == PhysicsBitMask.Marble) {
+        if (firstBody.categoryBitMask == PhysicsCategory.Marble && secondBody.categoryBitMask == PhysicsCategory.Edge || firstBody.categoryBitMask == PhysicsCategory.Edge && secondBody.categoryBitMask == PhysicsCategory.Marble) {
             if (touchedEdge == false) {
             touchedEdge = true
             timer.invalidate()
@@ -301,15 +313,15 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         topWall.physicsBody = SKPhysicsBody(rectangleOf: topWall.size)
-        topWall.physicsBody?.categoryBitMask = PhysicsBitMask.Wall
-        topWall.physicsBody?.collisionBitMask = PhysicsBitMask.Marble
+        topWall.physicsBody?.categoryBitMask = PhysicsCategory.Wall
+        topWall.physicsBody?.collisionBitMask = PhysicsCategory.Marble
         topWall.physicsBody?.contactTestBitMask = 0
         topWall.physicsBody?.affectedByGravity = false
         topWall.physicsBody?.isDynamic = false
         
         bottomWall.physicsBody = SKPhysicsBody(rectangleOf: bottomWall.size)
-        bottomWall.physicsBody?.categoryBitMask = PhysicsBitMask.Wall
-        bottomWall.physicsBody?.collisionBitMask = PhysicsBitMask.Marble
+        bottomWall.physicsBody?.categoryBitMask = PhysicsCategory.Wall
+        bottomWall.physicsBody?.collisionBitMask = PhysicsCategory.Marble
         bottomWall.physicsBody?.contactTestBitMask = 0
         bottomWall.physicsBody?.affectedByGravity = false
         bottomWall.physicsBody?.isDynamic = false
@@ -333,6 +345,71 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
         // accelerometer data is constantly read to change the gravity of the world to enable control of the marble through screen tilt
         if let accelerometerData = motionManager?.accelerometerData {
             physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.x * Constants.motorGameGravityScaler, dy: accelerometerData.acceleration.y * Constants.motorGameGravityScaler)
+        }
+    }
+    
+    
+    // MARK: - The fllowing code was taken from Stack Overflow: Written by Dominique Vial, https://stackoverflow.com/questions/34293575/is-it-possible-to-use-xcode-ui-testing-on-an-app-using-spritekit/42676977#42676977
+    // The code's purpose is to make elements of Sprite Kit accessbile to XCUITest for the
+    // purpose of UI testing.
+    
+    override func accessibilityElementCount() -> Int {
+        initAccessibility()
+        return accessibleElements.count
+    }
+    
+    override func accessibilityElement(at index: Int) -> Any? {
+        initAccessibility()
+        if (index < accessibleElements.count) {
+            return accessibleElements[index]
+        }
+        else {
+            return nil
+        }
+    }
+    
+    override func index(ofAccessibilityElement element: Any) -> Int {
+        initAccessibility()
+        return accessibleElements.index(of: element as! UIAccessibilityElement)!
+    }
+    
+    func initAccessibility() {
+        if accessibleElements.count == 0 {
+            let elemForEndGameLabel = UIAccessibilityElement(accessibilityContainer: self.view!)
+            var frameForEndGameLabel = endGameLabel.frame
+            frameForEndGameLabel.origin = (view?.convert(frameForEndGameLabel.origin, from: self))!
+            frameForEndGameLabel.origin.y = frameForEndGameLabel.origin.y - frameForEndGameLabel.size.height
+            elemForEndGameLabel.accessibilityLabel = "EndGameLabel"
+            elemForEndGameLabel.accessibilityFrame = frameForEndGameLabel
+            elemForEndGameLabel.accessibilityTraits = UIAccessibilityTraits.staticText
+            accessibleElements.append(elemForEndGameLabel)
+            
+            let elemForStartGameLabel = UIAccessibilityElement(accessibilityContainer: self.view!)
+            var frameForStartGameLabel = startGameLabel.frame
+            frameForStartGameLabel.origin = (view?.convert(frameForStartGameLabel.origin, from: self))!
+            frameForStartGameLabel.origin.y = frameForStartGameLabel.origin.y - frameForStartGameLabel.size.height
+            elemForStartGameLabel.accessibilityLabel = "StartGameLabel"
+            elemForStartGameLabel.accessibilityFrame = frameForStartGameLabel
+            elemForStartGameLabel.accessibilityTraits = UIAccessibilityTraits.staticText
+            accessibleElements.append(elemForStartGameLabel)
+            
+            let elemForRestartButton = UIAccessibilityElement(accessibilityContainer: self.view!)
+            var frameForRestartButton = restartButton.frame
+            frameForRestartButton.origin = (view?.convert(frameForRestartButton.origin, from: self))!
+            frameForRestartButton.origin.y = frameForRestartButton.origin.y - frameForRestartButton.size.height
+            elemForRestartButton.accessibilityLabel = "RestartButton"
+            elemForRestartButton.accessibilityFrame = frameForRestartButton
+            elemForRestartButton.accessibilityTraits = UIAccessibilityTraits.button
+            accessibleElements.append(elemForRestartButton)
+            
+            let elemForQuitButton = UIAccessibilityElement(accessibilityContainer: self.view!)
+            var frameForQuitButton = quitButton.frame
+            frameForQuitButton.origin = (view?.convert(frameForQuitButton.origin, from: self))!
+            frameForQuitButton.origin.y = frameForQuitButton.origin.y - frameForQuitButton.size.height
+            elemForQuitButton.accessibilityLabel = "RestartButton"
+            elemForQuitButton.accessibilityFrame = frameForQuitButton
+            elemForQuitButton.accessibilityTraits = UIAccessibilityTraits.button
+            accessibleElements.append(elemForQuitButton)
         }
     }
 }

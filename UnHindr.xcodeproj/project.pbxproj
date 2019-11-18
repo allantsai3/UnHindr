@@ -57,6 +57,8 @@
 		CD7521512378A93200F100AA /* MotorGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CD7521502378A93200F100AA /* MotorGameScene.sks */; };
 		CD7521532378A95D00F100AA /* MotorGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7521522378A95D00F100AA /* MotorGameScene.swift */; };
 		CD7521952378C73C00F100AA /* MotorGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7521972378C73C00F100AA /* MotorGame.storyboard */; };
+		CDA5E5082381F57F00E98E76 /* MotGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA5E5072381F57F00E98E76 /* MotGameUITests.swift */; };
+		CDA5E50A2382106900E98E76 /* MotorGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA5E5092382106900E98E76 /* MotorGameTests.swift */; };
 		CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBC4012236E4FE8008934AF /* Settings.storyboard */; };
 		CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBC4015236E501B008934AF /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -139,6 +141,8 @@
 		CD7521502378A93200F100AA /* MotorGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MotorGameScene.sks; sourceTree = "<group>"; };
 		CD7521522378A95D00F100AA /* MotorGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorGameScene.swift; sourceTree = "<group>"; };
 		CD7521962378C73C00F100AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MotorGame.storyboard; sourceTree = "<group>"; };
+		CDA5E5072381F57F00E98E76 /* MotGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotGameUITests.swift; sourceTree = "<group>"; };
+		CDA5E5092382106900E98E76 /* MotorGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorGameTests.swift; sourceTree = "<group>"; };
 		CDBC4012236E4FE8008934AF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CDBC4015236E501B008934AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D67DC310DD2C16DCFB8FDD88 /* Pods-UnHindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.release.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.release.xcconfig"; sourceTree = "<group>"; };
@@ -330,6 +334,7 @@
 				9DF3F8AD2367D82D003CF8B9 /* UnHindrTests.swift */,
 				9DF3F8AF2367D82D003CF8B9 /* Info.plist */,
 				9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */,
+				CDA5E5092382106900E98E76 /* MotorGameTests.swift */,
 			);
 			path = UnHindrTests;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */,
+				CDA5E5072381F57F00E98E76 /* MotGameUITests.swift */,
 				9DF3F8BA2367D82D003CF8B9 /* Info.plist */,
 			);
 			path = UnHindrUITests;
@@ -670,6 +676,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DE33C6E236F98BD00855C78 /* DatabaseTests.swift in Sources */,
+				CDA5E50A2382106900E98E76 /* MotorGameTests.swift in Sources */,
 				9DF3F8AE2367D82D003CF8B9 /* UnHindrTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -679,6 +686,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DFA139F2370F17D00F8B7B5 /* UnHindrUITests.swift in Sources */,
+				CDA5E5082381F57F00E98E76 /* MotGameUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
