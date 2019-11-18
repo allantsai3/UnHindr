@@ -14,14 +14,14 @@ import FirebaseAuth
 
 class MotorGameGraphViewController: UIViewController {
 
-    @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var motorWeeklyGraph: BarChartView!
+    @IBOutlet weak var monthLabel: UILabel!
     
     
-    let cogRef = Services.db.collection("users").document(Services.userRef!).collection("CogGameData")
+    let motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
     
     var GraphData: [BarChartDataEntry] = []
-    var cogData: [Int:Double] = [:]
+    var motorData: [Int:Double] = [:]
     var dayAverage = Array(repeating: 0, count: 8)
     var days: [Int] = []
     var stringDays: [String] = []
@@ -30,6 +30,7 @@ class MotorGameGraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        getMotorData()
         self.title = "Cog Bar Chart"
         motorWeeklyGraph.maxVisibleCount = 40
         motorWeeklyGraph.drawBarShadowEnabled = false
@@ -54,9 +55,9 @@ class MotorGameGraphViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func getCogData()
+    func getMotorData()
     {
-        cogRef.getDocuments()
+        motorRef.getDocuments()
             {
                 (querySnapshot,err) in
                 if err != nil
@@ -106,7 +107,7 @@ class MotorGameGraphViewController: UIViewController {
                         for document in querySnapshot!.documents
                         {
                             // gets the date numbers of the timestamp
-                            let timestamp: Timestamp = document.get("Date") as! Timestamp
+                            let timestamp: Timestamp = document.get("Time") as! Timestamp
                             let dbDate: Date = timestamp.dateValue()
                             // gets the date of the database value
                             let dbDay = calendar.component(.day, from: dbDate)
@@ -114,18 +115,18 @@ class MotorGameGraphViewController: UIViewController {
                             // if dbDay is not inside the days array skip this entire if statement
                             if (self.days.contains(dbDay))
                             {
-                                // checks if dbDay is already inside cogData dictionary
-                                let keyExists = self.cogData[dbDay] != nil
+                                // checks if dbDay is already inside motorData dictionary
+                                let keyExists = self.motorData[dbDay] != nil
                                 if(keyExists)
                                 {
                                     // adds the score found from dbDay into the correct spot in the dictionary
-                                    self.cogData[dbDay] = (self.cogData[dbDay]!) + (document.get("Score") as! Double)
+                                    self.motorData[dbDay] = (self.motorData[dbDay]!) + (document.get("Score") as! Double)
                                     // increments the average by one
                                     self.dictDayAvg[dbDay]! += 1
                                 }
                                 else{
                                     // sets the value of the new dbDay key to equal to the score
-                                    self.cogData[dbDay] = (document.get("Score") as! Double)
+                                    self.motorData[dbDay] = (document.get("Score") as! Double)
                                     // sets the average to 1
                                     self.dictDayAvg[dbDay] = 1
                                 }
@@ -136,11 +137,11 @@ class MotorGameGraphViewController: UIViewController {
                         while(i < self.days.count)
                         {
                             // checks if a key value of days[i] exists inside the dictionary
-                            let dayExists = self.cogData[self.days[i]] != nil
+                            let dayExists = self.motorData[self.days[i]] != nil
                             if(dayExists)
                             {
                                 // places data into the graph data array
-                                let data = BarChartDataEntry(x: Double(i), y: (self.cogData[self.days[i]]!)/Double(self.dictDayAvg[self.days[i]]!))
+                                let data = BarChartDataEntry(x: Double(i), y: (self.motorData[self.days[i]]!)/Double(self.dictDayAvg[self.days[i]]!))
                                 self.GraphData.append(data)
                                 
                             }
@@ -169,7 +170,7 @@ class MotorGameGraphViewController: UIViewController {
                         for document in querySnapshot!.documents
                         {
                             // grabs the timestamp and gets the date of that timestamp
-                            let timestamp: Timestamp = document.get("Date") as! Timestamp
+                            let timestamp: Timestamp = document.get("Time") as! Timestamp
                             let dbDate: Date = timestamp.dateValue()
                             // converts the date into a day
                             let dbDay = calendar.component(.day, from: dbDate)
@@ -177,18 +178,18 @@ class MotorGameGraphViewController: UIViewController {
                             if (dbDay >= lastWeekDay && dbDay <= currentDay)
                             {
                                 // checks if dbDay exists in the dictionary already
-                                let keyExists = self.cogData[dbDay] != nil
+                                let keyExists = self.motorData[dbDay] != nil
                                 if(keyExists)
                                 {
                                     // if the key exists add the score from the database on top of the value found in the dictionary
-                                    self.cogData[dbDay] = (self.cogData[dbDay]!) + (document.get("Score") as! Double)
+                                    self.motorData[dbDay] = (self.motorData[dbDay]!) + (document.get("Score") as! Double)
                                     // increments the correct value inside the dayAverage array
                                     self.dayAverage[(currentDay-dbDay)] += 1
                                 }
                                 else{
                                     // if the key does not exist
                                     // make a new key of dbDay with the score value found from the database
-                                    self.cogData[dbDay] = (document.get("Score") as! Double)
+                                    self.motorData[dbDay] = (document.get("Score") as! Double)
                                     // increments the correct value inside the dayAverage array
                                     self.dayAverage[(currentDay-dbDay)] += 1
                                 }
@@ -197,12 +198,12 @@ class MotorGameGraphViewController: UIViewController {
                         // insert the data values into the graphData array
                         for i in lastWeekDay...currentDay
                         {
-                            // checks if the that day already exists in the cogData
-                            let dayExists = self.cogData[i] != nil
+                            // checks if the that day already exists in the motorData
+                            let dayExists = self.motorData[i] != nil
                             if(dayExists)
                             {
                                 // inserts the data into the graphData array
-                                let data = BarChartDataEntry(x: Double(i), y: (self.cogData[i]!)/Double(self.dayAverage[(currentDay-i)]))
+                                let data = BarChartDataEntry(x: Double(i), y: (self.motorData[i]!)/Double(self.dayAverage[(currentDay-i)]))
                                 self.GraphData.append(data)
                                 
                             }
@@ -215,7 +216,7 @@ class MotorGameGraphViewController: UIViewController {
                         }
                     }
                     // formatting the graph
-                    let set = BarChartDataSet(values: self.GraphData, label: "Cog Score")
+                    let set = BarChartDataSet(values: self.GraphData, label: "Motor Score")
                     set.colors = [UIColor.green]
                     let chartData = BarChartData(dataSet: set)
                     self.motorWeeklyGraph.fitBars = true

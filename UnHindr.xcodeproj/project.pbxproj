@@ -22,6 +22,8 @@
 		7030116C23820DA6009A8294 /* cogYearlyGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7030116B23820DA6009A8294 /* cogYearlyGraphViewController.swift */; };
 		7030116E2382158F009A8294 /* MotorGameGraphs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7030116D2382158F009A8294 /* MotorGameGraphs.storyboard */; };
 		703011702382170A009A8294 /* MotorGameGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7030116F2382170A009A8294 /* MotorGameGraphViewController.swift */; };
+		704EBB5D23822E600045973F /* MotorGameMonthlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704EBB5C23822E600045973F /* MotorGameMonthlyViewController.swift */; };
+		704EBB5F238232580045973F /* MotorGameYearlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704EBB5E238232580045973F /* MotorGameYearlyViewController.swift */; };
 		70EC827C2378B59800F2CA12 /* MoodGraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC827B2378B59800F2CA12 /* MoodGraphsViewController.swift */; };
 		70EC82832378EDC400F2CA12 /* MonthMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC82822378EDC400F2CA12 /* MonthMoodGraphViewController.swift */; };
 		70EC82852378FA8B00F2CA12 /* YearMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC82842378FA8B00F2CA12 /* YearMoodGraphViewController.swift */; };
@@ -104,6 +106,8 @@
 		7030116B23820DA6009A8294 /* cogYearlyGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cogYearlyGraphViewController.swift; sourceTree = "<group>"; };
 		7030116D2382158F009A8294 /* MotorGameGraphs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MotorGameGraphs.storyboard; sourceTree = "<group>"; };
 		7030116F2382170A009A8294 /* MotorGameGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorGameGraphViewController.swift; sourceTree = "<group>"; };
+		704EBB5C23822E600045973F /* MotorGameMonthlyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorGameMonthlyViewController.swift; sourceTree = "<group>"; };
+		704EBB5E238232580045973F /* MotorGameYearlyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorGameYearlyViewController.swift; sourceTree = "<group>"; };
 		70EC827B2378B59800F2CA12 /* MoodGraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodGraphsViewController.swift; sourceTree = "<group>"; };
 		70EC82822378EDC400F2CA12 /* MonthMoodGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMoodGraphViewController.swift; sourceTree = "<group>"; };
 		70EC82842378FA8B00F2CA12 /* YearMoodGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMoodGraphViewController.swift; sourceTree = "<group>"; };
@@ -340,7 +344,9 @@
 				70F2B3C02380DC990002B587 /* MoodGraphs.storyboard */,
 				7030115D2381FAEA009A8294 /* WellnessGraphs.storyboard */,
 				7030116D2382158F009A8294 /* MotorGameGraphs.storyboard */,
+				704EBB5C23822E600045973F /* MotorGameMonthlyViewController.swift */,
 				7030116F2382170A009A8294 /* MotorGameGraphViewController.swift */,
+				704EBB5E238232580045973F /* MotorGameYearlyViewController.swift */,
 				7030115F2381FD5A009A8294 /* CogGameGraphs.storyboard */,
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
@@ -671,6 +677,7 @@
 				98F115E7236D23520082A1B1 /* MoodQ3ViewController.swift in Sources */,
 				9DF3F8992367D826003CF8B9 /* AppDelegate.swift in Sources */,
 				9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */,
+				704EBB5D23822E600045973F /* MotorGameMonthlyViewController.swift in Sources */,
 				2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */,
 				7013CBB92370D00E00A1231F /* ChartsViewController.swift in Sources */,
 				70EC82852378FA8B00F2CA12 /* YearMoodGraphViewController.swift in Sources */,
@@ -682,6 +689,7 @@
 				98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */,
 				98F6791D236E849900517099 /* ProfileViewController.swift in Sources */,
 				70EC82832378EDC400F2CA12 /* MonthMoodGraphViewController.swift in Sources */,
+				704EBB5F238232580045973F /* MotorGameYearlyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
