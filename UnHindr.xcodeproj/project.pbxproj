@@ -20,6 +20,8 @@
 		703011682381FFB7009A8294 /* CogGameGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703011672381FFB7009A8294 /* CogGameGraphViewController.swift */; };
 		7030116A23820A10009A8294 /* CogGameMonthlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7030116923820A10009A8294 /* CogGameMonthlyViewController.swift */; };
 		7030116C23820DA6009A8294 /* cogYearlyGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7030116B23820DA6009A8294 /* cogYearlyGraphViewController.swift */; };
+		7030116E2382158F009A8294 /* MotorGameGraphs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7030116D2382158F009A8294 /* MotorGameGraphs.storyboard */; };
+		703011702382170A009A8294 /* MotorGameGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7030116F2382170A009A8294 /* MotorGameGraphViewController.swift */; };
 		70EC827C2378B59800F2CA12 /* MoodGraphsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC827B2378B59800F2CA12 /* MoodGraphsViewController.swift */; };
 		70EC82832378EDC400F2CA12 /* MonthMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC82822378EDC400F2CA12 /* MonthMoodGraphViewController.swift */; };
 		70EC82852378FA8B00F2CA12 /* YearMoodGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC82842378FA8B00F2CA12 /* YearMoodGraphViewController.swift */; };
@@ -100,6 +102,8 @@
 		703011672381FFB7009A8294 /* CogGameGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameGraphViewController.swift; sourceTree = "<group>"; };
 		7030116923820A10009A8294 /* CogGameMonthlyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameMonthlyViewController.swift; sourceTree = "<group>"; };
 		7030116B23820DA6009A8294 /* cogYearlyGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cogYearlyGraphViewController.swift; sourceTree = "<group>"; };
+		7030116D2382158F009A8294 /* MotorGameGraphs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MotorGameGraphs.storyboard; sourceTree = "<group>"; };
+		7030116F2382170A009A8294 /* MotorGameGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorGameGraphViewController.swift; sourceTree = "<group>"; };
 		70EC827B2378B59800F2CA12 /* MoodGraphsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodGraphsViewController.swift; sourceTree = "<group>"; };
 		70EC82822378EDC400F2CA12 /* MonthMoodGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthMoodGraphViewController.swift; sourceTree = "<group>"; };
 		70EC82842378FA8B00F2CA12 /* YearMoodGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMoodGraphViewController.swift; sourceTree = "<group>"; };
@@ -335,6 +339,8 @@
 				215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */,
 				70F2B3C02380DC990002B587 /* MoodGraphs.storyboard */,
 				7030115D2381FAEA009A8294 /* WellnessGraphs.storyboard */,
+				7030116D2382158F009A8294 /* MotorGameGraphs.storyboard */,
+				7030116F2382170A009A8294 /* MotorGameGraphViewController.swift */,
 				7030115F2381FD5A009A8294 /* CogGameGraphs.storyboard */,
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
@@ -503,6 +509,7 @@
 				7030115E2381FAEB009A8294 /* WellnessGraphs.storyboard in Resources */,
 				98F115D8236CCDF80082A1B1 /* Mood.storyboard in Resources */,
 				81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */,
+				7030116E2382158F009A8294 /* MotorGameGraphs.storyboard in Resources */,
 				2DD6710B236BCD41005948DF /* Login.storyboard in Resources */,
 				9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */,
 				81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */,
@@ -670,6 +677,7 @@
 				2DE6A77D236E402B00B76282 /* Services.swift in Sources */,
 				8176FAB3237B88D80083B445 /* CogGameViewController.swift in Sources */,
 				9DFB75BD236F7515006321B8 /* MedicationViewController.swift in Sources */,
+				703011702382170A009A8294 /* MotorGameGraphViewController.swift in Sources */,
 				9D627A0E236FD4240027B6B7 /* MedicationHomeViewController.swift in Sources */,
 				98F115E9236D29B50082A1B1 /* MoodQ4ViewController.swift in Sources */,
 				98F6791D236E849900517099 /* ProfileViewController.swift in Sources */,

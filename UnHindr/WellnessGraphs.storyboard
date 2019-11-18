@@ -38,6 +38,9 @@
                                 <rect key="frame" x="180" y="420" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Motor"/>
+                                <connections>
+                                    <segue destination="xkw-8r-kkw" kind="show" id="eYC-bL-ygx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x92-QH-AAe">
                                 <rect key="frame" x="167" y="588" width="34" height="30"/>
@@ -62,7 +65,15 @@
                 <viewControllerPlaceholder storyboardName="MoodGraphs" id="WUz-gb-EjB" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NkM-62-CQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="-330"/>
+            <point key="canvasLocation" x="933" y="-327"/>
+        </scene>
+        <!--MotorGameGraphs-->
+        <scene sceneID="xl1-Sa-wUV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MotorGameGraphs" id="xkw-8r-kkw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IKY-lf-OS9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933" y="-119"/>
         </scene>
         <!--WellnessTestHome-->
         <scene sceneID="2hf-DI-u6d">
@@ -70,7 +81,7 @@
                 <viewControllerPlaceholder storyboardName="WellnessTestHome" id="VPX-Zs-d4k" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEX-HD-v87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="-7"/>
+            <point key="canvasLocation" x="933" y="-8"/>
         </scene>
         <!--CogGameGraphs-->
         <scene sceneID="V1A-K0-C5E">
@@ -78,7 +89,7 @@
                 <viewControllerPlaceholder storyboardName="CogGameGraphs" id="5Tg-Zv-11V" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJ9-BP-84W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978" y="-240"/>
+            <point key="canvasLocation" x="934" y="-237"/>
         </scene>
     </scenes>
 </document>
