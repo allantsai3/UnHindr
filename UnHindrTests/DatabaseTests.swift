@@ -22,6 +22,7 @@ class DatabaseTests: XCTestCase {
                 XCTFail("Unable to sign in")
             }
             
+            
 //            handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             
 //            }

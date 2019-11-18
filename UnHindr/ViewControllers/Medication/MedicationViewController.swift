@@ -2,7 +2,7 @@
  File: [MedicationViewController.swift]
  Creators: [Jake, Sina]
  Date created: [29/10/2019]
- Date updated: [10/11/2019]
+ Date updated: [17/11/2019]
  Updater name: [Sina, Allan]
  File description: [Controls the Add New Med screen]
  */
@@ -13,15 +13,12 @@ import FirebaseFirestore
 import FirebaseAuth
 import Firebase
 
+// Protocol for passing data when new medication plan is added
+protocol NewMedDelegate: class {
+    func onMedAdded(documentID: String)
+}
 
 class MedicationViewController: UIViewController {
-//    @IBOutlet weak var checkMon: UIImageView!
-//    @IBOutlet weak var checkTues: UIImageView!
-//    @IBOutlet weak var checkWed: UIImageView!
-//    @IBOutlet weak var checkThur: UIImageView!
-//    @IBOutlet weak var checkFri: UIImageView!
-//    @IBOutlet weak var checkSat: UIImageView!
-//    @IBOutlet weak var checkSun: UIImageView!
     
     @IBOutlet weak var monButton: UIButton!
     @IBOutlet weak var tuesButton: UIButton!
@@ -35,7 +32,6 @@ class MedicationViewController: UIViewController {
     @IBOutlet weak var dosageLabel: UILabel!
     @IBOutlet weak var timeInputTextField: UITextField!
     
-    
     // Store user object from authentication
     private var user: User?
     private var dayOFWeek: [String:Int] = ["Sunday":0, "Saturday":0, "Friday":0, "Thursday":0, "Wednesday":0, "Tuesday":0, "Monday":0]
@@ -44,6 +40,9 @@ class MedicationViewController: UIViewController {
     private var MedicationName = ""
     private var ReminderTime = ""
     private var timePicker: UIDatePicker?
+    
+    // Link to Medication Home View Controller
+    weak var delegate: NewMedDelegate? = nil
 
     
     override func viewDidLoad() {
@@ -72,12 +71,11 @@ class MedicationViewController: UIViewController {
         Auth.auth().removeStateDidChangeListener(Services.handle!)
     }
     
-    
-    // MARK - Stores the medication data to the database
+    // MARK: - Stores the medication data to the database
     // Input: None
     // Output:
     //      1. User's medication data is persistently stored in database
-    private func storeToDB(){
+    private func storeToDB(completionHandler: @escaping (_ result: Bool) -> Void){
         //User should be logged in with reference created
         // Add a new document with a generated id.
         let daysArr = initArrayToPassDays()
@@ -93,8 +91,12 @@ class MedicationViewController: UIViewController {
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
+                completionHandler(false)
             } else {
                 print("Document added with ID: \(ref!.documentID)")
+                // Send data back to Medication Main View Controller
+                self.delegate?.onMedAdded(documentID: ref!.documentID)
+                completionHandler(true)
             }
         }
     }
@@ -226,7 +228,7 @@ class MedicationViewController: UIViewController {
     @IBAction func satButtonPressed(_ sender: Any) {
         if (self.dayOFWeek["Saturday"] == 1){
             self.dayOFWeek["Saturday"] = 0
-            satButton.setImage(UIImage(named: "saturday.png"), for: UIControl.State.normal)
+            satButton.setImage(UIImage(named: "satNoCheck.png"), for: UIControl.State.normal)
         }
         else {
             self.dayOFWeek["Saturday"] = 1
@@ -244,7 +246,7 @@ class MedicationViewController: UIViewController {
     @IBAction func sunButtonPressed(_ sender: Any) {
         if (self.dayOFWeek["Sunday"] == 1){
             self.dayOFWeek["Sunday"] = 0
-            sunButton.setImage(UIImage(named: "sunday.png"), for: UIControl.State.normal)
+            sunButton.setImage(UIImage(named: "sunNoCheck.png"), for: UIControl.State.normal)
         }
         else {
             self.dayOFWeek["Sunday"] = 1
@@ -259,9 +261,13 @@ class MedicationViewController: UIViewController {
     // Output:
     //      1. Calls storeToDB() in order to save the medication, returns User to MyMeds screen (done in storyboard)
     @IBAction func addMedTapped(_ sender: Any) {
-        self.storeToDB()
-        view.endEditing(true)
-         performSegue(withIdentifier: "ToMedHome", sender: self)
+        self.storeToDB { (ret) in
+            if (ret) {
+                self.view.endEditing(true)
+                self.performSegue(withIdentifier: "ToMedHome", sender: self)
+            }
+            //Error storing data
+        }
     }
     
     // MARK - Cancels medication, saves no data

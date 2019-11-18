@@ -1,10 +1,11 @@
-//
-//  CardModel.swift
-//  UnHindr
-//
-//  Created by Jordan Kam on 11/12/19.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+File: [CardModel.swift]
+Creators: [Jordan]
+Date created: [11/14/2019]
+Date updated: [11/15/2019]
+Updater name: [Jordan]
+File description: [Randomly generates the pairs of cards to be used in the game. Shuffles the cards in different positions]
+*/
 
 import Foundation
 
@@ -55,10 +56,20 @@ class CardModel {
             //optional: to generate unique card number
         }
         
-        //to do: randomize array
         
-        //return the array
+        
         return generatedCardsArray.shuffled()
+        
+        
+    
+        
+
+        
+        
+       
+        //return the array
+        //return generatedCardsArray.shuffled()
         
     }
 }
+

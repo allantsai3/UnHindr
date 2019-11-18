@@ -24,6 +24,10 @@
 	<string>test</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Login</string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>UIRequiredDeviceCapabilities</key>

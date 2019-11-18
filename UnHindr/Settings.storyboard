@@ -10,14 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HomeScreen-->
-        <scene sceneID="KnG-st-Udi">
-            <objects>
-                <viewControllerPlaceholder storyboardName="HomeScreen" id="Npz-sD-8D8" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vua-1F-r1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1836" y="604"/>
-        </scene>
         <!--Settings-->
         <scene sceneID="S8b-P2-ZHW">
             <objects>
@@ -39,7 +31,7 @@
                                 <rect key="frame" x="26" y="56" width="77.5" height="67"/>
                                 <state key="normal" image="home-white"/>
                                 <connections>
-                                    <segue destination="Npz-sD-8D8" kind="show" id="AB8-Hi-nFq"/>
+                                    <action selector="homeButtonTapped:" destination="29x-Pw-Tsq" eventType="touchUpInside" id="lyR-hD-a7h"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiI-EC-TYK">

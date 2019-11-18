@@ -1,15 +1,18 @@
-//
-//  CogGameViewController.swift
-//  UnHindr
-//
-//  Created by Jordan Kam on 11/12/19.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+File: [CogGameViewController.swift]
+Creators: [Jordan]
+Date created: [11/14/2019]
+Date updated: [11/15/2019]
+Updater name: [Jordan]
+File description: [Controls the CogGame screen UI view. Controls way cards are displayed on scren, along with game logic, timer settings, and user interaction protocols]
+*/
 
 import Foundation
 import UIKit
 import Firebase
 import FirebaseAuth
+
+
 
 class CogGameViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -21,8 +24,13 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     var model = CardModel()
     var cardArray = [Card]()
     
+    //initiaize a timer object
     var timer : Timer?
+    
+    //The number of seconds the player has to complete the matching game
     var seconds = 120
+    
+    //number of matches the player has made
     var matches = 0
     
     
@@ -46,13 +54,17 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         scoreElapsed()
         
     }
-    
-    
+
+    //Input: None (When view appears)
+    //Output: Plays a shuffle sound
     override func viewDidAppear(_ animated: Bool) {
         
         SoundManager.playSound(.shuffle)
     }
     
+    
+    //Input: None
+    //Output: Updates the number of cards matched to the screen
     @objc func scoreElapsed() {
         
         scoreLabel.text = "Cards Matched: \(matches)"
@@ -62,8 +74,10 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     
     
     
-    //MARK: Timer Methods
+    //MARK: - Timer Methods
     
+    //Input: None
+    //Output: Updates the timer in seconds, Changes time color to red when reaches 0
     @objc func timerElapsed(){
         
         seconds -= 1
@@ -91,6 +105,9 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     //MARK: - CollectionViewCell Formatting
    
     //sets the number of items on a row
+    //Input: The collection view, view layout, and index path of cell item
+    //Output: A struct with width and height parameters.
+    //Function sets the number of items on a row based on width and height of view
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let yourWidth = collectionView.bounds.width/4.0
         let yourHeight = yourWidth
@@ -98,17 +115,22 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         return CGSize(width: yourWidth, height: yourHeight)
     }
     
+    //Input: collectionView, CollectionViewlayout, section
+    //Output: Configures the spacing for items relative to the view
     //sets spacing for items
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.init(top: 20, left: 20, bottom: 20, right: 20)
     }
     
+    //Input: UICollectionView, ViewLayout, and section number
+    //Output: Sets the side by side spacing for items in the CollectionView
     //sets spacing for items
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return -10
     }
     
-    //sets spacing for items
+    //Input: CollectionView, ViewLayout, and section number
+    //Output: sets spacing for items vertically
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 25
     }
@@ -118,12 +140,14 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     
     // MARK: - UICollectionView Protocol Methods
     
-    //ask delegate how many items need to be displayed
+    //Input: collectionView and section number
+    //Output: Asks delegate how many items need to be displayed
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cardArray.count
     }
     
-    //collectionView asks dataSource (viewController) for new data to display - for each individual cell to be displayed
+    //Input: collectionView, and cell index path
+    //Output: collectionView asks datasource (Viewcontroller for new data to display - for each individual cell to be displayed
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         //get a cardCollectionViewCell object
@@ -138,7 +162,9 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         return cell
     }
     
-    //when a user taps on a cell in the grid
+    
+    //input: User selection on the grid (User taps on a cell in the grid)
+    //Output: Flips the card when user clicks on it. Play sounds when user clicks on it. Check for a match when two cards are flipped
     //protocol method is part of UICollectionViewDelegate protocol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -187,6 +213,13 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
     
     //MARK: - Game Logic Methods
     
+    
+    //Input: indexPath of the second card flipped
+    //Output: compares the first and second card's images to see if they are a match
+    //plays a sound if it is a match
+    //Updates amount of matched cards
+    //Checks if game has ended
+    //Flips the cards back down if they are not a match with sound effect
     func checkForMatches(_ secondFlippedCardIndex:IndexPath){
         
         
@@ -251,11 +284,17 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         firstFlippedCardIndex = nil
     }
     
+    
+    //Input: None
+    //Output: Checks every card in the game to see if they are all matched together
+    //Final score is calculated based on cards matched + time remaining
+    //If all cards are matched then display winning alert to screen
+    //If cards are not all matched then losing alert is displayed
+    //Sends the score and date to the firebase database
     func checkGameEnded() {
         
         //determine if there any cards left unmatched
         var isWon = true
-        var numMatches = 0
         var timeRemaining = 0
         var score = 0
         
@@ -335,8 +374,8 @@ class CogGameViewController : UIViewController, UICollectionViewDelegate, UIColl
         
     }
     
-    //Configures how the alert will be displayed to screen
-    //Takes in a title and message parameter and displays alert to screen
+    //Input: Takes in a title and message string parameter
+    //Output: Configures how the alert will be displayed to screen
     func showAlert(_ title:String, _ message: String){
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

@@ -59,6 +59,15 @@ class ChartsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool)
     {
         Auth.auth().removeStateDidChangeListener(handle!)
+        self.MedTaken.removeAll()
+        self.DateTaken.removeAll()
+        self.medDayPlan.removeAll()
+        self.GraphData.removeAll()
+        self.dictMedTaken.removeAll()
+        self.dictDateTaken.removeAll()
+        self.dictDidTakeMed.removeAll()
+        self.dictDayPlan.removeAll()
+        self.documents.removeAll()
     }
     
     override func viewDidLoad() {
@@ -155,7 +164,7 @@ class ChartsViewController: UIViewController {
                             {
                                 for count in 0..<(arr.count)
                                 {
-                                    arr.append(self.MedTaken[count]) // the new medication is appended to the arr array
+                                    arr.append(self.MedTaken[0]) // the new medication is appended to the arr array
                                 }
                                 self.dictMedTaken[med] = arr // the modified arr is the new value of 'dictMedTaken[med]'
                             }

@@ -2,8 +2,8 @@
  File: [SettingsViewController.swift]
  Creators: [Jake, Jordan]
  Date created: [2/11/2019]
- Date updated: [3/11/2019]
- Updater name: [Jordan]
+ Date updated: [15/11/2019]
+ Updater name: [Sina]
  File description: [Controls the functionality of the Options feature]
  */
 
@@ -17,6 +17,15 @@ class SettingsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    // Input:
+    //      Home button tapped
+    // Output:
+    //      1. Transition to correct home page
+    @IBAction func homeButtonTapped(_ sender: UIButton) {
+        Services.transitionHome(self)
+    }
+    
     
     // MARK: - Transitions storyboard to Login screen, authenticates the logout with Firebase
     // Input:
@@ -35,14 +44,5 @@ class SettingsViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
         present(vc, animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

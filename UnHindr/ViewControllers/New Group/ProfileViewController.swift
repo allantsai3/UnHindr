@@ -136,9 +136,7 @@ class ProfileViewController: UIViewController {
     // Output:
     //      1. The user is at the Home Screen now
     @IBAction func backTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
-        present(vc, animated: true, completion: nil)
+        Services.transitionHome(self)
     }
     
     // MARK: - Update and Store user data

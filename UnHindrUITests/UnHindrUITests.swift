@@ -1,12 +1,14 @@
-//
-//  UnHindrUITests.swift
-//  UnHindrUITests
-//
-//  Created by Allan on 2019-10-28.
-//  Copyright © 2019 Sigma. All rights reserved.
-//
+/*
+ File: [UnHindrUITests.swift]
+ Creators: [Allan Tsai]
+ Date created: [10/28/2019]
+ Date updated: [11/17/2019]
+ Updater name: [Jordan, Allan]
+ File description: [Tests the UI navigation for the Core UI of the app]
+ */
 
 import XCTest
+@testable import UnHindr
 
 class UnHindrUITests: XCTestCase {
     func a() { print ("something") }
@@ -82,8 +84,8 @@ class UnHindrUITests: XCTestCase {
         app.buttons["Wellness"].tap()
         
         // Wellness page homescreen
-        XCTAssert(app.buttons["Mood Survey Button"].waitForExistence(timeout: 5))
-        app.buttons["Mood Survey Button"].tap()
+        XCTAssert(app.buttons["MoodSurveyButton"].waitForExistence(timeout: 5))
+        app.buttons["MoodSurveyButton"].tap()
         
         // Q1
         XCTAssert(stronglyAgreeButton.waitForExistence(timeout: 5))
@@ -216,7 +218,31 @@ class UnHindrUITests: XCTestCase {
         
         XCTAssert(app.textFields["Email"].exists)
     }
-    
+    //Basic UI test for connect UI view
+    func testConnect(){
+        
+        let app = XCUIApplication()
+        loginToHomeScreen(app)
+        app.buttons["Connect"].tap()
+        XCTAssert(app.buttons["addfriend"].exists)
+        XCTAssert(app.buttons["home white"].exists)
+        app.textFields["Add new contact by email"].tap()
+        app.textFields["Add new contact by email"].typeText("FAKEEMAIL@123.com\n")
+        app.buttons["addfriend"].tap()
+        app.alerts["The Entered Email Does not Exist!"].buttons["Ok"].tap()
+        app.buttons["home white"].tap()
+        XCTAssert(app.buttons["Options"].waitForExistence(timeout: 5))
+        
+        app.buttons["Connect"].tap()
+        XCTAssert(app.buttons["addfriend"].exists)
+        XCTAssert(app.buttons["home white"].exists)
+        app.textFields["Add new contact by email"].tap()
+        app.textFields["Add new contact by email"].typeText("unittestacc1@gmail.com\n")
+        app.buttons["addfriend"].tap()
+        app.alerts["You're already paired with unittestacc1@gmail.com"].buttons["Ok"].tap()
+        app.buttons["home white"].tap()
+        XCTAssert(app.buttons["Options"].waitForExistence(timeout: 5))
+    }
     //test the scroll view in the profile
     func testProfileScrollView(){
         let app = XCUIApplication()

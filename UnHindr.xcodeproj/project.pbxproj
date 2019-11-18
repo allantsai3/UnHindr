@@ -10,6 +10,7 @@
 		215C15DA236F6E390063F3E4 /* WellnessTestHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */; };
 		215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */; };
 		2BB1F3E910641FB171AAA24E /* Pods_UnHindrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */; };
+		2DA6698E2381EAA60050AE42 /* MedicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6698D2381EAA60050AE42 /* MedicationTests.swift */; };
 		2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */; };
 		2DD6710B236BCD41005948DF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD67107236BCD41005948DF /* Login.storyboard */; };
 		2DD6710C236BCD41005948DF /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD67109236BCD41005948DF /* HomeScreen.storyboard */; };
@@ -19,6 +20,8 @@
 		8176FAB5237B896B0083B445 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB4237B896B0083B445 /* CardModel.swift */; };
 		8176FAB7237B8A9C0083B445 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB6237B8A9C0083B445 /* Card.swift */; };
 		8176FAB9237B94FC0083B445 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */; };
+		81A7340C2381E0840069FE24 /* CogGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7340B2381E0840069FE24 /* CogGameTest.swift */; };
+		81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7340D238200320069FE24 /* CogGameUITests.swift */; };
 		81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B5908D2378F8DD00BA49AF /* CogGame.storyboard */; };
 		81BDBD9F237F8E9C00F4C970 /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9B237F8E9B00F4C970 /* shuffle.wav */; };
 		81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 81BDBD9C237F8E9B00F4C970 /* dingcorrect.wav */; };
@@ -51,6 +54,9 @@
 		9E4EAB32237E5E8400FC051B /* CaregiverHomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4EAB30237E5E8400FC051B /* CaregiverHomeScreen.storyboard */; };
 		9E4EAB33237E5E8400FC051B /* ModeChoice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */; };
 		9E4EAB35237E5FDE00FC051B /* ModeChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */; };
+		9E9138992380D5B5006AD1F9 /* Connect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E9138982380D5B5006AD1F9 /* Connect.storyboard */; };
+		9E91389C2380D6C5006AD1F9 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */; };
+		9E9F0B96238267B5003F06CD /* CaregiverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9F0B95238267B5003F06CD /* CaregiverUITests.swift */; };
 		9EE42465237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */; };
 		CBE5CD7485E703281E2757D0 /* Pods_UnHindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB3CE85FD97976F3B7E3634 /* Pods_UnHindr.framework */; };
 		CD75214F2378A87300F100AA /* MotorGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD75214E2378A87300F100AA /* MotorGameViewController.swift */; };
@@ -85,6 +91,7 @@
 		070601D3D77C38C0722FE935 /* Pods-UnHindrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WellnessTestHome.storyboard; sourceTree = "<group>"; };
 		215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessTestHomeViewController.swift; sourceTree = "<group>"; };
+		2DA6698D2381EAA60050AE42 /* MedicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTests.swift; sourceTree = "<group>"; };
 		2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		2DD67108236BCD41005948DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		2DD6710A236BCD41005948DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeScreen.storyboard; sourceTree = "<group>"; };
@@ -96,6 +103,8 @@
 		8176FAB4237B896B0083B445 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		8176FAB6237B8A9C0083B445 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		8176FAB8237B94FC0083B445 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		81A7340B2381E0840069FE24 /* CogGameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameTest.swift; sourceTree = "<group>"; };
+		81A7340D238200320069FE24 /* CogGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogGameUITests.swift; sourceTree = "<group>"; };
 		81B5908D2378F8DD00BA49AF /* CogGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CogGame.storyboard; sourceTree = "<group>"; };
 		81BDBD9B237F8E9B00F4C970 /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
 		81BDBD9C237F8E9B00F4C970 /* dingcorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingcorrect.wav; sourceTree = "<group>"; };
@@ -133,6 +142,9 @@
 		9E4EAB30237E5E8400FC051B /* CaregiverHomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CaregiverHomeScreen.storyboard; sourceTree = "<group>"; };
 		9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModeChoice.storyboard; sourceTree = "<group>"; };
 		9E4EAB34237E5FDE00FC051B /* ModeChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeChoiceViewController.swift; sourceTree = "<group>"; };
+		9E9138982380D5B5006AD1F9 /* Connect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Connect.storyboard; sourceTree = "<group>"; };
+		9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		9E9F0B95238267B5003F06CD /* CaregiverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverUITests.swift; sourceTree = "<group>"; };
 		9EE42464237FA48C0067B2E3 /* CaregiverHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverHomeScreenViewController.swift; sourceTree = "<group>"; };
 		A6E2B4E2DEF28A4C383CB68F /* Pods_UnHindr_UnHindrUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnHindr_UnHindrUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A52706C5DFD3854AB3653D /* Pods-UnHindr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindr.debug.xcconfig"; path = "Target Support Files/Pods-UnHindr/Pods-UnHindr.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +201,7 @@
 		2DD670FC236BBF79005948DF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9E91389A2380D6B6006AD1F9 /* Connect */,
 				9E4EAB36237E5FE400FC051B /* ModeChoice */,
 				215C15DD236F73610063F3E4 /* WellnessTestHome */,
 				9DFB75BA236F7515006321B8 /* Medication */,
@@ -322,6 +335,7 @@
 				CDBC4012236E4FE8008934AF /* Settings.storyboard */,
 				9E4EAB31237E5E8400FC051B /* ModeChoice.storyboard */,
 				215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */,
+				9E9138982380D5B5006AD1F9 /* Connect.storyboard */,
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
 			);
@@ -335,6 +349,8 @@
 				9DF3F8AF2367D82D003CF8B9 /* Info.plist */,
 				9DE33C6D236F98BD00855C78 /* DatabaseTests.swift */,
 				CDA5E5092382106900E98E76 /* MotorGameTests.swift */,
+				81A7340B2381E0840069FE24 /* CogGameTest.swift */,
+				2DA6698D2381EAA60050AE42 /* MedicationTests.swift */,
 			);
 			path = UnHindrTests;
 			sourceTree = "<group>";
@@ -345,6 +361,8 @@
 				9DF3F8B82367D82D003CF8B9 /* UnHindrUITests.swift */,
 				CDA5E5072381F57F00E98E76 /* MotGameUITests.swift */,
 				9DF3F8BA2367D82D003CF8B9 /* Info.plist */,
+				9E9F0B95238267B5003F06CD /* CaregiverUITests.swift */,
+				81A7340D238200320069FE24 /* CogGameUITests.swift */,
 			);
 			path = UnHindrUITests;
 			sourceTree = "<group>";
@@ -369,14 +387,17 @@
 			sourceTree = "<group>";
 		};
 		CD86D3692380C3AB006E1340 /* MotorGame */ = {
+		9E91389A2380D6B6006AD1F9 /* Connect */ = {
 			isa = PBXGroup;
 			children = (
 				CD75214E2378A87300F100AA /* MotorGameViewController.swift */,
 				CD7521972378C73C00F100AA /* MotorGame.storyboard */,
 				CD7521502378A93200F100AA /* MotorGameScene.sks */,
 				CD7521522378A95D00F100AA /* MotorGameScene.swift */,
+				9E91389B2380D6C5006AD1F9 /* ConnectViewController.swift */,
 			);
 			path = MotorGame;
+			path = Connect;
 			sourceTree = "<group>";
 		};
 		CDBC4014236E4FF2008934AF /* Settings */ = {
@@ -513,6 +534,7 @@
 				CDBC4013236E4FE8008934AF /* Settings.storyboard in Resources */,
 				CD7521512378A93200F100AA /* MotorGameScene.sks in Resources */,
 				9DFB75B9236F74D0006321B8 /* Medication.storyboard in Resources */,
+				9E9138992380D5B5006AD1F9 /* Connect.storyboard in Resources */,
 				81BDBDA2237F8E9C00F4C970 /* cardflip.wav in Resources */,
 				9E4EAB32237E5E8400FC051B /* CaregiverHomeScreen.storyboard in Resources */,
 			);
@@ -647,6 +669,7 @@
 				9D6C641C2378B50F00F0C058 /* Constants.swift in Sources */,
 				98F115EB236D2B770082A1B1 /* MoodQ5ViewController.swift in Sources */,
 				8176FAB7237B8A9C0083B445 /* Card.swift in Sources */,
+				9E91389C2380D6C5006AD1F9 /* ConnectViewController.swift in Sources */,
 				98F115E5236D23380082A1B1 /* MoodQ2ViewController.swift in Sources */,
 				CDBC4016236E501B008934AF /* SettingsViewController.swift in Sources */,
 				81BDBDA6237F8FDB00F4C970 /* SoundManager.swift in Sources */,
@@ -678,6 +701,8 @@
 				9DE33C6E236F98BD00855C78 /* DatabaseTests.swift in Sources */,
 				CDA5E50A2382106900E98E76 /* MotorGameTests.swift in Sources */,
 				9DF3F8AE2367D82D003CF8B9 /* UnHindrTests.swift in Sources */,
+				81A7340C2381E0840069FE24 /* CogGameTest.swift in Sources */,
+				2DA6698E2381EAA60050AE42 /* MedicationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,8 +710,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E9F0B96238267B5003F06CD /* CaregiverUITests.swift in Sources */,
 				9DFA139F2370F17D00F8B7B5 /* UnHindrUITests.swift in Sources */,
 				CDA5E5082381F57F00E98E76 /* MotGameUITests.swift in Sources */,
+				81A7340E238200320069FE24 /* CogGameUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

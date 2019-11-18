@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="htM-Qi-GRg">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="htM-Qi-GRg">
+>>>>>>> master
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
+<<<<<<< HEAD
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+=======
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+>>>>>>> master
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,10 +34,18 @@
             </objects>
             <point key="canvasLocation" x="-502" y="43"/>
         </scene>
+        <!--Connect-->
+        <scene sceneID="ZSB-aq-iaf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Connect" id="cHH-gY-Nw1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h6c-Hm-YSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-551" y="347"/>
+        </scene>
         <!--Home Screen View Controller-->
         <scene sceneID="85T-wp-Yw2">
             <objects>
-                <viewController storyboardIdentifier="HomeScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="htM-Qi-GRg" customClass="HomeScreenViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeScreenViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="htM-Qi-GRg" customClass="HomeScreenViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFit" id="fEE-mx-SpD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,33 +54,55 @@
                                 <rect key="frame" x="2" y="44" width="371" height="734"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rg0-VH-foh" userLabel="Stack 1">
+<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="0.0" width="371" height="171.66666666666666"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f52-Tr-MrN" userLabel="profle">
                                                 <rect key="frame" x="0.0" y="0.0" width="174.66666666666666" height="171.66666666666666"/>
+=======
+                                        <rect key="frame" x="0.0" y="0.0" width="371" height="208.33333333333334"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f52-Tr-MrN" userLabel="profle">
+                                                <rect key="frame" x="0.0" y="0.0" width="183.66666666666666" height="208.33333333333334"/>
+>>>>>>> master
                                                 <state key="normal" image="Profile"/>
                                                 <connections>
                                                     <segue destination="UAW-SP-lXV" kind="presentation" id="n5A-rk-vut"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjU-9F-vfA" userLabel="EmergencyContact">
+<<<<<<< HEAD
                                                 <rect key="frame" x="176.66666666666663" y="0.0" width="194.33333333333337" height="171.66666666666666"/>
+=======
+                                                <rect key="frame" x="185.66666666666663" y="0.0" width="185.33333333333337" height="208.33333333333334"/>
+>>>>>>> master
                                                 <state key="normal" image="Emergency"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Enp-sU-NVG" userLabel="Stack 2">
+<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="173.66666666666663" width="371" height="172"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXs-qU-yVt" userLabel="wellnessTests">
                                                 <rect key="frame" x="0.0" y="0.0" width="174.66666666666666" height="172"/>
+=======
+                                        <rect key="frame" x="0.0" y="210.33333333333337" width="371" height="175.66666666666663"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXs-qU-yVt" userLabel="wellnessTests">
+                                                <rect key="frame" x="0.0" y="0.0" width="184" height="175.66666666666666"/>
+>>>>>>> master
                                                 <state key="normal" image="Wellness"/>
                                                 <connections>
                                                     <segue destination="3Zx-zs-cWA" kind="show" id="9rj-Cz-XIB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugf-Nl-Zuo" userLabel="medication">
+<<<<<<< HEAD
                                                 <rect key="frame" x="176.66666666666663" y="0.0" width="194.33333333333337" height="172"/>
+=======
+                                                <rect key="frame" x="186" y="0.0" width="185" height="175.66666666666666"/>
+>>>>>>> master
                                                 <state key="normal" image="Medication"/>
                                                 <connections>
                                                     <segue destination="noV-tN-kQm" kind="presentation" id="Akn-Nr-GEA"/>
@@ -73,6 +111,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mim-W5-zYZ" userLabel="Stack 3">
+<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="347.66666666666669" width="371" height="171.66666666666669"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYb-qA-KQ8" userLabel="location">
@@ -81,19 +120,43 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ch-IM-MQm" userLabel="chat">
                                                 <rect key="frame" x="176.66666666666663" y="0.0" width="194.33333333333337" height="171.66666666666666"/>
+=======
+                                        <rect key="frame" x="0.0" y="388" width="371" height="172.33333333333337"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYb-qA-KQ8" userLabel="location">
+                                                <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="172.33333333333334"/>
+                                                <state key="normal" image="Location"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ch-IM-MQm" userLabel="chat">
+                                                <rect key="frame" x="186.66666666666663" y="0.0" width="184.33333333333337" height="172.33333333333334"/>
+>>>>>>> master
                                                 <state key="normal" image="Chat"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="WMQ-FE-Xei" userLabel="Stack 4">
+<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="521.33333333333337" width="371" height="212.66666666666663"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2v4-he-ByU" userLabel="connect">
                                                 <rect key="frame" x="0.0" y="0.0" width="174.66666666666666" height="212.66666666666666"/>
+=======
+                                        <rect key="frame" x="0.0" y="562.33333333333337" width="371" height="171.66666666666663"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2v4-he-ByU" userLabel="connect">
+                                                <rect key="frame" x="0.0" y="0.0" width="184" height="171.66666666666666"/>
+>>>>>>> master
                                                 <state key="normal" image="Connect"/>
+                                                <connections>
+                                                    <segue destination="cHH-gY-Nw1" kind="presentation" id="JE1-rS-xTD"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkO-9j-pI0" userLabel="options">
+<<<<<<< HEAD
                                                 <rect key="frame" x="176.66666666666663" y="0.0" width="194.33333333333337" height="212.66666666666666"/>
+=======
+                                                <rect key="frame" x="186" y="0.0" width="185" height="171.66666666666666"/>
+>>>>>>> master
                                                 <state key="normal" image="Options"/>
                                                 <connections>
                                                     <action selector="optionsTapped:" destination="htM-Qi-GRg" eventType="touchUpInside" id="GoV-8T-uCt"/>

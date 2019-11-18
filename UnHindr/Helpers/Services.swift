@@ -24,6 +24,9 @@ class Services {
     // Static reference to Firestore root
     static let db = Firestore.firestore()
     
+    // Reference to all users
+    static let fullUserRef = db.collection("users")
+    
     // User profile reference
     static let userProfileRef = db.collection("users").document(userRef!)
     
@@ -34,6 +37,8 @@ class Services {
     static let medicationHistoryRef = db.collection("users").document(userRef!).collection("Medication")
     
     static let motorGameRef = db.collection("users").document(userRef!).collection("MotorGameData")
+    // Connections reference
+    static let connectionRef = db.collection("users").document(userRef!).collection("Connections")
     
     // MARK: - Retrieve reference to a patient's data
     // Input:
@@ -54,7 +59,57 @@ class Services {
                 }
         }
     }
+    //Configures how the alert will be displayed to screen
+    //input:
+    //      1.Takes in a title and message parameter and displays alert to screen
+    //output:
+    //      1. output the alert to the screen
+    static func showAlert(_ title:String, _ message: String, vc: UIViewController){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(alertAction)
+        vc.present(alert, animated: true, completion: nil)
+    }
     
+    static func transitionHome(_ UIVC: UIViewController){
+        Services.fetchModeStatus(Services.userRef!) { (result) in
+            if (result!) {
+                let storyboard = UIStoryboard(name: "HomeScreen", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as UIViewController
+                UIVC.present(vc, animated: true, completion: nil)
+            }else{
+                let storyboard = UIStoryboard(name: "CaregiverHomeScreen", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "CaregiverHomeScreenViewController") as UIViewController
+                UIVC.present(vc, animated: true, completion: nil)
+            }
+        }
+        
+    }
+    
+    
+    // Fetch caregiver mode status using a completion handler
+    // Input:
+    //      1. User reference
+    // Output:
+    //      1. returns true if user is a patient else false
+    static func fetchModeStatus(_ userdoc: String, completionHandler: @escaping (_ result: Bool? ) -> Void){
+        Services.userProfileRef.getDocument { (documentSnapshot, err) in
+            if err != nil {
+                //error
+            }
+            else{
+                guard let document = documentSnapshot else {
+                    print("Error fetching user document")
+                    return
+                }
+                
+                let status = document.get("isPatient") as! Bool
+
+                completionHandler(status)
+            }
+            
+        }
+    }
 }
 
 extension Date {

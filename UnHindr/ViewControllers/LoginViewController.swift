@@ -13,8 +13,6 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class LoginViewController: UIViewController {
-    //used to navigate user to the correct homescreen
-    private var isPatient = false
     // to determine which button is pressed (login/signup) - used in viewWillDisappear
     private var isSignUp = false
     
@@ -71,40 +69,9 @@ class LoginViewController: UIViewController {
                         return
                     }
                     Services.userRef = userref
-                    // Obtain the mode status (see if patient or caregiver)
-                    self!.fetchModeStatus(Services.userRef!) { (result) in
-                        if (result!){
-                            strongSelf.transitionToHomeScreen()
-                        }
-                        else {
-                            // Error fetching user mode
-                        }
-                    }
+                    Services.transitionHome(self!)
                 })
                 
-            }
-            
-        }
-    }
-    
-    // Fetch caregiver mode status using a completion handler
-    // Input:
-    //      1. User reference
-    // Output:
-    //      1. Update the local mode value
-    private func fetchModeStatus(_ userdoc: String, completionHandler: @escaping (_ result: Bool? ) -> Void){
-        Services.userProfileRef.addSnapshotListener { (documentSnapshot, err) in
-            if err != nil {
-                //error
-            }
-            else{
-                guard let document = documentSnapshot else {
-                    print("Error fetching user document")
-                    return
-                }
-                self.isPatient = document.get("isPatient") as! Bool
-                let result = true
-                completionHandler(result)
             }
             
         }
@@ -152,8 +119,8 @@ class LoginViewController: UIViewController {
     // Input: None
     // Output:
     //      1. Storyboard changes to HomeScreen and displays first view on the storyboard
-    private func transitionToHomeScreen(){
-        if(!self.isPatient){
+    private func transitionToHomeScreen(_ isPatient: Bool){
+        if(!isPatient){
             //Switch storyboard to the home menu
             let storyboard = UIStoryboard(name: "CaregiverHomeScreen", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "CaregiverHomeScreenViewController") as UIViewController
@@ -173,19 +140,6 @@ class LoginViewController: UIViewController {
     // Action: If successful -> Navigate to home menu
     //         else not successful -> display error message
     @IBAction func loginTapped(_ sender: Any) {
-//        if (Services.userRef != nil) {
-//            self.getUserInfo(Services.userRef!, completionHandler: { (complete) in
-//                if complete == true {
-//                    self.isPatient = (self.datacollection?["isPatient"] as? Bool)!
-//                    self.authenticateLogin()
-//                }
-//                else{
-//                    print("----------------Failed to get user data--------------")
-//                }
-//
-//            })
-//        }
-        
         self.authenticateLogin()
     }
     
