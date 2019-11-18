@@ -1,13 +1,13 @@
-//File: [YearMoodGraphViewController]
+//File: [MotorGameYearlyViewController]
 //Creators: [Johnston]
-//Date created: [11/10/2019]
+//Date created: [11/17/2019]
 //Updater name: [Johnston]
-//File description: [Reads mood data values from fireabse]
+//File description: [Reads cognitive data values from fireabse]
 //
-//  YearMoodGraphViewController.swift
+//  MotorGameYearlyViewController.swift
 //  UnHindr
 //
-//  Created by Johnston Yang on 11/10/19.
+//  Created by Johnston Yang on 2019-11-17.
 //  Copyright © 2019 Sigma. All rights reserved.
 //
 
@@ -17,40 +17,43 @@ import Charts
 import FirebaseFirestore
 import FirebaseAuth
 
-class YearMoodGraphViewController: UIViewController {
-
+class MotorGameYearlyViewController: UIViewController {
+    
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var motorYearlyGraph: BarChartView!
+    
     // gets the correct user database values
-    let moodRef = Services.db.collection("users").document(Services.userRef!).collection("Mood")
+    let motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
+    
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
-    var yearMoodValues: [String:Double] = [:]
+    
+    var yearMotorValues: [String:Double] = [:]
     var monthAverage = Array(repeating: 0, count: 12)
     var dictMonthAvg: [String:Double] = [:]
     // this array is to set the x axis values as strings
     let months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
     
-    @IBOutlet weak var yearGraph: BarChartView!
-    @IBOutlet weak var numYear: UILabel!
-    
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        getMoodData()
+
+        getMotorData()
         
         // Sets up the chart properties
         self.title = "Bar Chart"
-        yearGraph.maxVisibleCount = 40
-        yearGraph.drawBarShadowEnabled = false
-        yearGraph.drawValueAboveBarEnabled = true
-        yearGraph.highlightFullBarEnabled = false
-        yearGraph.doubleTapToZoomEnabled = false
-        yearGraph.animate(xAxisDuration: 1.0, yAxisDuration: 2.0)
-        let leftAxis = yearGraph.leftAxis
+        motorYearlyGraph.maxVisibleCount = 40
+        motorYearlyGraph.drawBarShadowEnabled = false
+        motorYearlyGraph.drawValueAboveBarEnabled = true
+        motorYearlyGraph.highlightFullBarEnabled = false
+        motorYearlyGraph.doubleTapToZoomEnabled = false
+        motorYearlyGraph.animate(xAxisDuration: 1.0, yAxisDuration: 2.0)
+        let leftAxis = motorYearlyGraph.leftAxis
         leftAxis.axisMinimum = 0
-        yearGraph.rightAxis.enabled = false
-        let xAxis = yearGraph.xAxis
+        motorYearlyGraph.rightAxis.enabled = false
+        let xAxis = motorYearlyGraph.xAxis
         xAxis.labelPosition = .bottom
-        let l = yearGraph.legend
+        let l = motorYearlyGraph.legend
         l.horizontalAlignment = .center
         l.verticalAlignment = .bottom
         l.orientation = .horizontal
@@ -59,24 +62,23 @@ class YearMoodGraphViewController: UIViewController {
         l.formToTextSpace = 8
         l.xEntrySpace = 6
         xAxis.drawGridLinesEnabled = false
-        yearGraph.xAxis.labelRotationAngle = -45
+        motorYearlyGraph.xAxis.labelRotationAngle = -45
     }
     
-    // MARK: - Obtain the yearly mood data from firebase
+    // MARK: - Obtain the yearly motor data from firebase
     // Input:
     //      1. None
     // Output:
-    //      1. The yearly mood graph is created and displayed for the user to see
-    func getMoodData()
+    //      1. The yearly motor graph is created and displayed for the user to see
+    func getMotorData()
     {
         // gets all the documents for this particular user
-        moodRef.getDocuments()
+        motorRef.getDocuments()
             {
                 (querySnapshot, err) in
-                if err != nil
-                    // the program will go into this if statement if the user authentication fails
+                if err != nil // the program will go into this if statement if the user authentication fails
                 {
-                    print("Error getting yearly mood data")
+                    print("Error getting yearly motor data")
                 }
                 else
                 {
@@ -86,12 +88,12 @@ class YearMoodGraphViewController: UIViewController {
                     // finds the year from today's date
                     let currentYear = calendar.component(.year, from: today)
                     // sets the label to be the currentYear
-                    self.numYear.text = "\(currentYear)"
+                    self.yearLabel.text = "\(currentYear)"
                     // iterates through all of the documents for that user
                     for document in querySnapshot!.documents
                     {
                         // creates the timestamp for each document
-                        let timestamp: Timestamp = document.get("Date") as! Timestamp
+                        let timestamp: Timestamp = document.get("Time") as! Timestamp
                         // finds the date of that timestamp
                         let dbDate: Date = timestamp.dateValue()
                         // finds the month of that timestamp
@@ -104,18 +106,18 @@ class YearMoodGraphViewController: UIViewController {
                         if(dbYear == currentYear)
                         {
                             // checks if the month already exists in the dictionary
-                            let keyExists = self.yearMoodValues[monthName] != nil
+                            let keyExists = self.yearMotorValues[monthName] != nil
                             if(keyExists)
                             {
                                 // when the key exists, add the score on top of the value that is already in the dictionary
-                                self.yearMoodValues[monthName] = (self.yearMoodValues[monthName]!) + (document.get("Score") as! Double)
+                                self.yearMotorValues[monthName] = (self.yearMotorValues[monthName]!) + (document.get("Score") as! Double)
                                 // increment the average for that month
                                 self.dictMonthAvg[monthName]! += 1
                             }
                             else
                             {
                                 // creates the new key with the score from the database as its value
-                                self.yearMoodValues[monthName] = (document.get("Score") as! Double)
+                                self.yearMotorValues[monthName] = (document.get("Score") as! Double)
                                 // sets the average as 1
                                 self.dictMonthAvg[monthName] = 1
                             }
@@ -126,11 +128,11 @@ class YearMoodGraphViewController: UIViewController {
                     for i in self.months
                     {
                         // checks if that month exists inside the dictionary
-                        let dayExists = self.yearMoodValues[i] != nil
+                        let dayExists = self.yearMotorValues[i] != nil
                         if(dayExists)
                         {
-                            // sets the data value as the average from yearMoodValue[i] and dictMonthAvg[i] and appends the data to the GraphData array
-                            let data = BarChartDataEntry(x: Double(j),y: Double(self.yearMoodValues[i]!/self.dictMonthAvg[i]!))
+                            // sets the data value as the average from yearMotorValues[i] and dictMonthAvg[i] and appends the data to the GraphData array
+                            let data = BarChartDataEntry(x: Double(j),y: Double(self.yearMotorValues[i]!/self.dictMonthAvg[i]!))
                             self.GraphData.append(data)
                         }
                         else{
@@ -140,21 +142,21 @@ class YearMoodGraphViewController: UIViewController {
                         }
                         j += 1
                     }
-                    // calls on the helper function to set the xaxis values as strings
+                    // calls on the helper function to set the x axis values as strings
                     let monthFormat = BarChartFormatter(values: self.months)
-                    self.yearGraph.xAxis.valueFormatter = monthFormat as IAxisValueFormatter
-                    // finialize any other chart properties
-                    let set = BarChartDataSet(values: self.GraphData, label: "Mood Score")
+                    self.motorYearlyGraph.xAxis.valueFormatter = monthFormat as IAxisValueFormatter
+                    // finalize any other chart properties
+                    let set = BarChartDataSet(values: self.GraphData, label: "Motor Score")
                     set.colors = [UIColor.green]
                     let chartData = BarChartData(dataSet: set)
-                    self.yearGraph.fitBars = true
-                    self.yearGraph.data = chartData
-                    self.yearGraph.setVisibleXRangeMaximum(6)
-                    self.yearGraph.moveViewToX(6)
+                    self.motorYearlyGraph.fitBars = true
+                    self.motorYearlyGraph.data = chartData
+                    self.motorYearlyGraph.setVisibleXRangeMaximum(6)
+                    self.motorYearlyGraph.moveViewToX(6)
                 }
-            }
+        }
     }
-
+    
     // MARK: - Helper class for XAxis labeling of medication graph
     private class BarChartFormatter: NSObject, IAxisValueFormatter {
         
@@ -173,7 +175,7 @@ class YearMoodGraphViewController: UIViewController {
             return values[Int(value)]
         }
     }
-
+    
     /*
     // MARK: - Navigation
 
@@ -183,6 +185,5 @@ class YearMoodGraphViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 
 }

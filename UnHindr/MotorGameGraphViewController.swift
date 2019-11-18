@@ -1,10 +1,10 @@
-//File: [CogGameGraphViewController]
+//File: [MotorGameGraphViewController]
 //Creators: [Johnston]
 //Date created: [11/17/2019]
 //Updater name: [Johnston]
-//File description: [Reads cognitive data values from fireabse]
+//File description: [Reads mood data values from firebase]
 //
-//  CogGameGraphViewController.swift
+//  MotorGameGraphViewController.swift
 //  UnHindr
 //
 //  Created by Johnston Yang on 2019-11-17.
@@ -17,42 +17,42 @@ import Charts
 import FirebaseFirestore
 import FirebaseAuth
 
-class CogGameGraphViewController: UIViewController {
+class MotorGameGraphViewController: UIViewController {
 
-    @IBOutlet weak var cogGraph: BarChartView!
-    @IBOutlet weak var month: UILabel!
+    @IBOutlet weak var motorWeeklyGraph: BarChartView!
+    @IBOutlet weak var monthLabel: UILabel!
     
     // gets the correct user database values
-    let cogRef = Services.db.collection("users").document(Services.userRef!).collection("CogGameData")
+    let motorRef = Services.db.collection("users").document(Services.userRef!).collection("MotorGameData")
     
     // storing the graph data
     var GraphData: [BarChartDataEntry] = []
-    var cogData: [Int:Double] = [:]
+    var motorData: [Int:Double] = [:]
     var dayAverage = Array(repeating: 0, count: 8)
     var days: [Int] = []
     var stringDays: [String] = []
-    
     var dictDayAvg: [Int:Int] = [:]
     
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        getCogData()
+
+        getMotorData()
         
         // Sets up the chart properties
         self.title = "Cog Bar Chart"
-        cogGraph.maxVisibleCount = 40
-        cogGraph.drawBarShadowEnabled = false
-        cogGraph.drawValueAboveBarEnabled = true
-        cogGraph.highlightFullBarEnabled = false
-        cogGraph.doubleTapToZoomEnabled = false
-        cogGraph.animate(xAxisDuration: 2.0, yAxisDuration: 3.0)
-        let leftAxis = cogGraph.leftAxis
+        motorWeeklyGraph.maxVisibleCount = 40
+        motorWeeklyGraph.drawBarShadowEnabled = false
+        motorWeeklyGraph.drawValueAboveBarEnabled = true
+        motorWeeklyGraph.highlightFullBarEnabled = false
+        motorWeeklyGraph.doubleTapToZoomEnabled = false
+        motorWeeklyGraph.animate(xAxisDuration: 2.0, yAxisDuration: 3.0)
+        let leftAxis = motorWeeklyGraph.leftAxis
         leftAxis.axisMinimum = 0
-        cogGraph.rightAxis.enabled = false
-        let xAxis = cogGraph.xAxis
+        motorWeeklyGraph.rightAxis.enabled = false
+        let xAxis = motorWeeklyGraph.xAxis
         xAxis.labelPosition = .bottom
-        let l = cogGraph.legend
+        let l = motorWeeklyGraph.legend
         l.horizontalAlignment = .center
         l.verticalAlignment = .bottom
         l.orientation = .horizontal
@@ -63,31 +63,31 @@ class CogGameGraphViewController: UIViewController {
         xAxis.drawGridLinesEnabled = false
     }
     
-    // MARK: - Obtain cognitive data from firebase
+    // MARK: - Obtain motor data from firebase
     // Input:
     //      1. None
     // Output:
-    //      1. Cognitive Graph is created using the data from the user in firebase
-    func getCogData()
+    //      1. Motor Graph is created using the data from the user in firebase
+    func getMotorData()
     {
         // gets all the documents for this particular user
-        cogRef.getDocuments()
-        {
-            (querySnapshot,err) in
-            // the program will go into this if statement if the user authentication fails
+        motorRef.getDocuments()
+            {
+                (querySnapshot,err) in
+                // the program will go into this if statement if the user authentication fails
                 if err != nil
                 {
-                        print("Error getting cognitive data")
+                    print("Error getting motor data")
                 }
                 else
                 {
-                    // the program will go into this if the user authentication succeeds
+                    // the program will go into this else statement if the user authentication succeeds
                     // the next three lines recieves the current month
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "LLLL"
                     let nameOfMonth = dateFormatter.string(from: Date())
                     
-                    // commented out block from line 90 - 105 is a test for other dates
+                    // commented out block from line 90 - 101 is a test for other dates
                     //let otherdate = DateFormatter()
                     //otherdate.dateFormat = "yyyy/MM/dd HH:mm"
                     //let someDateTime = otherdate.date(from: "2019/11/3 22:31")
@@ -118,13 +118,12 @@ class CogGameGraphViewController: UIViewController {
                     {
                         // function that gets how many days are in the last month and puts those days into stringDays and days array
                         self.daysInMonth(inMonth: currentMonth, inYear: currentYear, inDay: lastWeekDay)
-                        // displays the previous month and the current month
-                        self.month.text = "\(previousMonthName)-\(nameOfMonth)"
+                        self.monthLabel.text = "\(previousMonthName)-\(nameOfMonth)"
                         // iterates through all of the documents for this user
                         for document in querySnapshot!.documents
                         {
                             // gets the date numbers of the timestamp
-                            let timestamp: Timestamp = document.get("Date") as! Timestamp
+                            let timestamp: Timestamp = document.get("Time") as! Timestamp
                             let dbDate: Date = timestamp.dateValue()
                             // gets the date of the database value
                             let dbDay = calendar.component(.day, from: dbDate)
@@ -132,18 +131,18 @@ class CogGameGraphViewController: UIViewController {
                             // if dbDay is not inside the days array skip this entire if statement
                             if (self.days.contains(dbDay))
                             {
-                                // checks if dbDay is already inside cogData dictionary
-                                let keyExists = self.cogData[dbDay] != nil
+                                // checks if dbDay is already inside motorData dictionary
+                                let keyExists = self.motorData[dbDay] != nil
                                 if(keyExists)
                                 {
                                     // adds the score found from dbDay into the correct spot in the dictionary
-                                    self.cogData[dbDay] = (self.cogData[dbDay]!) + (document.get("Score") as! Double)
+                                    self.motorData[dbDay] = (self.motorData[dbDay]!) + (document.get("Score") as! Double)
                                     // increments the average by one
                                     self.dictDayAvg[dbDay]! += 1
                                 }
                                 else{
                                     // sets the value of the new dbDay key to equal to the score
-                                    self.cogData[dbDay] = (document.get("Score") as! Double)
+                                    self.motorData[dbDay] = (document.get("Score") as! Double)
                                     // sets the average to 1
                                     self.dictDayAvg[dbDay] = 1
                                 }
@@ -154,11 +153,11 @@ class CogGameGraphViewController: UIViewController {
                         while(i < self.days.count)
                         {
                             // checks if a key value of days[i] exists inside the dictionary
-                            let dayExists = self.cogData[self.days[i]] != nil
+                            let dayExists = self.motorData[self.days[i]] != nil
                             if(dayExists)
                             {
                                 // places data into the graph data array
-                                let data = BarChartDataEntry(x: Double(i), y: (self.cogData[self.days[i]]!)/Double(self.dictDayAvg[self.days[i]]!))
+                                let data = BarChartDataEntry(x: Double(i), y: (self.motorData[self.days[i]]!)/Double(self.dictDayAvg[self.days[i]]!))
                                 self.GraphData.append(data)
                                 
                             }
@@ -172,23 +171,22 @@ class CogGameGraphViewController: UIViewController {
                         }
                         // formats the x values to have the correct values
                         let dayFormat = BarChartFormatter(values: self.stringDays)
-                        self.cogGraph.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
+                        self.motorWeeklyGraph.xAxis.valueFormatter = dayFormat as IAxisValueFormatter
                         // formatting the graph
                         let set = BarChartDataSet(values: self.GraphData, label: "Mood")
                         set.colors = [UIColor.green]
                         let chartData = BarChartData(dataSet: set)
-                        self.cogGraph.fitBars = true
-                        self.cogGraph.data = chartData
+                        self.motorWeeklyGraph.fitBars = true
+                        self.motorWeeklyGraph.data = chartData
                     }
                     else
                     {
                         // if lastweekday is a positive value
-                        // sets the month text as the current month
-                        self.month.text = "\(nameOfMonth)"
+                        self.monthLabel.text = "\(nameOfMonth)"
                         for document in querySnapshot!.documents
                         {
                             // grabs the timestamp and gets the date of that timestamp
-                            let timestamp: Timestamp = document.get("Date") as! Timestamp
+                            let timestamp: Timestamp = document.get("Time") as! Timestamp
                             let dbDate: Date = timestamp.dateValue()
                             // converts the date into a day
                             let dbDay = calendar.component(.day, from: dbDate)
@@ -196,18 +194,18 @@ class CogGameGraphViewController: UIViewController {
                             if (dbDay >= lastWeekDay && dbDay <= currentDay)
                             {
                                 // checks if dbDay exists in the dictionary already
-                                let keyExists = self.cogData[dbDay] != nil
+                                let keyExists = self.motorData[dbDay] != nil
                                 if(keyExists)
                                 {
                                     // if the key exists add the score from the database on top of the value found in the dictionary
-                                    self.cogData[dbDay] = (self.cogData[dbDay]!) + (document.get("Score") as! Double)
+                                    self.motorData[dbDay] = (self.motorData[dbDay]!) + (document.get("Score") as! Double)
                                     // increments the correct value inside the dayAverage array
                                     self.dayAverage[(currentDay-dbDay)] += 1
                                 }
                                 else{
                                     // if the key does not exist
                                     // make a new key of dbDay with the score value found from the database
-                                    self.cogData[dbDay] = (document.get("Score") as! Double)
+                                    self.motorData[dbDay] = (document.get("Score") as! Double)
                                     // increments the correct value inside the dayAverage array
                                     self.dayAverage[(currentDay-dbDay)] += 1
                                 }
@@ -216,12 +214,12 @@ class CogGameGraphViewController: UIViewController {
                         // insert the data values into the graphData array
                         for i in lastWeekDay...currentDay
                         {
-                            // checks if the that day already exists in the cogData
-                            let dayExists = self.cogData[i] != nil
+                            // checks if the that day already exists in the motorData
+                            let dayExists = self.motorData[i] != nil
                             if(dayExists)
                             {
                                 // inserts the data into the graphData array
-                                let data = BarChartDataEntry(x: Double(i), y: (self.cogData[i]!)/Double(self.dayAverage[(currentDay-i)]))
+                                let data = BarChartDataEntry(x: Double(i), y: (self.motorData[i]!)/Double(self.dayAverage[(currentDay-i)]))
                                 self.GraphData.append(data)
                                 
                             }
@@ -234,12 +232,12 @@ class CogGameGraphViewController: UIViewController {
                         }
                     }
                     // formatting the graph
-                    let set = BarChartDataSet(values: self.GraphData, label: "Cog Score")
+                    let set = BarChartDataSet(values: self.GraphData, label: "Motor Score")
                     set.colors = [UIColor.green]
                     let chartData = BarChartData(dataSet: set)
-                    self.cogGraph.fitBars = true
-                    self.cogGraph.data = chartData
-            }
+                    self.motorWeeklyGraph.fitBars = true
+                    self.motorWeeklyGraph.data = chartData
+                }
         }
     }
     
@@ -315,13 +313,12 @@ class CogGameGraphViewController: UIViewController {
         }
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
 }

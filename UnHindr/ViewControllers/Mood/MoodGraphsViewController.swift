@@ -11,6 +11,7 @@
 //  Created by Johnston Yang on 11/12/19.
 //
 
+
 import UIKit
 import Foundation
 import Charts
@@ -62,8 +63,6 @@ class MoodGraphsViewController: UIViewController {
         l.formToTextSpace = 8
         l.xEntrySpace = 6
         xAxis.drawGridLinesEnabled = false
-        // Do any additional setup after loading the view.
-        
     }
     
     // MARK: - Obtain mood data from firebase
@@ -80,7 +79,7 @@ class MoodGraphsViewController: UIViewController {
             // the program will go into this if statement if the user authentication fails
             if err != nil
             {
-                print("Error getting medication data")
+                print("Error getting mood data")
             }
             // the program will go into this else statement if the user authentication succeeds
             else
@@ -90,7 +89,7 @@ class MoodGraphsViewController: UIViewController {
                 dateFormatter.dateFormat = "LLLL"
                 let nameOfMonth = dateFormatter.string(from: Date())
                 
-                // commented out block from line 95 - 105 is a test for other dates
+                // commented out block from line 91 - 103 is a test for other dates
                 //let otherdate = DateFormatter()
                 //otherdate.dateFormat = "yyyy/MM/dd HH:mm"
                 //let someDateTime = otherdate.date(from: "2019/11/3 22:31")
@@ -121,6 +120,7 @@ class MoodGraphsViewController: UIViewController {
                 {
                     // function that gets how many days are in the last month and puts those days into stringDays and days array
                     self.daysInMonth(inMonth: currentMonth, inYear: currentYear, inDay: lastWeekDay)
+                    // displays the previous month and the current month
                     self.month.text = "\(previousMonthName)-\(nameOfMonth)"
                     // iterates through all of the documents for this user
                     for document in querySnapshot!.documents
@@ -185,6 +185,7 @@ class MoodGraphsViewController: UIViewController {
                 else
                 {
                     // if lastweekday is a positive value
+                    // sets the month text as the current month
                     self.month.text = "\(nameOfMonth)"
                     for document in querySnapshot!.documents
                     {
