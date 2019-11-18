@@ -119,9 +119,8 @@
                         <viewLayoutGuide key="safeArea" id="wja-BF-wDR"/>
                     </view>
                     <connections>
-                        <outlet property="month" destination="9KD-c7-PQH" id="FyG-go-EfV"/>
                         <outlet property="motorYearlyGraph" destination="S5t-BS-zbq" id="QsS-40-ftp"/>
-                        <outlet property="yearLabel" destination="9KD-c7-PQH" id="NqN-kE-sn3"/>
+                        <outlet property="yearLabel" destination="9KD-c7-PQH" id="dxZ-q8-79b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xch-hY-E1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -245,8 +244,7 @@
                         <viewLayoutGuide key="safeArea" id="vhF-3A-kQO"/>
                     </view>
                     <connections>
-                        <outlet property="month" destination="iUR-gQ-Vp4" id="SSL-cH-hPa"/>
-                        <outlet property="monthLabel" destination="iUR-gQ-Vp4" id="vlO-dZ-Aau"/>
+                        <outlet property="monthLabel" destination="iUR-gQ-Vp4" id="Sek-Qt-U1b"/>
                         <outlet property="motorMonthGraph" destination="NGJ-v7-Owa" id="7mQ-4M-xf9"/>
                     </connections>
                 </viewController>
@@ -363,8 +361,7 @@
                         <viewLayoutGuide key="safeArea" id="tpH-Sh-dZu"/>
                     </view>
                     <connections>
-                        <outlet property="month" destination="gTc-49-n5O" id="L6Y-zY-gai"/>
-                        <outlet property="monthLabel" destination="gTc-49-n5O" id="sLa-Nz-gMr"/>
+                        <outlet property="monthLabel" destination="gTc-49-n5O" id="V7E-yA-n9c"/>
                         <outlet property="motorWeeklyGraph" destination="nc8-mp-Thz" id="bhI-Jt-7AG"/>
                     </connections>
                 </viewController>
@@ -379,7 +376,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="RSB-Bo-mVW"/>
-        <segue reference="1ha-tl-ME5"/>
+        <segue reference="Pca-54-k00"/>
         <segue reference="Hdk-8K-MWL"/>
         <segue reference="lAa-Pe-SEE"/>
     </inferredMetricsTieBreakers>
