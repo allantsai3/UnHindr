@@ -13,7 +13,7 @@
         <!--Mood Graphs View Controller-->
         <scene sceneID="Uc5-Sf-Zpt">
             <objects>
-                <viewController id="ZcH-HD-W6d" customClass="MoodGraphsViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoodGraphsViewController" id="ZcH-HD-W6d" customClass="MoodGraphsViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FPd-4Z-3z1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,7 +129,7 @@
         <!--Month Mood Graph View Controller-->
         <scene sceneID="aTh-v3-SRK">
             <objects>
-                <viewController id="J8Q-jX-sPu" customClass="MonthMoodGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MonthMoodGraphViewController" id="J8Q-jX-sPu" customClass="MonthMoodGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M2o-gp-Z1w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -242,12 +242,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMI-5y-jbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="Tc2-qF-mtB"/>
             </objects>
-            <point key="canvasLocation" x="698.55072463768124" y="-110.49107142857143"/>
+            <point key="canvasLocation" x="778" y="36"/>
         </scene>
         <!--Year Mood Graph View Controller-->
         <scene sceneID="M25-B4-HdA">
             <objects>
-                <viewController id="mdv-bo-yLO" customClass="YearMoodGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YearMoodGraphViewController" id="mdv-bo-yLO" customClass="YearMoodGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rrJ-Aj-nXm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,9 +376,9 @@
         <image name="greenBG" width="414" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MCE-vn-oKG"/>
-        <segue reference="Yei-Yt-NL7"/>
-        <segue reference="Wlm-5f-dGp"/>
+        <segue reference="QPF-tG-42D"/>
+        <segue reference="1AC-Wh-h4k"/>
+        <segue reference="QCe-Qi-Eqz"/>
         <segue reference="15N-q6-oZc"/>
     </inferredMetricsTieBreakers>
 </document>

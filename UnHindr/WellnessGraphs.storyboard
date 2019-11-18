@@ -41,6 +41,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNr-dU-86G">
                                                 <rect key="frame" x="0.0" y="164" width="352" height="22"/>
                                                 <state key="normal" image="MotorGraph"/>
+                                                <connections>
+                                                    <segue destination="85w-Ie-q5Z" kind="show" id="fcf-pJ-VOj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x92-QH-AAe">
                                                 <rect key="frame" x="0.0" y="246" width="352" height="22"/>
@@ -83,7 +86,7 @@
                 <viewControllerPlaceholder storyboardName="MoodGraphs" id="WUz-gb-EjB" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NkM-62-CQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="-330"/>
+            <point key="canvasLocation" x="959" y="-360"/>
         </scene>
         <!--WellnessTestHome-->
         <scene sceneID="2hf-DI-u6d">
@@ -91,7 +94,7 @@
                 <viewControllerPlaceholder storyboardName="WellnessTestHome" id="VPX-Zs-d4k" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEX-HD-v87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="-85"/>
+            <point key="canvasLocation" x="970" y="87"/>
         </scene>
         <!--CogGameGraphs-->
         <scene sceneID="V1A-K0-C5E">
@@ -99,7 +102,15 @@
                 <viewControllerPlaceholder storyboardName="CogGameGraphs" id="5Tg-Zv-11V" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJ9-BP-84W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978" y="-208"/>
+            <point key="canvasLocation" x="978" y="-224"/>
+        </scene>
+        <!--MotorGameGraph-->
+        <scene sceneID="kqm-Yt-Wgv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MotorGameGraph" id="85w-Ie-q5Z" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ySh-1u-LlT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="959" y="-101"/>
         </scene>
     </scenes>
     <resources>

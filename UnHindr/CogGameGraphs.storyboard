@@ -10,26 +10,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--WellnessTestHome-->
-        <scene sceneID="GrK-1D-uAz">
-            <objects>
-                <viewControllerPlaceholder storyboardName="WellnessTestHome" id="2XE-10-fw0" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1nr-2b-Q2N" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1517" y="-682"/>
-        </scene>
         <!--WellnessGraphs-->
         <scene sceneID="w0d-zP-EYp">
             <objects>
                 <viewControllerPlaceholder storyboardName="WellnessGraphs" id="20S-sj-HP6" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQr-3b-Uqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="562" y="-674"/>
+            <point key="canvasLocation" x="942" y="-733"/>
         </scene>
         <!--Cog Game Graph View Controller-->
         <scene sceneID="6It-R1-HZ3">
             <objects>
-                <viewController id="4Wl-Ag-GVd" customClass="CogGameGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CogGameGraphViewController" id="4Wl-Ag-GVd" customClass="CogGameGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EUs-Zm-mCS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,6 +65,9 @@
                                 <state key="normal" title="Year">
                                     <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="mr2-On-MtB" kind="show" id="LJi-SR-d0Y"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="I7l-cc-tQ7">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -143,7 +138,7 @@
         <!--Cog Game Monthly View Controller-->
         <scene sceneID="rSs-o1-Khx">
             <objects>
-                <viewController id="zHA-PJ-HeT" customClass="CogGameMonthlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CogGameMonthlyViewController" id="zHA-PJ-HeT" customClass="CogGameMonthlyViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7J9-HC-2ss">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,6 +179,9 @@
                                 <state key="normal" title="Year">
                                     <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="mr2-On-MtB" kind="show" id="o7o-hz-WLB"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenBG" translatesAutoresizingMaskIntoConstraints="NO" id="v2P-PB-ttG">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -250,12 +248,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ao3-sB-zTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="943" y="-234"/>
+            <point key="canvasLocation" x="1045" y="-149"/>
         </scene>
-        <!--Cog Game Yearly View Controller-->
+        <!--Cog Yearly Graph View Controller-->
         <scene sceneID="RYL-rJ-F3w">
             <objects>
-                <viewController id="mr2-On-MtB" customClass="CogGameYearlyViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cogYearlyGraphViewController" id="mr2-On-MtB" customClass="cogYearlyGraphViewController" customModule="UnHindr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Jr-ar-Tgo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -273,6 +271,9 @@
                                 <state key="normal" title="Week">
                                     <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="4Wl-Ag-GVd" kind="show" id="eGf-rx-WTg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9p0-xw-hEG">
                                 <rect key="frame" x="162" y="145" width="90" height="77.5"/>
@@ -283,6 +284,9 @@
                                 <state key="normal" title="Month">
                                     <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="zHA-PJ-HeT" kind="show" id="2Oe-30-Rce"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45f-0C-H7R">
                                 <rect key="frame" x="294" y="145" width="90" height="77.5"/>
@@ -308,7 +312,7 @@
                                 </constraints>
                                 <state key="normal" title="Back" image="Back3"/>
                                 <connections>
-                                    <segue destination="2XE-10-fw0" kind="show" id="zxC-85-kFs"/>
+                                    <segue destination="20S-sj-HP6" kind="show" id="Plg-uf-jHw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47Z-On-i9g">
@@ -353,13 +357,14 @@
                         <viewLayoutGuide key="safeArea" id="Wri-FL-KJp"/>
                     </view>
                     <connections>
-                        <outlet property="cogMonthGraph" destination="6nY-ZE-i7o" id="td5-pi-ZTS"/>
+                        <outlet property="cogYearlyGraph" destination="6nY-ZE-i7o" id="Asz-CC-aSa"/>
                         <outlet property="month" destination="47Z-On-i9g" id="aXA-7p-kmK"/>
+                        <outlet property="yearLabel" destination="47Z-On-i9g" id="Mpu-ma-Yo0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Q5-4k-vCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1730" y="-258"/>
+            <point key="canvasLocation" x="2267" y="-234"/>
         </scene>
     </scenes>
     <resources>
@@ -367,6 +372,9 @@
         <image name="greenBG" width="414" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="scC-Dh-ifw"/>
+        <segue reference="o7o-hz-WLB"/>
+        <segue reference="2Oe-30-Rce"/>
+        <segue reference="8p1-Ve-Cgh"/>
+        <segue reference="rdZ-TL-fPr"/>
     </inferredMetricsTieBreakers>
 </document>
