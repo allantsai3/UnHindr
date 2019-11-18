@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		215C15DA236F6E390063F3E4 /* WellnessTestHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */; };
 		215C15DC236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */; };
+		215E1413238252E800017E4D /* MotorGameGraph.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215E1412238252E800017E4D /* MotorGameGraph.storyboard */; };
 		2BB1F3E910641FB171AAA24E /* Pods_UnHindrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A434C323DEDECA6A4F4E7C /* Pods_UnHindrTests.framework */; };
 		2DD67104236BC4C5005948DF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */; };
 		2DD6710B236BCD41005948DF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD67107236BCD41005948DF /* Login.storyboard */; };
@@ -88,6 +89,7 @@
 		070601D3D77C38C0722FE935 /* Pods-UnHindrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnHindrTests.debug.xcconfig"; path = "Target Support Files/Pods-UnHindrTests/Pods-UnHindrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		215C15D9236F6E390063F3E4 /* WellnessTestHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WellnessTestHome.storyboard; sourceTree = "<group>"; };
 		215C15DB236F6E5F0063F3E4 /* WellnessTestHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessTestHomeViewController.swift; sourceTree = "<group>"; };
+		215E1412238252E800017E4D /* MotorGameGraph.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MotorGameGraph.storyboard; sourceTree = "<group>"; };
 		2DD67103236BC4C5005948DF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		2DD67108236BCD41005948DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		2DD6710A236BCD41005948DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeScreen.storyboard; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 				7030115F2381FD5A009A8294 /* CogGameGraphs.storyboard */,
 				9DF3F8C62367D880003CF8B9 /* GoogleService-Info.plist */,
 				9DF3F8A42367D82D003CF8B9 /* Info.plist */,
+				215E1412238252E800017E4D /* MotorGameGraph.storyboard */,
 			);
 			path = UnHindr;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				81BDBDA0237F8E9C00F4C970 /* dingcorrect.wav in Resources */,
 				2DD6710B236BCD41005948DF /* Login.storyboard in Resources */,
 				9DFB75C0236F7B15006321B8 /* Assets.xcassets in Resources */,
+				215E1413238252E800017E4D /* MotorGameGraph.storyboard in Resources */,
 				81B5908E2378F8DD00BA49AF /* CogGame.storyboard in Resources */,
 				81BDBDA1237F8E9C00F4C970 /* dingwrong.wav in Resources */,
 				9DF3F8A32367D82D003CF8B9 /* LaunchScreen.storyboard in Resources */,

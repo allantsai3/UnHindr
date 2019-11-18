@@ -18,43 +18,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdd-Lq-6j6">
-                                <rect key="frame" x="169" y="144" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Mood"/>
-                                <connections>
-                                    <segue destination="WUz-gb-EjB" kind="show" id="WaK-9j-MBb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLH-Hv-FxY">
-                                <rect key="frame" x="177" y="280" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cog"/>
-                                <connections>
-                                    <segue destination="5Tg-Zv-11V" kind="show" id="iSI-wc-H8V"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNr-dU-86G">
-                                <rect key="frame" x="180" y="420" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Motor"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x92-QH-AAe">
-                                <rect key="frame" x="167" y="588" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="VPX-Zs-d4k" kind="show" id="TSm-8X-nLq"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abx-TQ-Ldt">
+                                <rect key="frame" x="0.0" y="39" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="Vlh-CC-4CE">
+                                        <rect key="frame" x="31" y="30" width="352" height="268"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdd-Lq-6j6">
+                                                <rect key="frame" x="0.0" y="0.0" width="352" height="22"/>
+                                                <state key="normal" image="MoodGraph"/>
+                                                <connections>
+                                                    <segue destination="WUz-gb-EjB" kind="show" id="WaK-9j-MBb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLH-Hv-FxY">
+                                                <rect key="frame" x="0.0" y="82" width="352" height="22"/>
+                                                <state key="normal" image="CogGraph"/>
+                                                <connections>
+                                                    <segue destination="5Tg-Zv-11V" kind="show" id="iSI-wc-H8V"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNr-dU-86G">
+                                                <rect key="frame" x="0.0" y="164" width="352" height="22"/>
+                                                <state key="normal" image="MotorGraph"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x92-QH-AAe">
+                                                <rect key="frame" x="0.0" y="246" width="352" height="22"/>
+                                                <state key="normal" image="Back2">
+                                                    <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="VPX-Zs-d4k" kind="show" id="CUI-oi-hKy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Vlh-CC-4CE" firstAttribute="width" secondItem="abx-TQ-Ldt" secondAttribute="width" multiplier="0.85" id="1dr-Bs-3nX"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vlh-CC-4CE" secondAttribute="bottom" constant="40" id="EAu-aT-Wb4"/>
+                                    <constraint firstItem="Vlh-CC-4CE" firstAttribute="top" secondItem="abx-TQ-Ldt" secondAttribute="top" constant="30" id="NcJ-Cb-Kfo"/>
+                                    <constraint firstItem="Vlh-CC-4CE" firstAttribute="centerX" secondItem="abx-TQ-Ldt" secondAttribute="centerX" id="aaw-4Y-cJx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vlh-CC-4CE" secondAttribute="trailing" constant="18" id="oof-uv-gKl"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="abx-TQ-Ldt" firstAttribute="centerX" secondItem="qtD-Ec-Q5z" secondAttribute="centerX" id="cVC-Z0-YnJ"/>
+                            <constraint firstItem="abx-TQ-Ldt" firstAttribute="width" secondItem="Ias-6I-mg1" secondAttribute="width" id="nbq-MT-fFl"/>
+                            <constraint firstItem="abx-TQ-Ldt" firstAttribute="centerY" secondItem="qtD-Ec-Q5z" secondAttribute="centerY" id="uCu-HL-R3M"/>
+                            <constraint firstItem="abx-TQ-Ldt" firstAttribute="height" secondItem="Ias-6I-mg1" secondAttribute="height" id="uzD-W8-CsB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ias-6I-mg1"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="03j-4z-Usa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="268" y="-135"/>
+            <point key="canvasLocation" x="266.66666666666669" y="-135.26785714285714"/>
         </scene>
         <!--MoodGraphs-->
         <scene sceneID="vox-M3-f3l">
@@ -70,7 +91,7 @@
                 <viewControllerPlaceholder storyboardName="WellnessTestHome" id="VPX-Zs-d4k" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEX-HD-v87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="-7"/>
+            <point key="canvasLocation" x="970" y="-85"/>
         </scene>
         <!--CogGameGraphs-->
         <scene sceneID="V1A-K0-C5E">
@@ -78,7 +99,13 @@
                 <viewControllerPlaceholder storyboardName="CogGameGraphs" id="5Tg-Zv-11V" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJ9-BP-84W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978" y="-240"/>
+            <point key="canvasLocation" x="978" y="-208"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Back2" width="374" height="133"/>
+        <image name="CogGraph" width="443" height="121"/>
+        <image name="MoodGraph" width="388" height="131"/>
+        <image name="MotorGraph" width="400" height="132"/>
+    </resources>
 </document>
