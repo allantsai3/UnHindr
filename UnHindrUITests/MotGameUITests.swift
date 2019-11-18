@@ -55,9 +55,30 @@ class MotGameUITests: XCTestCase {
         XCTAssert(app.buttons["Wellness"].waitForExistence(timeout: 5))
     }
     
+    // MARK: - Test that start label text appears upon entering the game
+    // Input:
+    //      1. None
+    // Output:
+    //      1. Motor Game is entered, start label text appears
     func testStartLabelText() {
         testNavigationToMotorGame()
-        //let 
+        let app = XCUIApplication()
+        app.buttons["MotorGameButton"].tap()
+        XCTAssert(app.staticTexts["StartGameLabel"].waitForExistence(timeout: 5))
+    }
+    
+    // MARK: - Test that the end label text and retry and quit buttons appear upon finishing the game
+    // Input:
+    //      1. None
+    // Output:
+    //      1. Motor Game is finished, end label text, retry, and quit buttons appear
+    func testEndGameFeatureAppearances() {
+        testStartLabelText()
+        let app = XCUIApplication()
+        app.staticTexts["StartGameLabel"].tap()
+        XCTAssert(app.staticTexts["EndGameLabel"].waitForExistence(timeout: 5))
+        XCTAssert(app.buttons["RestartButton"].waitForExistence(timeout: 5))
+        XCTAssert(app.buttons["QuitButton"].waitForExistence(timeout: 5))
     }
 
     // MARK: - Helper Functions
@@ -77,5 +98,6 @@ class MotGameUITests: XCTestCase {
         
         
     }
+
 }
 

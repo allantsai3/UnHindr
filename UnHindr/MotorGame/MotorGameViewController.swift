@@ -16,7 +16,7 @@ class MotorGameViewController: UIViewController {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
-            // Load the SKScene from MotorGameScene.sks
+            // Load the SKScene from MotorGameScene.swift
             if let scene = SKScene(fileNamed: "MotorGameScene") {
                 scene.scaleMode = .aspectFit
                 
@@ -29,6 +29,9 @@ class MotorGameViewController: UIViewController {
             view.showsNodeCount = false
         }
     }
+    
+
+    
     
     override var shouldAutorotate: Bool {
         return true

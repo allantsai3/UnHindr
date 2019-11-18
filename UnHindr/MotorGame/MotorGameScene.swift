@@ -64,6 +64,7 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
     func restartScene() {
         self.removeAllChildren()
         self.removeAllActions()
+        //RetryButton.alpha = 0
         gameStarted = false
         touchedEdge = false
         scoreCounter = 0
@@ -145,11 +146,14 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
     // Output:
     //      1. "Retry" and "Quit" buttons appear on the screen
     func createEndGameButtons() {
+        
         restartButton = SKSpriteNode(imageNamed: "Retry")
         restartButton.position = CGPoint(x: self.frame.width / 4, y: self.frame.height * 2 / 5)
         restartButton.size = CGSize(width: self.frame.width * 5 / 14, height: self.frame.height / 10)
         restartButton.zPosition = 6
         restartButton.accessibilityLabel = "RestartButton"
+        print(restartButton.frame.origin.x)
+        print(restartButton.frame.origin.y)
         quitButton = SKSpriteNode(imageNamed: "Quit")
         quitButton.position = CGPoint(x: self.frame.width * 3 / 4, y: self.frame.height * 2 / 5)
         quitButton.size = CGSize(width: self.frame.width * 5 / 14, height: self.frame.height / 10)
@@ -349,9 +353,11 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     
+    
+    
+    
     // MARK: - The fllowing code was taken from Stack Overflow: Written by Dominique Vial, https://stackoverflow.com/questions/34293575/is-it-possible-to-use-xcode-ui-testing-on-an-app-using-spritekit/42676977#42676977
-    // The code's purpose is to make elements of Sprite Kit accessbile to XCUITest for the
-    // purpose of UI testing.
+    // The code's purpose is to make elements of Sprite Kit accessbile to XCUITest for the purpose of UI testing.
     
     override func accessibilityElementCount() -> Int {
         initAccessibility()
@@ -406,10 +412,12 @@ class MotorGameScene: SKScene, SKPhysicsContactDelegate {
             var frameForQuitButton = quitButton.frame
             frameForQuitButton.origin = (view?.convert(frameForQuitButton.origin, from: self))!
             frameForQuitButton.origin.y = frameForQuitButton.origin.y - frameForQuitButton.size.height
-            elemForQuitButton.accessibilityLabel = "RestartButton"
+            elemForQuitButton.accessibilityLabel = "QuitButton"
             elemForQuitButton.accessibilityFrame = frameForQuitButton
             elemForQuitButton.accessibilityTraits = UIAccessibilityTraits.button
             accessibleElements.append(elemForQuitButton)
         }
     }
+ 
 }
+
