@@ -15,19 +15,19 @@ TODO
 
 ## Features
 
-* [ ] Connectivity between caregiver and patient with the following features (caregiver/patient pairing)
-    * [ ] Medication reminder, recording and graphical display
-    * [ ] Emergency dial to caregiver
-    * [ ] GPS tracking
-    * [ ] Mood tracking and graphical display
+* [x] Connectivity between caregiver and patient with the following features (caregiver/patient pairing)
+    * [x] Medication reminder, recording and graphical display
+    * [x] Emergency dial to caregiver
+    * [x] GPS tracking
+    * [x] Mood tracking and graphical display
     
-* [ ] Motor game
-    * [ ] Ball tilting game that exercises precise motor movements to direct the ball using gyroscope
-    * [ ] store and provide visual data to the subject and caregivers
+* [x] Motor game
+    * [x] Ball tilting game that exercises precise motor movements to direct the ball using gyroscope
+    * [x] store and provide visual data to the subject and caregivers
     
-* [ ] Cognitive game
-    * [ ] Card matching game that exercises memory skills
-    * [ ] store and provide visual data to the subject and caregivers
+* [x] Cognitive game
+    * [x] Card matching game that exercises memory skills
+    * [x] store and provide visual data to the subject and caregivers
     
 ## Installation and setup
 
